@@ -383,6 +383,15 @@ Calcular el Índice de Delitos por Área (IDA) mediante la fórmula proporcionad
 El Índice de Delitos por Área (IDA) proporciona una medida relativa de la seguridad en una zona geográfica específica al evaluar la incidencia de delitos en relación con la población total de la zona. Esta métrica es valiosa para que los usuarios puedan tomar decisiones informadas al seleccionar su alojamiento, al proporcionar una perspectiva sobre la seguridad en diferentes áreas.
 
 
+## Modelo de datos
+
+
+
+## Dashboard
+
+![wink](imagenes/db.jpeg)
+Link de acceso: https://lookerstudio.google.com/reporting/b6c70dbb-9c99-4710-8eb3-03f883cf818a
+
 ## Stack Tecnológico
 
 ---
