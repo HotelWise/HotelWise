@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="../_src/HotelWiseLogo.Horizontal.png">
+    <img src="../_src/logo/HotelWiseLogo.png">
 </p>
 
 # Despliegue de la Aplicacion Web del Proyecto <!-- omit in toc --> 
@@ -91,31 +91,55 @@ Ejecutar en Terminal (local) y en la carpeta del proyecto:
   3. Correr `docker-compose -f docker-compose-deploy.yml run --rm gcloud sh -c "gcloud app deploy --project PROJECT_ID"` para subir el projecto a GCP. Notar que `PROJECT_ID` es el nombre que tiene el proyecto creado en la consola de Google Cloud Platform.
   4. Una vez terminado el proceso de subida le dará un IP publico donde ver la aplicacion o página web.
 
-## Contribuciones
+---
+
+# Contribuciones
 
 ¡Estamos abiertos a contribuciones! Si tienes ideas de mejora, problemas que reportar o características nuevas que te gustaría añadir, no dudes en abrir una solicitud de extracción o un problema en este repositorio.
 
-## Créditos
+# Créditos
 
-- Desarrollado por (Equipo).
-- Logotipo diseñado por (Diseñador).
+- Desarrollado por HotelWise® 2024 Team.
 
-## Licencia
+- Logotipo diseñado por HotelWise® 2024 Copyright ©.
+
+# Licencias
 
 Este proyecto está bajo las Licencias:
 
-- [Licencia GPL 3.0](LICENSE-GPL).
-- [Licencia MIT](LICENSE-MIT).
-- [Licencia Apache 2.0](LICENSE-APACHE).
+- [![Licencia GPL 3.0](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE-GPL)
+- [![Licencia MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE-GPL)
+- [![Licencia Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE-APACHE)
 
-## Contacto
 
-Si tienes alguna pregunta, comentario o problema con la página web de HotelWise, no dudes en ponerte en contacto con nosotros en [mdallanegra@icloud.com](mailto:mdallanegra@icloud.com).
+# Contacto
 
-## Enlaces adicionales
+Si tienes alguna pregunta, comentario o problema con la página web de HotelWise, no dudes en ponerte en contacto con nosotros.
+
+- **Delfina Longo Peña**
+  - ![mail](../_src/icons/mail.ico) [delfinapena55@gmail.com](mailto:delfinapena55@gmail.com)
+  - ![LinkedIn](../_src/icons/linkedin.ico) [Delfina Longo Peña](https://www.linkedin.com/in/delfina-longo-pe%C3%B1a-44b4b623b)
+  - ![GitHub](../_src/icons/github_mark_icon.ico) [delfinap5](https://github.com/delfinap5)
+
+- **Angel Prieto**
+  - ![mail](../_src/icons/mail.ico) [angelprieto92@gmail.com](mailto:angelprieto92@gmail.com)
+  - ![LinkedIn](../_src/icons/linkedin.ico) [Angel Prieto](https://www.linkedin.com/in/angelprieto92)
+  - ![GitHub](../_src/icons/github_mark_icon.ico) [PrietoPy](https://github.com/PrietoPy)
+
+- **Carlos Hidalgo**
+  - ![mail](../_src/icons/mail.ico) [hidalgo.carlos1984@gmail.com](mailto:hidalgo.carlos1984@gmail.com)
+  - ![LinkedIn](../_src/icons/linkedin.ico) [Carlos Hidalgo](https://www.linkedin.com/in/carlos-hidalgo84)
+  - ![GitHub](../_src/icons/github_mark_icon.ico) [C-Hidalgo](https://github.com/C-Hidalgo)
+
+- **Miguel Dallanegra**
+  - ![mail](../_src/icons/mail.ico) [mdallanegra@icloud.com](mailto:mdallanegra@icloud.com)
+  - ![LinkedIn](../_src/icons/linkedin.ico) [Miguel Dallanegra](https://www.linkedin.com/in/mdallanegra)
+  - ![GitHub](../_src/icons/github_mark_icon.ico) [mdallanegra](https://github.com/mdallanegra)
+
+# Enlaces adicionales
 
 - [Documentación completa del proyecto](https://github.com/HotelWise/HotelWise)
-- [Repositorio de código fuente Web Dockerizada](https://github.com/HotelWise/HotelWise/tree/HotelWiseWeb/HotelWise)
+- [Repositorio de código fuente de la Web](https://github.com/HotelWise/HotelWise/tree/HotelWiseWeb)
 - [Sitio web en vivo](https://hotelwiseweb.uk.r.appspot.com)
 
 
