@@ -17,7 +17,7 @@
   - [6. Desplegar la aplicación en Google App Engine](#6-desplegar-la-aplicación-en-google-app-engine)
     - [Ajustar los Dockerfiles según las necesidades de la aplicacion](#ajustar-los-dockerfiles-según-las-necesidades-de-la-aplicacion)
     - [Comandos para desplegar en GCP](#comandos-para-desplegar-en-gcp)
-- [Contribución](#contribución)
+- [Contribuciones](#contribuciones)
 - [Créditos](#créditos)
 - [Licencia](#licencia)
 - [Contacto](#contacto)
@@ -91,7 +91,7 @@ Ejecutar en Terminal (local) y en la carpeta del proyecto:
   3. Correr `docker-compose -f docker-compose-deploy.yml run --rm gcloud sh -c "gcloud app deploy --project PROJECT_ID"` para subir el projecto a GCP. Notar que `PROJECT_ID` es el nombre que tiene el proyecto creado en la consola de Google Cloud Platform.
   4. Una vez terminado el proceso de subida le dará un IP publico donde ver la aplicacion o página web.
 
-## Contribución
+## Contribuciones
 
 ¡Estamos abiertos a contribuciones! Si tienes ideas de mejora, problemas que reportar o características nuevas que te gustaría añadir, no dudes en abrir una solicitud de extracción o un problema en este repositorio.
 
