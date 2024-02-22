@@ -26,7 +26,7 @@
 
 ## Descripción
 
-Partiendo de la App creada en forma local en la rama [HotelWiseWeb](https://github.com/jgutierrezladino/HotelWise/tree/HotelWiseWeb/) creada en Django, se procede a llevarla a produccion. Para ello se creará un contenedor con los archivos de la aplicación, utilizando Docker y luego se desplegará en GCP utilizando el servicio App Engine que lo publicará en la web.
+Partiendo de la App creada en forma local en la rama [HotelWiseWeb](https://github.com/HotelWise/HotelWise/tree/HotelWiseWeb/) creada en Django, se procede a llevarla a produccion. Para ello se creará un contenedor con los archivos de la aplicación, utilizando Docker y luego se desplegará en GCP utilizando el servicio App Engine que lo publicará en la web.
 
 ## Despliegue de una Aplicación Django en Google App Engine usando Docker
 
@@ -37,7 +37,7 @@ Este repositorio contiene los archivos necesarios para desplegar una aplicación
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/jgutierrezladino/HotelWise/tree/HotelWiseWeb/HotelWise.git
+git clone https://github.com/HotelWise/HotelWise/tree/HotelWiseWeb/HotelWise.git
 cd HotelWise/HotelWiseWeb/HotelWise/
 ```
 
@@ -114,8 +114,8 @@ Si tienes alguna pregunta, comentario o problema con la página web de HotelWise
 
 ## Enlaces adicionales
 
-- [Documentación completa del proyecto](https://github.com/jgutierrezladino/HotelWise)
-- [Repositorio de código fuente](https://github.com/jgutierrezladino/HotelWise/tree/HotelWiseWeb/HotelWise)
+- [Documentación completa del proyecto](https://github.com/HotelWise/HotelWise)
+- [Repositorio de código fuente Web Dockerizada](https://github.com/HotelWise/HotelWise/tree/HotelWiseWeb/HotelWise)
 - [Sitio web en vivo](https://hotelwiseweb.uk.r.appspot.com)
 
 

@@ -60,7 +60,7 @@ Para desplegar la aplicación en Google Cloud Platform:
 ### Procedimiento
 
 ```bash
-git clone https://github.com/jgutierrezladino/HotelWise/tree/HotelWiseWeb.git
+git clone https://github.com/HotelWise/HotelWise/tree/HotelWiseWeb.git
 
 python3 -m venv myenv
 source myenv/bin/activate
@@ -88,7 +88,7 @@ Herramientas y entornos que utiliza el proyecto:
 
 Se utilizará el servicio de hosting web de Google Cloud Platform (GCP) que ofrece una variedad de opciones para alojar sitios, aplicaciones y servicios web en la infraestructura global de Google. El hosting web de Google ofrece una plataforma flexible, escalable y segura para alojar tus aplicaciones web y servicios web. Con una variedad de opciones de servicio, integración con otros servicios de GCP y una infraestructura global de alto rendimiento, GCP es una excelente opción para alojar tus proyectos web en la nube.
 
-###  [Despliegue de la aplicacion web de HotelWise](https://github.com/jgutierrezladino/HotelWise/tree/HotelWiseWeb/HotelWise)
+###  [Despliegue de la aplicacion web de HotelWise](https://github.com/HotelWise/HotelWise/tree/HotelWiseWeb/HotelWise)
 
 ## Lenguajes de Programación
 
@@ -153,7 +153,7 @@ Si tienes alguna pregunta, comentario o problema con la página web de HotelWise
 
 ## Enlaces adicionales
 
-- [Documentación completa del proyecto](https://github.com/jgutierrezladino/HotelWise)
-- [Repositorio de código fuente](https://github.com/jgutierrezladino/HotelWise/tree/HotelWiseWeb)
+- [Documentación completa del proyecto](https://github.com/HotelWise/HotelWise)
+- [Repositorio de código fuente de la Web](https://github.com/HotelWise/HotelWise/tree/HotelWiseWeb)
 - [Sitio web en vivo](https://hotelwiseweb.uk.r.appspot.com)
 
