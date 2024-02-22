@@ -6,29 +6,42 @@
 
 ## Indice <!-- omit in toc --> 
 
+- [Descripción](#descripción)
+- [Flujo de Trabajo](#flujo-de-trabajo)
+- [Objetivos Particulares](#objetivos-particulares)
+- [Instalación y Despliegue](#instalación-y-despliegue)
+  - [Procedimiento](#procedimiento)
+  - [Uso](#uso)
+  - [Frameworks de Trabajo](#frameworks-de-trabajo)
+  - [Hosting](#hosting)
+    - [Despliegue de la aplicacion web de HotelWise](#despliegue-de-la-aplicacion-web-de-hotelwise)
+  - [Lenguajes de Programación](#lenguajes-de-programación)
+  - [Ejemplos](#ejemplos)
 - [Contribución](#contribución)
 - [Créditos](#créditos)
 - [Licencias](#licencias)
 - [Contacto](#contacto)
 - [Enlaces adicionales](#enlaces-adicionales)
 
-## Descripción
+---
+
+# Descripción
 
 La página web de HotelWise es una plataforma diseñada para crear recomendaciones de hoteles.
 Permitiendo a los usuarios encontrar la mejor opcion según sus criterios de busqueda, los cuales son curados por una herramienta de Machine Learning para ofrecerle la mejor experiencia en su estadía.
 
-## Flujo de Trabajo
+# Flujo de Trabajo
 
 Diagrama de Gantt
 <p align="center">
     <img src="screenshots/Gantt_Proyecto_Grupal_HenryDS.Web.png">
 </p>
 
-## Objetivos Particulares
+# Objetivos Particulares
 
 Diseño y desarrollo del sitio web del proyecto,  implementando las características y funcionalidades necesarias para poder hacer las mejores recomendaciones de hoteles. Dando a los clientes una experiencia superadora y otorgando información clara sobre sus consultas, haciendo hincapié en la facilidad para navegar el sitio.
 
-## Instalación y Despliegue
+# Instalación y Despliegue
 
 
 Asegúrate de tener Python instalado. Recomiendo usar un entorno virtual para instalar las dependencias del proyecto.
@@ -46,7 +59,7 @@ Para desplegar la aplicación en Google Cloud Platform:
 3. Inicializa tu proyecto GCP.
 4. Despliega tu aplicación usando GCP App Engine.
 
-### Procedimiento
+## Procedimiento
 
 ```bash
 git clone https://github.com/HotelWise/HotelWise/tree/HotelWiseWeb.git
@@ -118,6 +131,7 @@ Este proyecto utiliza los siguientes:
 <p align="center">
     <img src="screenshots/Web_HotelWise_01_REVIEWS.png"  height=400>
 </p>
+
 ---
 
 # Contribución
