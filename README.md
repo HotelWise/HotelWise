@@ -14,6 +14,7 @@
 - [Uso](#uso)
 - [Frameworks de Trabajo](#frameworks-de-trabajo)
 - [Hosting](#hosting)
+  - [Despliegue de la aplicacion web de HotelWise](#despliegue-de-la-aplicacion-web-de-hotelwise)
 - [Lenguajes de Programación](#lenguajes-de-programación)
 - [Ejemplos](#ejemplos)
 - [Contribución](#contribución)
@@ -49,12 +50,12 @@ Asegúrate de tener Python instalado. Recomiendo usar un entorno virtual para in
 4. Ejecuta el servidor Django.
 
 
-Para desplegar la aplicación en Firebase:
+Para desplegar la aplicación en Google Cloud Platform:
 
-1. Configura una cuenta de Firebase.
-2. Instala Firebase CLI.
-3. Inicializa tu proyecto Firebase.
-4. Despliega tu aplicación usando Firebase Hosting.
+1. Configura una cuenta de GCP.
+2. Instala GCP CLI.
+3. Inicializa tu proyecto GCP.
+4. Despliega tu aplicación usando GCP App Engine.
 
 ### Procedimiento
 
@@ -81,13 +82,13 @@ Herramientas y entornos que utiliza el proyecto:
 - ```Django```: Framework de desarrollo web de alto nivel en Python que fomenta el desarrollo rápido y limpio.
 - ```Bootstrap```: Framework que facilita la creación de interfaces de usuario responsivas y modernas para sitios y aplicaciones web.
 - ```Visual Studio Code```: Editor de código fuente desarrollado por Microsoft para Windows, Linux y macOS.
-- ```Firebase```: Hosting Web.
+- ```GCP App Encgine```: Hosting Web.
 
 ## Hosting
 
 Se utilizará el servicio de hosting web de Google Cloud Platform (GCP) que ofrece una variedad de opciones para alojar sitios, aplicaciones y servicios web en la infraestructura global de Google. El hosting web de Google ofrece una plataforma flexible, escalable y segura para alojar tus aplicaciones web y servicios web. Con una variedad de opciones de servicio, integración con otros servicios de GCP y una infraestructura global de alto rendimiento, GCP es una excelente opción para alojar tus proyectos web en la nube.
 
-* [Despliegue de la aplicacion web de HotelWise](https://github.com/jgutierrezladino/HotelWise/blob/HotelWiseWeb/HotelWise)
+###  [Despliegue de la aplicacion web de HotelWise](https://github.com/jgutierrezladino/HotelWise/tree/HotelWiseWeb/HotelWise)
 
 ## Lenguajes de Programación
 
@@ -152,7 +153,7 @@ Si tienes alguna pregunta, comentario o problema con la página web de HotelWise
 
 ## Enlaces adicionales
 
-- [Documentación completa del proyecto](/HotelWise)
+- [Documentación completa del proyecto](https://github.com/jgutierrezladino/HotelWise)
 - [Repositorio de código fuente](https://github.com/jgutierrezladino/HotelWise/tree/HotelWiseWeb)
 - [Sitio web en vivo](https://hotelwiseweb.uk.r.appspot.com)
 
