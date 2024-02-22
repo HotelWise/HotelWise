@@ -17,7 +17,7 @@
     - [Despliegue de la aplicacion web de HotelWise](#despliegue-de-la-aplicacion-web-de-hotelwise)
   - [Lenguajes de Programación](#lenguajes-de-programación)
   - [Ejemplos](#ejemplos)
-- [Contribución](#contribución)
+- [Contribuciones](#contribuciones)
 - [Créditos](#créditos)
 - [Licencias](#licencias)
 - [Contacto](#contacto)
@@ -135,7 +135,7 @@ Este proyecto utiliza los siguientes:
 
 ---
 
-# Contribución
+# Contribuciones
 
 ¡Estamos abiertos a contribuciones! Si tienes ideas de mejora, problemas que reportar o características nuevas que te gustaría añadir, no dudes en abrir una solicitud de extracción o un problema en este repositorio.
 
