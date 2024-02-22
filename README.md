@@ -32,7 +32,7 @@ Permitiendo a los usuarios encontrar la mejor opcion según sus criterios de bus
 
 # Flujo de Trabajo
 
-Diagrama de Gantt
+**Diagrama de Gantt**
 <p align="center">
     <img src="screenshots/Gantt_Proyecto_Grupal_HenryDS.Web.png">
 </p>
