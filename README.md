@@ -188,19 +188,19 @@ Diseño y desarrollo del sitio web del proyecto, implementando las característi
 ### Sprint 1
 
 <p align="center">
-    <img src="./_src/Gantt1.png">
+    <img src="_src/Gantt1.png">
 </p>
 
 ### Sprint 2
 
 <p align="center">
-    <img src="./_src/Gantt2.png">
+    <img src="_src/Gantt2.png">
 </p>
 
 ### Sprint 3
 
 <p align="center">
-    <img src="./_src/Gantt3.png">
+    <img src="_src/Gantt3.png">
 </p>
 
 ---
