@@ -382,17 +382,78 @@ Calcular el Índice de Delitos por Área (IDA) mediante la fórmula proporcionad
 
 El Índice de Delitos por Área (IDA) proporciona una medida relativa de la seguridad en una zona geográfica específica al evaluar la incidencia de delitos en relación con la población total de la zona. Esta métrica es valiosa para que los usuarios puedan tomar decisiones informadas al seleccionar su alojamiento, al proporcionar una perspectiva sobre la seguridad en diferentes áreas.
 
+## **Diccionario de datos**
 
-## Modelo de datos
+---
+
+![wink](imagenes\diccionario.jpeg)
+![wink](imagenes\diccionario2.jpeg)
+
+### Detallado
+
+Hotel:
+
+- Gmap_id (PK): Identificador único del hotel.
+- Name: Nombre del hotel.
+- Category: Categoría del hotel.
+- Amenidades: Servicios del hotel.
+- Url (FK): Clave foránea que referencia a la tabla "Ubicación" mediante la columna "Url".
+- Review_id (FK): Clave foránea que referencia a la tabla "Review" mediante la columna "Review_id".
+
+Ubicación:
+
+- Url (PK): URL de la ubicación del hotel.
+- Gmap_id (FK): Clave foránea que referencia a la tabla "Hotel" mediante la columna "Gmap_id".
+- Latitude: Latitud del hotel.
+- Longitude: Longitud del hotel.
+- County: Nombre del condado del hotel.
+- City: Nombre de la ciudad del hotel.
+- State: Nombre del estado del hotel.
+- Country: Nombre del país del hotel.
+
+Review:
+
+- Review_id (PK): Identificador único de revisión.
+- Time: Fecha del comentario.
+- Text: Comentario (review).
+- Avg_rating: Rating promedio de las revisiones.
+- Num_of_reviews: Número de revisiones.
+- User_id (FK): Clave foránea que referencia a la tabla "Usuario" mediante la columna "User_id".
+- Gmap_id (FK): Clave foránea que referencia a la tabla "Hotel" mediante la columna "Gmap_id".
+
+## **Modelo de datos**
+
+---
+
+Optamos por un modelo relacional para nuestro conjunto de datos con el fin de mantener una estructura organizada y facilitar la recuperación y análisis de información. Este modelo es eficaz tanto para el análisis de datos como para su implementación en una base de datos, gracias a la claridad en las relaciones entre las tablas y la normalización de los datos. Esto nos permite realizar consultas complejas para obtener información detallada sobre hoteles, ubicaciones, opiniones y usuarios, lo cual es fundamental para el desarrollo de nuestra aplicación HotelWise.
+
+<img src = 'imagenes/Modelo ER.png' height='400'>
+
+### Relaciones
+
+* Relación Uno a Uno (1:1) entre Hotel y Ubicación:
+
+La relación se establece a través de la clave primaria en "Ubicación" (Url) y la clave foránea en "Hotel" (Url). Esto significa que cada hotel tiene una única ubicación, y cada ubicación pertenece a un solo hotel.
+
+* Relación Uno a Muchos (1:N) entre Hotel y Review:
+
+La relación se establece a través de la clave primaria en "Hotel" (Gmap_id) y la clave foránea en "Review" (Gmap_id). Un hotel puede tener múltiples revisiones, pero cada revisión está asociada a un solo hotel.
+
+* Relación Uno a Muchos (1:N) entre Review y Usuario:
+
+La relación se establece a través de la clave primaria en "Usuario" (User_id) y la clave foránea en "Review" (User_id). Un usuario puede tener múltiples revisiones, pero cada revisión está asociada a un solo usuario.
 
 
 
-## Dashboard
+
+## **Dashboard**
+
+---
 
 ![wink](imagenes/db.jpeg)
 Link de acceso: https://lookerstudio.google.com/reporting/b6c70dbb-9c99-4710-8eb3-03f883cf818a
 
-## Stack Tecnológico
+## **Stack Tecnológico**
 
 ---
 
