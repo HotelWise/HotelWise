@@ -2,6 +2,8 @@
 HotelWise/home/templates/pruebas/
 static/
 app_prueba/
+hoteles_unificado.xlsx
+00.DB.FIX.ipynb
 
 # Editors
 .vscode/
