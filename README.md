@@ -118,9 +118,9 @@ git clone https://github.com/jgutierrezladino/HotelWise/tree/HotelWiseML
 
 pip install -r requirements.txt
 
-python NLP.py
+python /HotelWise/NLP.py
 
-python ML.py
+python /HotelWise/ML.py
 
 ```
 
