@@ -47,7 +47,7 @@ Conjunto de tecnologías, herramientas, frameworks e infraestructura que se util
 ## Google Cloud Platform (GCP)
 Utilizaremos Google Cloud Platform para acceder a los servicios de Vertex AI y alojar nuestro proyecto.
 - Google Cloud Storage será utilizado para almacenar los datos raw.
-- Cloud Firestore - Firebase será utlizado por el ML para trabajar con los datos procesados. 
+- Google Cloud Filestore será utlizado por el ML para trabajar con los datos procesados. 
 
 ## Vertex AI de Google
 Utilizaremos Vertex AI de Google para entrenar y desplegar nuestros modelos de aprendizaje automático.
@@ -89,7 +89,7 @@ Dentro de esta plataforma podremos utilizar las siguientes funciones y bibliotec
   - Las Bibliotecas de aprendizaje automático serán utilizadas según sea necesario para el desarrollo de modelos que se eligirán para trabajar con Vertex AI.
 
 - **Entorno de Desarrollo**:
-  - Visual Studio Code para escribir y ejecutar nuestro código Python.
+  - Visual Studio Code, Google Colab y Jupyter Notebook se utilizarán para escribir y ejecutar nuestro código Python.
 
 - **Git y GitHub**:
   - Utilizaremos Git y GitHub para el control de versiones del código y la colaboración en equipo.
@@ -98,15 +98,18 @@ Dentro de esta plataforma podremos utilizar las siguientes funciones y bibliotec
 
 - Instalar Python: [Python.org](https://www.python.org/downloads/)
 - Configurar Google Cloud Platform: [Google Cloud Platform](https://cloud.google.com/)
-- Modelos a instalar...
+- Modelos y Paquetes a instalar:
+  - Machine Learning: [Tensorflow Recommenders](https://blog.tensorflow.org/2020/09/introducing-tensorflow-recommenders.html?hl=es-419&_gl=1*1ywamkx*_ga*MTY2Nzg0ODg1Ni4xNzA3ODUyMzIw*_ga_W0YLR4190T*MTcwODY0NjkyOC40LjEuMTcwODY0NjkzNy4wLjAuMA)
+  - Natural Language Processing: [Tensorflow Text](https://blog.tensorflow.org/2019/06/introducing-tftext.html?hl=es-419&_gl=1*qajqos*_ga*MTY2Nzg0ODg1Ni4xNzA3ODUyMzIw*_ga_W0YLR4190T*MTcwODY0NjkyOC40LjEuMTcwODY0NzA1OC4wLjAuMA..)
+
 
 ## Instalación
 
-Asegúrate de tener Python instalado. Recomiendo usar un entorno virtual para instalar las dependencias del proyecto.
+Asegurarse de tener Python instalado. Se recomienda usar un entorno virtual para instalar las dependencias del proyecto.
 
-1. Clona este repositorio en tu máquina local.
-2. Crea un entorno virtual para trabajar 
-3. Instala las dependencias necesarias utilizando el gestor de paquetes de tu elección (por ejemplo, npm o pip).
+1. Clonar este repositorio en su máquina local.
+2. Crear un entorno virtual para trabajar 
+3. Instalar las dependencias necesarias utilizando el gestor de paquetes de su elección (por ejemplo, npm o pip).
 
 ### Procedimiento
 
@@ -115,7 +118,9 @@ git clone https://github.com/jgutierrezladino/HotelWise/tree/HotelWiseML
 
 pip install -r requirements.txt
 
-...
+python NLP.py
+
+python ML.py
 
 ```
 
