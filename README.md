@@ -1,6 +1,6 @@
 <div align="center">
 
-![wink](imagenes/HotelWiseLogo.png)
+<img src = 'imagenes/HotelWiseLogo.png' >
 </div>
 
 
@@ -450,7 +450,8 @@ La relación se establece a través de la clave primaria en "Usuario" (User_id) 
 
 ---
 
-![wink](imagenes\db.jpeg)
+<img src = 'imagenes\db.jpeg' >
+
 Link de acceso: [Dashboard](https://lookerstudio.google.com/reporting/b6c70dbb-9c99-4710-8eb3-03f883cf818a)
 
 ## **Stack Tecnológico**
