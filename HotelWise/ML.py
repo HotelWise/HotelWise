@@ -8,35 +8,15 @@ from sklearn.model_selection import train_test_split
 data = pd.read_csv('hoteles.csv')
 
 # Preprocesamiento de datos
-unique_hotels = data['hotel_id'].unique()
-unique_users = np.arange(len(unique_hotels))
-
-# Mapear ids de hoteles y usuarios en los datos
-hotel_to_user_mapping = dict(zip(unique_hotels, unique_users))
-user_to_hotel_mapping = dict(zip(unique_users, unique_hotels))
-
-data['user_id'] = data['hotel_id'].map(hotel_to_user_mapping)
-
-# Dividir datos en conjunto de entrenamiento y prueba
 train_data, test_data = train_test_split(data, test_size=0.2, random_state=42)
 
 # Definir modelo de recomendación
-
-
 class HotelModel(tfrs.Model):
     def __init__(self):
         super().__init__()
         self.embedding_dimension = 32
 
-        # Definir capas de embedding para usuarios, hoteles, estados y ciudades
-        self.hotel_embeddings = tf.keras.layers.Embedding(
-            input_dim=len(unique_hotels) + 1,
-            output_dim=self.embedding_dimension
-        )
-        self.user_embeddings = tf.keras.layers.Embedding(
-            input_dim=len(unique_users) + 1,
-            output_dim=self.embedding_dimension
-        )
+        # Definir capas de embedding para estados y ciudades
         self.state_embeddings = tf.keras.layers.Embedding(
             input_dim=len(data['state'].unique()) + 1,
             output_dim=self.embedding_dimension
@@ -46,55 +26,59 @@ class HotelModel(tfrs.Model):
             output_dim=self.embedding_dimension
         )
 
-        # Definir capa de producto punto para calcular similitud entre usuarios y hoteles
-        self.task = tfrs.tasks.Retrieval(
-            metrics=tfrs.metrics.FactorizedTopK(
-                candidates=unique_hotels.tolist()
-            )
-        )
+        # Capa para concatenar las embeddings de estado y ciudad
+        self.concat_layer = tf.keras.layers.Concatenate(axis=1)
 
-    def compute_loss(self, features, training=False):
-        hotel_embeddings = self.hotel_embeddings(features['hotel_id'])
-        user_embeddings = self.user_embeddings(features['user_id'])
-        state_embeddings = self.state_embeddings(features['state'])
-        city_embeddings = self.city_embeddings(features['city'])
+        # Capas densas para procesar los datos de entrada
+        self.dense1 = tf.keras.layers.Dense(64, activation='relu')
+        self.dense2 = tf.keras.layers.Dense(32, activation='relu')
 
-        return self.task(user_embeddings + state_embeddings + city_embeddings, hotel_embeddings)
+        # Capa de salida para la recomendación
+        self.output_layer = tf.keras.layers.Dense(
+            1)  # Una salida para rating o sentimiento
+
+    def call(self, inputs):
+        # Obtener embeddings de estado y ciudad
+        state_embeddings = self.state_embeddings(inputs['state'])
+        city_embeddings = self.city_embeddings(inputs['city'])
+
+        # Concatenar embeddings de estado y ciudad
+        concatenated = self.concat_layer([state_embeddings, city_embeddings])
+
+        # Procesar datos de entrada a través de capas densas
+        x = self.dense1(concatenated)
+        x = self.dense2(x)
+
+        # Capa de salida para la recomendación
+        return self.output_layer(x)
 
 
 # Crear dataset de TensorFlow
-train_dataset = tf.data.Dataset.from_tensor_slices(dict(train_data))
-test_dataset = tf.data.Dataset.from_tensor_slices(dict(test_data))
+train_dataset = tf.data.Dataset.from_tensor_slices((
+    {'state': train_data['state'], 'city': train_data['city']},
+    {'rating': train_data['rating'], 'sentimiento': train_data['sentimiento']}
+))
+test_dataset = tf.data.Dataset.from_tensor_slices((
+    {'state': test_data['state'], 'city': test_data['city']},
+    {'rating': test_data['rating'], 'sentimiento': test_data['sentimiento']}
+))
 
 # Configurar modelo y entrenamiento
 model = HotelModel()
-model.compile(optimizer=tf.keras.optimizers.Adagrad(0.1))
+model.compile(optimizer=tf.keras.optimizers.Adam(), loss='mean_squared_error')
 
 # Entrenar el modelo
-model.fit(train_dataset.batch(32), epochs=10)
+model.fit(train_dataset.shuffle(len(train_data)).batch(32), epochs=10)
 
 # Solicitar entrada del usuario para la ciudad y el estado
 city = input("Ingrese la ciudad: ")
 state = input("Ingrese el estado: ")
 
 # Generar recomendaciones para la ciudad y el estado proporcionados por el usuario
-# Asignar un nuevo ID de usuario para la entrada del usuario
-user_id = len(unique_users) + 1
-city_embedding = model.city_embeddings(
-    tf.constant([city]))  # Obtener embedding de la ciudad
-state_embedding = model.state_embeddings(
-    tf.constant([state]))  # Obtener embedding del estado
-user_embedding = model.user_embeddings(
-    tf.constant([user_id]))  # Obtener embedding del usuario
-query_embedding = user_embedding + city_embedding + \
-    state_embedding  # Combinar embeddings
+# Crear un batch con la entrada del usuario
+user_input = {'state': np.array([state]), 'city': np.array([city])}
+# Obtener la predicción del modelo
+predicted_rating = model(user_input).numpy()[0][0]
 
-# Obtener las 5 mejores recomendaciones para la entrada del usuario
-top_recommendations = model.task.recommend(
-    query_embedding, candidates=tf.constant(unique_hotels), k=5)
-top_hotel_ids = top_recommendations[0].numpy()
-
-# Imprimir los IDs de los hoteles recomendados
-print("Los mejores hoteles recomendados son:")
-for hotel_id in top_hotel_ids:
-    print(user_to_hotel_mapping[hotel_id])
+print("La calificación predicha para la ciudad {} y el estado {} es: {}".format(
+    city, state, predicted_rating))
