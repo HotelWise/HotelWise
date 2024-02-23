@@ -386,8 +386,8 @@ El Índice de Delitos por Área (IDA) proporciona una medida relativa de la segu
 
 ---
 
-![wink](imagenes\diccionario.jpeg)
-![wink](imagenes\diccionario2.jpeg)
+<img src = 'imagenes\diccionario.jpeg' >
+<img src = 'imagenes\diccionario2.jpeg' >
 
 ### Detallado
 
