@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="HotelWiseML/_src/HotelWiseLogo.Horizontal.png">
+    <img src="_src/logo/HotelWiseLogo.Horizontal.png">
 </p>
 
 # Proyecto de Machine Learning <!-- omit in toc -->
@@ -11,48 +11,48 @@
 - [Objetivos Particulares](#objetivos-particulares)
 - [Stack Tecnológico](#stack-tecnológico)
   - [Google Cloud Platform (GCP)](#google-cloud-platform-gcp)
-  - [AutoML de Google](#automl-de-google)
+  - [Vertex AI de Google](#vertex-ai-de-google)
     - [Bibliotecas y Funciones](#bibliotecas-y-funciones)
     - [Modelos](#modelos)
     - [Lenguajes](#lenguajes)
 - [Requisitos de Instalación](#requisitos-de-instalación)
-- [Instalación](#instalación)
-  - [Procedimiento](#procedimiento)
+  - [Instalación](#instalación)
+    - [Procedimiento](#procedimiento)
 - [Resumen y Decisiones Finales](#resumen-y-decisiones-finales)
-- [Contribución](#contribución)
+- [Contribuciones](#contribuciones)
 - [Créditos](#créditos)
-- [Licencia](#licencia)
+- [Licencias](#licencias)
 - [Contacto](#contacto)
 - [Enlaces adicionales](#enlaces-adicionales)
 
-## Descripción del Proyecto
+# Descripción del Proyecto
 
-Este es un proyecto de Machine Learning que utiliza AutoML de Google para entrenar y desplegar modelos de aprendizaje automático y tiene como objetivo desplegarlos utilizando las bases de datos de Google y Yelp para hacer recomendaciones de hoteles.
+Este es un proyecto de Machine Learning que utiliza Vertex AI de Google para entrenar y desplegar modelos de aprendizaje automático y tiene como objetivo desplegarlos utilizando las bases de datos de Google y Yelp para hacer recomendaciones de hoteles.
 
-## Flujo de Trabajo
+# Flujo de Trabajo
 
 Diagrama de Gantt
 <p align="center">
-    <img src="HotelWiseML/screenshots/Gantt_Proyecto_Grupal_HenryDS.ML.png">
+    <img src="screenshots/Gantt_Proyecto_Grupal_HenryDS.ML.png">
 </p>
 
-## Objetivos Particulares
+# Objetivos Particulares
 
 Seleccion del entorno de trabajo, biblioteca y modelo de machine learning, para luego implementarlo, entrenarlo, evaluarlo y validarlo, de manera que finalmente pueda ser desplegado y puesto en produccion, devolviendo recomendaciones de hoteles. 
 
-## Stack Tecnológico
+# Stack Tecnológico
 
 Conjunto de tecnologías, herramientas, frameworks e infraestructura que se utilizan para desarrollar y ejecutar el proyecto.
 
-### Google Cloud Platform (GCP)
-Utilizaremos Google Cloud Platform para acceder a los servicios de AutoML y alojar nuestro proyecto.
+## Google Cloud Platform (GCP)
+Utilizaremos Google Cloud Platform para acceder a los servicios de Vertex AI y alojar nuestro proyecto.
 - Google Cloud Storage será utilizado para almacenar los datos raw.
 - Cloud Firestore - Firebase será utlizado por el ML para trabajar con los datos procesados. 
 
-### AutoML de Google
-Utilizaremos AutoML de Google para entrenar y desplegar nuestros modelos de aprendizaje automático.
+## Vertex AI de Google
+Utilizaremos Vertex AI de Google para entrenar y desplegar nuestros modelos de aprendizaje automático.
 
-#### Bibliotecas y Funciones
+### Bibliotecas y Funciones
 
 Dentro de esta plataforma podremos utilizar las siguientes funciones y bibliotecas para implementar los modelos de recomendación:
 
@@ -65,7 +65,7 @@ Dentro de esta plataforma podremos utilizar las siguientes funciones y bibliotec
   - **Cloud Functions**:
       Google Cloud Functions es un servicio de computación sin servidor que permite a los desarrolladores ejecutar código en respuesta a eventos en la nube sin necesidad de aprovisionar o administrar servidores. Permite a los desarrolladores crear funciones pequeñas y modulares que se ejecutan de forma independiente en la nube, escalando automáticamente según la demanda. Cloud Functions es adecuado para implementar lógica empresarial, procesamiento de eventos, integraciones de sistemas y tareas de automatización en la nube de Google.
 
-#### Modelos
+### Modelos
 
   - **Vecinos más cercanos (Nearest Neighbors)**:
       Este es un enfoque simple que recomienda elementos similares a los que un usuario ha interactuado anteriormente. Se basa en encontrar elementos similares en función de la distancia entre ellos en un espacio de características.
@@ -80,13 +80,13 @@ Dentro de esta plataforma podremos utilizar las siguientes funciones y bibliotec
   - **Modelos de aprendizaje por refuerzo (Reinforcement Learning Models)**:
       Estos modelos recomiendan elementos basados en interacciones de usuario en tiempo real y el objetivo de maximizar una recompensa a largo plazo. Pueden ser útiles en entornos donde las interacciones de los usuarios tienen un impacto dinámico en las recomendaciones.
 
-#### Lenguajes
+### Lenguajes
 
 - **Python**:
   - Utilizaremos Python como lenguaje de programación principal para desarrollar y ejecutar nuestro código.
 
 - **Bibliotecas de Python**:
-  - Las Bibliotecas de aprendizaje automático serán utilizadas según sea necesario para el desarrollo de modelos que se eligirán para trabajar con AutoML.
+  - Las Bibliotecas de aprendizaje automático serán utilizadas según sea necesario para el desarrollo de modelos que se eligirán para trabajar con Vertex AI.
 
 - **Entorno de Desarrollo**:
   - Visual Studio Code para escribir y ejecutar nuestro código Python.
@@ -94,7 +94,7 @@ Dentro de esta plataforma podremos utilizar las siguientes funciones y bibliotec
 - **Git y GitHub**:
   - Utilizaremos Git y GitHub para el control de versiones del código y la colaboración en equipo.
 
-## Requisitos de Instalación
+# Requisitos de Instalación
 
 - Instalar Python: [Python.org](https://www.python.org/downloads/)
 - Configurar Google Cloud Platform: [Google Cloud Platform](https://cloud.google.com/)
@@ -119,34 +119,58 @@ pip install -r requirements.txt
 
 ```
 
-## Resumen y Decisiones Finales
+# Resumen y Decisiones Finales
 
-Recapitulando lo visto anteriormente, para abordar el problema específico en nuestro proyecto de Machine Learning, se ha optado por utilizar TensorFlow Recommenders con AutoML. Este enfoque nos permite automatizar el proceso de construcción y entrenamiento de modelos, optimizando y ajustando automáticamente los modelos según los datos de entrada y los objetivos del proyecto.
+Recapitulando lo visto anteriormente, para abordar el problema específico en nuestro proyecto de Machine Learning, se ha optado por utilizar TensorFlow Recommenders con Vertex AI. Este enfoque nos permite automatizar el proceso de construcción y entrenamiento de modelos, optimizando y ajustando automáticamente los modelos según los datos de entrada y los objetivos del proyecto.
 Además, se ha decidido implementar un modelo basado en similitud de coseno o el modelo de vecinos cercanos (near neighbors) y aquel que consuma menos recursos de CPU será el elegido. Este enfoque nos permite maximizar la eficiencia en entornos de costo elevado por uso de CPU, asegurando un rendimiento óptimo mientras gestionamos de manera efectiva los recursos disponibles.
 
-## Contribución
+---
+
+# Contribuciones
 
 ¡Estamos abiertos a contribuciones! Si tienes ideas de mejora, problemas que reportar o características nuevas que te gustaría añadir, no dudes en abrir una solicitud de extracción o un problema en este repositorio.
 
-## Créditos
+# Créditos
 
-- Desarrollado por (Equipo).
-- Logotipo diseñado por (Diseñador).
+- Desarrollado por HotelWise® 2024 Team.
 
-## Licencia
+- Logotipo diseñado por HotelWise® 2024 Copyright ©.
+
+# Licencias
 
 Este proyecto está bajo las Licencias:
 
-- [Licencia GPL 3.0](LICENSE-GPL).
-- [Licencia MIT](LICENSE-MIT).
-- [Licencia Apache 2.0](LICENSE-APACHE).
+- [![Licencia GPL 3.0](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE-GPL)
+- [![Licencia MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE-GPL)
+- [![Licencia Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE-APACHE)
 
-## Contacto
 
-Si tienes alguna pregunta, comentario o problema con la página web de HotReviews, no dudes en ponerte en contacto con nosotros en [mdallanegra@icloud.com](mailto:mdallanegra@icloud.com).
+# Contacto
 
-## Enlaces adicionales
+Si tienes alguna pregunta, comentario o problema con la página web de HotelWise, no dudes en ponerte en contacto con nosotros.
 
-- [Documentación completa del proyecto](/HotelWiseML)
-- [Repositorio de código fuente](https://github.com/jgutierrezladino/HotelWise/tree/HotelWiseML)
-- [Sitio web en vivo](https://www.soyhenry.com)
+- **Delfina Longo Peña**
+  - ![mail](_src/icons/mail.ico) [delfinapena55@gmail.com](mailto:delfinapena55@gmail.com)
+  - ![LinkedIn](_src/icons/linkedin.ico) [Delfina Longo Peña](https://www.linkedin.com/in/delfina-longo-pe%C3%B1a-44b4b623b)
+  - ![GitHub](_src/icons/github_mark_icon.ico) [delfinap5](https://github.com/delfinap5)
+
+- **Angel Prieto**
+  - ![mail](_src/icons/mail.ico) [angelprieto92@gmail.com](mailto:angelprieto92@gmail.com)
+  - ![LinkedIn](_src/icons/linkedin.ico) [Angel Prieto](https://www.linkedin.com/in/angelprieto92)
+  - ![GitHub](_src/icons/github_mark_icon.ico) [PrietoPy](https://github.com/PrietoPy)
+
+- **Carlos Hidalgo**
+  - ![mail](_src/icons/mail.ico) [hidalgo.carlos1984@gmail.com](mailto:hidalgo.carlos1984@gmail.com)
+  - ![LinkedIn](_src/icons/linkedin.ico) [Carlos Hidalgo](https://www.linkedin.com/in/carlos-hidalgo84)
+  - ![GitHub](_src/icons/github_mark_icon.ico) [C-Hidalgo](https://github.com/C-Hidalgo)
+
+- **Miguel Dallanegra**
+  - ![mail](_src/icons/mail.ico) [mdallanegra@icloud.com](mailto:mdallanegra@icloud.com)
+  - ![LinkedIn](_src/icons/linkedin.ico) [Miguel Dallanegra](https://www.linkedin.com/in/mdallanegra)
+  - ![GitHub](_src/icons/github_mark_icon.ico) [mdallanegra](https://github.com/mdallanegra)
+
+# Enlaces adicionales
+
+- [Documentación completa del proyecto](https://github.com/HotelWise/HotelWise)
+- [Repositorio de código fuente de la Web](https://github.com/HotelWise/HotelWise/tree/HotelWiseML)
+- [Sitio web en vivo](https://hotelwiseweb.uk.r.appspot.com)
