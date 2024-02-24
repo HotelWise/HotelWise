@@ -2,6 +2,11 @@
 .vscode/
 .idea/
 
+# Unwanted Files and Folders
+00.DB.FIX.ipynb
+hoteles_unificado.xlsx
+/HotelWise
+
 # Vagrant
 .vagrant/
 
