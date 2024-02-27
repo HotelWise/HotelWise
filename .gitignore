@@ -3,10 +3,6 @@
 .idea/
 
 # Others unwanted files
-Archivo.zip
-00.DB.FIX.1.ipynb
-00.DB.FIX.2.ipynb
-00.DB.FIX.Amenities.ipynb
 prueba.ipynb
 
 # Vagrant
