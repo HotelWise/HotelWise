@@ -2,6 +2,12 @@
 .vscode/
 .idea/
 
+# Others unwanted files
+hoteles_unificado.xlsx
+Archivo.zip
+00.DB.FIX.1.ipynb
+00.DB.FIX.2.ipynb
+
 # Vagrant
 .vagrant/
 
@@ -123,8 +129,3 @@ venv.bak/
 .mypy_cache/
 .dmypy.json
 dmypy.json
-
-# others
-hoteles_unificado.xlsx
-00.DB.FIX.ipynb
-Archivo.zip
