@@ -4,6 +4,7 @@
 
 # Others unwanted files
 prueba.ipynb
+prueba.py
 
 # Vagrant
 .vagrant/
