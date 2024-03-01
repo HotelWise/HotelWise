@@ -1,8 +1,0 @@
-functions-framework==3.*
-google-cloud-storage
-fsspec
-gcsfs
-pyarrow
-pandas
-nltk
-contractions

@@ -5,3 +5,5 @@ fsspec
 gcsfs
 openpyxl
 pyarrow
+nltk
+contractions
