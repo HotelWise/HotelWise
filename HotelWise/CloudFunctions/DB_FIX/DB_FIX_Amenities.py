@@ -1,15 +1,10 @@
 from google.cloud import storage
 import pandas as pd
 import random
+from DB_FILES import *
 
 
 def process_amenities():
-    project_id = "hotelwiseweb"
-    bucket_name1 = "hotelwise_bucket"
-    bucket_name2 = "hotelwise_db"
-    file_name_excel = "hoteles_unificado.xlsx"
-    file_name_parquet = "HotelesUnificado.parquet"
-
     client = storage.Client(project=project_id)
     bucket = client.bucket(bucket_name1)
 
@@ -50,8 +45,6 @@ def process_amenities():
         'NAME', 'LATITUDE', 'LONGITUDE', 'CITY',
         'COUNTY', 'STATE', 'TEXT',
         'AVG_RATING', 'AMENITIES']]
-
-    print(hoteles_para_guardar.head())
 
     hoteles_para_guardar.to_parquet(
         f"gs://{bucket_name2}/{file_name_parquet}", index=False)

@@ -1,8 +1,9 @@
 import functions_framework
 from DB_FIX_Amenities import process_amenities
 from DB_FIX_Crime import process_crime
-from NLP_NLTK import *
-
+from DB_NLP_NLTK import process_nlp
+from DB_Extract_Amenities import extract_amenities
+from DB_Extract_Location import extract_location
 
 @functions_framework.cloud_event
 def process_hotel_data(cloud_event):
@@ -28,5 +29,7 @@ def process_hotel_data(cloud_event):
     process_amenities()
     process_crime()
     process_nlp()
+    extract_amenities()
+    extract_location()
     
-    print("Se termino el proceso")
+    print("Se termino el proceso de trabajo completo")

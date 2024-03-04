@@ -1,14 +1,8 @@
 from google.cloud import storage
 import pandas as pd
-
+from DB_FILES import *
 
 def process_crime():
-    project_id = "hotelwiseweb"
-    bucket_name = "hotelwise_db"
-    file_crime_parquet = "CrimeInTheUSA.parquet"
-    file_hoteles_parquet = "HotelesUnificado.parquet"
-    file_hoteles_parquet_final = "HotelesUnificado_Final.parquet"
-
     client = storage.Client(project=project_id)
     bucket = client.bucket(bucket_name)
 
