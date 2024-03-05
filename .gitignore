@@ -5,6 +5,9 @@
 # Others unwanted files
 prueba.ipynb
 prueba.py
+HotelWiseWeb/
+static/
+
 
 # Vagrant
 .vagrant/
