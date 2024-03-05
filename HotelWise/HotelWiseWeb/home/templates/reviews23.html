@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+{% block title %}REVIEWS{% endblock %}
+{% load static %}
+
+{%block scriptshead%}
+<script src = "https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.3/dist/jBox.all.min.js"></script>
+<link href="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.3/dist/jBox.all.min.css" rel="stylesheet"></link>
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+<script type="text/javascript" src="{% static '/js/script_bienvenida_head.js'%}"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+{%endblock%}
+
+{% block content %}
+
+        <!-- Contenedor Medio -->
+        <!-- Faltan migrar mas elementos a template base.html-->
+
+        <div class="middlecontainer">
+            <div class="row">
+                <div class="col-sm-12"">
+                    <!-- Titulo recomendations -->
+                    <h6 class="reviews-title">REVIEWS</h6>
+                </div>
+                <hr>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                </div>
+                <div class="col-sm-8">
+                    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <h1>GoogleMaps</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <p class="centro3">Elija su ubicacion:</p>
+                    <div style="display: flex; flex-direction: column;  align-items: center;">
+                        <label for="state">Select a State:</label>
+                        <select id="state" name="state">
+                            <option value="">--Select State--</option>
+                            {% for state in states %}
+                            <option value="{{ state.name }}" {% if state.name == request.GET.state %}selected{% endif %}>{{ state.name }}</option>
+                            {% endfor %}
+                        </select>
+                        <hr>
+                        <label for="city">Select a City:</label>
+                        <select id="city" name="city">
+                            <option value="">--Select City--</option>
+                        </select>
+                        <hr>
+
+                        <p class="centro3">Amenities</p>
+                        <div class="col-sm-4">
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">
+                                    Gimnasio
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                                <label class="form-check-label" for="defaultCheck2">
+                                    Pileta
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                                <label class="form-check-label" for="defaultCheck3">
+                                    WiFi
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
+                                <label class="form-check-label" for="defaultCheck4">
+                                    Restaurantes
+                                </label>
+                            </div>
+                        </div>
+                        <hr>
+                        <div id="miDiv">
+                            <label for="texto">Ingrese otro pedido:</label>
+                            <textarea id="texto" name="texto" rows="3"></textarea> 
+                        </div>
+                        <div class="col-sm-4">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 30px;">
+                        <img src="/static/imagenes/GoogleMaps.Map.png" alt="Descripción de la imagen" style="max-width: 80%;">
+                    </div>
+                </div> 
+            </div>
+        </div>
+<script>
+    const stateSelect = document.getElementById('state');
+    const citySelect = document.getElementById('city');
+
+    stateSelect.addEventListener('change', () => {
+        const selectedState = stateSelect.value;
+        fetch(`/get_cities?state=${selectedState}`)
+            .then(response => response.json())
+            .then(data => {
+                citySelect.innerHTML = '<option value="">--Select City--</option>';
+                data.forEach(city => {
+                    const option = document.createElement('option');
+                    option.value = city.name;
+                    option.textContent = city.name;
+                    citySelect.appendChild(option);
+                });
+            });
+    });
+</script>
+        <!-- Contenedor Bajo -->
+
+        <div class="bottomcontainer">
+            <div class="row">
+                <div class="col-3 d-none d-sm-block text-center">
+                    <img id="flip-img" src="/static/imagenes/Customer-Satisfaction-Surveys.png"
+                        class="img-fluid" width="100%" style="margin-left: 6%;"
+                        alt="Responsive image">
+                </div>
+                <div class="col-sm-6">
+                    <h6 id="txt00" class="bajo1">Rol a Desarrollar</h6>
+                    <p  class="bajo1">Como parte de una consultora de data, 
+                        nos han contratado para poder realizar un análisis del mercado
+                         estadounidense. Nuestro cliente es parte de un conglomerado de 
+                         empresas de restaurantes y afines, y desean tener un análisis 
+                         detallado de la opinión de los usuarios en Yelp y cruzarlos con los
+                          de Google Maps sobre hoteles, restaurantes y otros negocios afines
+                          al turismo y ocio, utilizando análisis de sentimientos, predecir 
+                          cuáles serán los rubros de los negocios que más crecerán 
+                          (o decaerán). Además, desean saber dónde es conveniente emplazar 
+                          los nuevos locales de restaurantes y afines, y desean poder tener 
+                          un sistema de recomendación de restaurantes para los usuarios de
+                           ambas plataformas para darle, al usuario por ejemplo la 
+                           posibilidad de poder conocer nuevos sabores basados en sus
+                            experiencias previas.</p>
+                </div>
+                <div class="col-sm-3">
+                    <div style="justify-content: center; margin-left:5% ;margin-right:5%">
+                        <h6 class="bajo2">Mas Información</h6>
+                        <div class="justify-content-center border border-dark rounded"
+                            style="background-color: rgb(248, 251, 251);">
+                            <p style="margin-bottom: 2%;"></p>
+                            <a class="enlace" href="https://www.google.com/">
+                                <p id="Tooltip-Arriba" class="bajo3" title="Vaya al Repo">
+                                    Repositorio Github</p>
+                                <p id="Tooltip-Izquierda1" class="bajo3 border-top" title="Estadísticas">
+                                    EDA</p>
+                                <p id="Tooltip-Izquierda2" class="bajo3 border-top" title="Rendimiento">
+                                    KPI's</p>
+                                <p id="Tooltip-Abajo" class="bajo3 border-top" title="Etapas alcanzadas">
+                                    Hitos</p></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock content %}
+
+{%block scriptsfoot%}
+<script type="text/javascript" src="{% static '/js/script_bienvenida_foot.js'%}"></script>
+{%endblock%}

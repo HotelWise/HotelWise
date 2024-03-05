@@ -1,5 +1,6 @@
 FROM python:3.9-slim
 LABEL maintainer="mdallanegra@icloud.com"
+ENV GOOGLE_APPLICATION_CREDENTIALS=/HotelWiseWeb/key.json
 
 COPY ./requirements.txt /requirements.txt
 COPY ./HotelWiseWeb /HotelWiseWeb

@@ -126,6 +126,6 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STATIC_ROOT = '/static'
+STATIC_ROOT = '/static/'
 
 CLOUD_STORAGE_BUCKET_NAME = 'hotelwise_db'

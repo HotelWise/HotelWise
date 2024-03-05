@@ -1,6 +1,6 @@
-# reviews/import_locations.py
+# reviews/management/command/import_locations.py
 from django.core.management.base import BaseCommand
-from models import State, City
+from reviews.models import State, City
 import pandas as pd
 import ast
 from google.cloud import storage
@@ -11,6 +11,8 @@ class Command(BaseCommand):
     help = 'Imports locations from CSV'
 
     def handle(self, *args, **kwargs):
+        client = storage.Client.from_service_account_json(
+            "../HotelWiseWeb/key.json")
         storage_client = storage.Client()
         # Specify your bucket name and file name
         bucket_name = 'hotelwise_db'
@@ -30,6 +32,7 @@ class Command(BaseCommand):
         for index, row in locations_df.iterrows():
             state, cities = row['STATE'], ast.literal_eval(row['CITY'])
             state_obj, _ = State.objects.get_or_create(name=state)
+            cities.sort()
             for city in cities:
                 if city:
                     City.objects.get_or_create(state=state_obj, name=city)
