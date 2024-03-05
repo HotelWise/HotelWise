@@ -32,10 +32,10 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-sm-5">
                     <p class="centro3">Elija su ubicacion:</p>
-                    <hr>
-                    <div style="display: flex; flex-direction: column;  align-items: center;">
+                    <br><br>
+                    <div style="display: flex; flex-direction: column;  align-items: center;text-align: center;">
                         <form method="GET" id="locationForm">
                             <label for="state">Seleccione Estado:</label>
                             <select id="state" name="state">
@@ -44,12 +44,12 @@
                                     <option value="{{ state.name }}" {% if state.name == request.GET.state %}selected{% endif %}>{{ state.name }}</option>
                                 {% endfor %}
                             </select>
-                            <br>
+                            <br><br>
                             <label for="city">Seleccione Ciudad:</label>
                             <select id="city" name="city">
                                 <option value="">--Seleccione Ciudad--</option>
                             </select>
-                            <hr>
+                            <br><br>
                             <div id="button-container" style="text-align: center;">
                                 <button type="button" id="submitButton" class="custom-btn btn-5 btn btn-info active responsive-width" style="border-color: black; font-size: 1.4vw">Enviar Pedido</button>
                             </div>
@@ -57,7 +57,7 @@
                         <br>  
                     </div>
                 </div>
-                <div class="col-sm-8">
+                <div class="col-sm-7">
                     <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 30px;">
                         <div id="map-container"></div>
                     </div>
@@ -67,7 +67,8 @@
         <script>
             const stateSelect = document.getElementById('state');
             const citySelect = document.getElementById('city');
-            const submitButton = document.getElementById('submitButton');     
+            const submitButton = document.getElementById('submitButton');
+        
             function updateCityOptions() {
                 const selectedState = stateSelect.value;
                 fetch(`/reviews/get_cities/?state=${selectedState}`)
@@ -77,53 +78,60 @@
                         citySelect.innerHTML = '<option value="">--Select City--</option>';
                         data.forEach(city => {
                             const option = document.createElement('option');
-                            option.value = city; 
+                            option.value = city;
                             option.textContent = city;
                             citySelect.appendChild(option);
                         });
                     })
                     .catch(error => console.error('Error fetching cities:', error));
-            }                
-            stateSelect.addEventListener('change', updateCityOptions);    
+            }
+        
+            stateSelect.addEventListener('change', updateCityOptions);
             updateCityOptions();
+        
             submitButton.addEventListener('click', function() {
                 const selectedState = stateSelect.value;
                 const selectedCity = citySelect.value;
-                
+        
                 console.log('Selected State:', selectedState);
                 console.log('Selected City:', selectedCity);
-            
+        
                 if (!selectedCity) {
                     alert("Please select a city before submitting.");
-                    return false; 
+                    return false;
                 }
-            
-                renderGoogleMap(selectedCity);
+                // Render Google Map with the selected city and state
+            renderGoogleMap(selectedCity, selectedState);
             });
-            
+        
+            // Function to render Google Map with the selected city and state
             function renderGoogleMap(city, state) {
                 // Fetch the JSON file containing the API key
                 const apiKeyUrl = "{% static 'gmap_api_key.json' %}";
-                    .then(response => response.json())
-                    .then(data => {
-                        const apiKey = data.MAP_API_KEY;
-            
-                        // Render the Google Maps iframe using the extracted API key
-                        const mapContainer = document.getElementById('map-container');
-                        mapContainer.innerHTML = `
-                            <iframe
-                                width="600"
-                                height="450"
-                                frameborder="0"
-                                style="border:0"
-                                src="https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${state},${city}"
-                                allowfullscreen
-                            ></iframe>
-                        `;
-                    })
-                    .catch(error => console.error('Error fetching API key:', error));
-            }      
+        
+            fetch(apiKeyUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const apiKey = data.MAP_API_KEY;
+    
+                    // Render the Google Maps iframe using the extracted API key
+                    const mapContainer = document.getElementById('map-container');
+                    mapContainer.innerHTML = `
+                        <iframe
+                            width="600"
+                            height="450"
+                            frameborder="0"
+                            style="border:0"
+                            src="https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${state},${city}"
+                            allowfullscreen
+                        ></iframe>
+                    `;
+                })
+                .catch(error => console.error('Error fetching API key:', error));
+            }
+            renderGoogleMap("", "United States");
         </script>
+        
 
         <!-- Contenedor Bajo -->
 
