@@ -4,6 +4,7 @@ static/
 app_prueba/
 hoteles_unificado.xlsx
 00.DB.FIX.ipynb
+key.json
 
 # Editors
 .vscode/

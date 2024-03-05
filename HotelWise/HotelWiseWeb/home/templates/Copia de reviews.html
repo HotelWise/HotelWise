@@ -55,28 +55,27 @@
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <p class="centro3">Seleccione Ubicación:</i>:</p>
+                    <p class="centro3">Seleccione cantidad <i class="fas fa-star estrella-amarilla"></i>:</p>
                     <div style="display: flex; flex-direction: column;  align-items: center;">
-                        <form method="GET">
-                            <label for="state">Select a State:</label>
-                            <select id="state" name="state">
-                                <option value="">--Select State--</option>
-                                {% for state in states %}
-                                <option value="{{ state.name }}" {% if state.name == request.GET.state %}selected{% endif %}>{{ state.name }}</option>
-                                {% endfor %}
+                        <form method="post">
+                            <label for="selected_state">Select State:</label>
+                            <select name="selected_state" id="selected_state">
+                            {% for state in states %}
+                                <option value="{{ state }}">{{ state }}</option>
+                            {% endfor %}
                             </select>
-                            <hr>
-                            <label for="city">Select a City:</label>
-                            <select id="city" name="city">
-                                <option value="">--Select City--</option>
-                                {% for city in cities %}
-                                <option value="{{ city.name }}">{{ city.name }}</option>
-                                {% endfor %}
+                            <br>
+                            <label for="selected_city">Select City:</label>
+                            <select name="selected_city" id="selected_city" disabled>
+                            {% for city in cities_dict.get(selected_state, []) %}
+                                <option value="{{ city }}">{{ city }}</option>
+                            {% endfor %}
+                            {% for city in cities_dict.get(selected_state, []) %}
+                                <option value="{{ city }}">{{ city }}</option>
+                            {% endfor %}
                             </select>
-                            <hr>
-                            <button type="submit">Submit</button>
+                            <br>
                         </form>
-
                         <p class="centro3">Amenities</p>
                         <div class="col-sm-4">
                         </div>

@@ -103,3 +103,12 @@
 .dropdown,
 .form-check {
     margin-bottom: 10px;
+}
+
+.div1 {
+    margin: auto;
+}
+
+.div2 {
+    align-self: center;
+}

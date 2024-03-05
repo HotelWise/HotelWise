@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}ERROR{% endblock %}
+{% load static %}
+
+{%block scriptshead%}
+<script src = "https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.3/dist/jBox.all.min.js"></script>
+<link href="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.3/dist/jBox.all.min.css" rel="stylesheet"></link>
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+<script type="text/javascript" src="{% static '/js/script_bienvenida_head.js'%}"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+{%endblock%}
+
+{% block content %}
+
+        <!-- Contenedor Medio -->
+        <!-- Faltan migrar mas elementos a template base.html-->
+
+        <div class="middlecontainer">
+            <div class="row">
+                <div class="col-sm-12"">
+                    <!-- Titulo recomendations -->
+                    <h6 class="reviews-title">ERROR!!!</h6>
+                </h1> 
+            </div>
+        </div>
+        
+        <!-- Contenedor Bajo -->
+
+        <div class="bottomcontainer">
+            <div class="row">
+                <div class="col-3 d-none d-sm-block text-center">
+                    <img id="flip-img" src="/static/imagenes/Customer-Satisfaction-Surveys.png"
+                    class="img-fluid" width="100%" style="margin-left: 6%;"
+                    alt="Responsive image">
+                </div>
+                <div class="col-sm-6 d-none d-sm-block text-center">
+                    <img id="flip-img" src="/static/imagenes/sad_face.png"
+                    class="img-fluid" width="30%" style="margin-top: 6%;"
+                    alt="Responsive image">
+                </div>
+                <div class="col-sm-3">
+                    <div style="justify-content: center; margin-left:5%; margin-right:5%; margin-top: 6%;">
+                        <h6 class="bajo2">Mas Información</h6>
+                        <div class="justify-content-center border border-dark rounded"
+                            style="background-color: rgb(248, 251, 251);">
+                            <p style="margin-bottom: 2%;"></p>
+                            <a class="enlace" href="https://www.google.com/">
+                                <p id="Tooltip-Arriba" class="bajo3" title="Vaya al Repo">
+                                    Repositorio Github</p>
+                                <p id="Tooltip-Izquierda1" class="bajo3 border-top" title="Estadísticas">
+                                    EDA</p>
+                                <p id="Tooltip-Izquierda2" class="bajo3 border-top" title="Rendimiento">
+                                    KPI's</p>
+                                <p id="Tooltip-Abajo" class="bajo3 border-top" title="Etapas alcanzadas">
+                                    Hitos</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock content %}
+
+{%block scriptsfoot%}
+<script type="text/javascript" src="{% static '/js/script_bienvenida_foot.js'%}"></script>
+{%endblock%}
