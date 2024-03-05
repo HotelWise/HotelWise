@@ -1,78 +1,178 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Page Title</title>
-</head>
-<body>
-    <form method="GET" id="locationForm">
-        <label for="state">Select a State:</label>
-        <select id="state" name="state">
-            <option value="">--Select State--</option>
-            {% for state in states %}
-                <option value="{{ state.name }}" {% if state.name == request.GET.state %}selected{% endif %}>{{ state.name }}</option>
-            {% endfor %}
-        </select>
-        <hr>
-        <label for="city">Select a City:</label>
-        <select id="city" name="city">
-            <option value="">--Select City--</option>
-        </select>
-        <hr>
-        <button type="button" id="submitButton">Submit Selection</button>
-    </form>
+{% extends "base.html" %}
+{% block title %}REVIEWS{% endblock %}
+{% load static %}
 
-    <script>
-        // Get references to the state and city select elements and the submit button
-        const stateSelect = document.getElementById('state');
-        const citySelect = document.getElementById('city');
-        const submitButton = document.getElementById('submitButton');
+{%block scriptshead%}
+<script src = "https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.3/dist/jBox.all.min.js"></script>
+<link href="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.3/dist/jBox.all.min.css" rel="stylesheet"></link>
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+<script type="text/javascript" src="{% static '/js/script_bienvenida_head.js'%}"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+{%endblock%}
 
-        // Define a JavaScript function to update the city options based on the selected state
-        function updateCityOptions() {
-            const selectedState = stateSelect.value;
-            // Make an AJAX request to fetch cities for the selected state
-            fetch(`/reviews/get_cities/?state=${selectedState}`)
-                .then(response => response.json())
-                .then(data => {
-                    console.log(data); // Add this line to check the data received
-                    // Update city options based on the fetched data
-                    citySelect.innerHTML = '<option value="">--Select City--</option>';
-                    data.forEach(city => {
-                        const option = document.createElement('option');
-                        option.value = city; // Set the value to the city name
-                        option.textContent = city; // Set the visible text to the city name
-                        citySelect.appendChild(option);
-                    });
-                })
-                .catch(error => console.error('Error fetching cities:', error));
-        }
-        
-        
+{% block content %}
 
-        // Attach event listener to the state select element to update city options
-        stateSelect.addEventListener('change', updateCityOptions);
+        <!-- Contenedor Medio -->
+        <!-- Faltan migrar mas elementos a template base.html-->
 
-        // Call updateCityOptions initially to handle any pre-selected state or to clear the city options if no state is selected
-        updateCityOptions();
-
-        // Attach event listener to the custom "Submit Selection" button for form submission
-        submitButton.addEventListener('click', function() {
-            const selectedState = stateSelect.value;
-            const selectedCity = citySelect.value;
+        <div class="middlecontainer">
+            <div class="row">
+                <div class="col-sm-12"">
+                    <!-- Titulo recomendations -->
+                    <h6 class="reviews-title">REVIEWS</h6>
+                </div>
+                <hr>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                </div>
+                <div class="col-sm-8">
+                    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <p class="centro3">Elija su ubicacion:</p>
+                    <hr>
+                    <div style="display: flex; flex-direction: column;  align-items: center;">
+                        <form method="GET" id="locationForm">
+                            <label for="state">Seleccione Estado:</label>
+                            <select id="state" name="state">
+                                <option value="">--Seleccione Estado--</option>
+                                {% for state in states %}
+                                    <option value="{{ state.name }}" {% if state.name == request.GET.state %}selected{% endif %}>{{ state.name }}</option>
+                                {% endfor %}
+                            </select>
+                            <br>
+                            <label for="city">Seleccione Ciudad:</label>
+                            <select id="city" name="city">
+                                <option value="">--Seleccione Ciudad--</option>
+                            </select>
+                            <hr>
+                            <div id="button-container" style="text-align: center;">
+                                <button type="button" id="submitButton" class="custom-btn btn-5 btn btn-info active responsive-width" style="border-color: black; font-size: 1.4vw">Enviar Pedido</button>
+                            </div>
+                        </form>
+                        <br>  
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 30px;">
+                        <div id="map-container"></div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        <script>
+            const stateSelect = document.getElementById('state');
+            const citySelect = document.getElementById('city');
+            const submitButton = document.getElementById('submitButton');     
+            function updateCityOptions() {
+                const selectedState = stateSelect.value;
+                fetch(`/reviews/get_cities/?state=${selectedState}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data);
+                        citySelect.innerHTML = '<option value="">--Select City--</option>';
+                        data.forEach(city => {
+                            const option = document.createElement('option');
+                            option.value = city; 
+                            option.textContent = city;
+                            citySelect.appendChild(option);
+                        });
+                    })
+                    .catch(error => console.error('Error fetching cities:', error));
+            }                
+            stateSelect.addEventListener('change', updateCityOptions);    
+            updateCityOptions();
+            submitButton.addEventListener('click', function() {
+                const selectedState = stateSelect.value;
+                const selectedCity = citySelect.value;
+                
+                console.log('Selected State:', selectedState);
+                console.log('Selected City:', selectedCity);
             
-            console.log('Selected State:', selectedState);
-            console.log('Selected City:', selectedCity);
-        
-            if (!selectedCity) {
-                alert("Please select a city before submitting.");
-                return false; // Prevent form submission if no city is selected
-            }
-        
-            // Submit the form using JavaScript (optional)
-            // document.getElementById("locationForm").submit(); // Uncomment to submit form using JavaScript
-        });
-    </script>
-</body>
-</html>
+                if (!selectedCity) {
+                    alert("Please select a city before submitting.");
+                    return false; 
+                }
+            
+                renderGoogleMap(selectedCity);
+            });
+            
+            function renderGoogleMap(city, state) {
+                // Fetch the JSON file containing the API key
+                const apiKeyUrl = "{% static 'gmap_api_key.json' %}";
+                    .then(response => response.json())
+                    .then(data => {
+                        const apiKey = data.MAP_API_KEY;
+            
+                        // Render the Google Maps iframe using the extracted API key
+                        const mapContainer = document.getElementById('map-container');
+                        mapContainer.innerHTML = `
+                            <iframe
+                                width="600"
+                                height="450"
+                                frameborder="0"
+                                style="border:0"
+                                src="https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${state},${city}"
+                                allowfullscreen
+                            ></iframe>
+                        `;
+                    })
+                    .catch(error => console.error('Error fetching API key:', error));
+            }      
+        </script>
+
+        <!-- Contenedor Bajo -->
+
+        <div class="bottomcontainer">
+            <div class="row">
+                <div class="col-3 d-none d-sm-block text-center">
+                    <img id="flip-img" src="/static/imagenes/Customer-Satisfaction-Surveys.png"
+                        class="img-fluid" width="100%" style="margin-left: 6%;"
+                        alt="Responsive image">
+                </div>
+                <div class="col-sm-6">
+                    <h6 id="txt00" class="bajo1">Rol a Desarrollar</h6>
+                    <p  class="bajo1">Como parte de una consultora de data, 
+                        nos han contratado para poder realizar un análisis del mercado
+                         estadounidense. Nuestro cliente es parte de un conglomerado de 
+                         empresas de restaurantes y afines, y desean tener un análisis 
+                         detallado de la opinión de los usuarios en Yelp y cruzarlos con los
+                          de Google Maps sobre hoteles, restaurantes y otros negocios afines
+                          al turismo y ocio, utilizando análisis de sentimientos, predecir 
+                          cuáles serán los rubros de los negocios que más crecerán 
+                          (o decaerán). Además, desean saber dónde es conveniente emplazar 
+                          los nuevos locales de restaurantes y afines, y desean poder tener 
+                          un sistema de recomendación de restaurantes para los usuarios de
+                           ambas plataformas para darle, al usuario por ejemplo la 
+                           posibilidad de poder conocer nuevos sabores basados en sus
+                            experiencias previas.</p>
+                </div>
+                <div class="col-sm-3">
+                    <div style="justify-content: center; margin-left:5% ;margin-right:5%">
+                        <h6 class="bajo2">Mas Información</h6>
+                        <div class="justify-content-center border border-dark rounded"
+                            style="background-color: rgb(248, 251, 251);">
+                            <p style="margin-bottom: 2%;"></p>
+                            <a class="enlace" href="https://www.google.com/">
+                                <p id="Tooltip-Arriba" class="bajo3" title="Vaya al Repo">
+                                    Repositorio Github</p>
+                                <p id="Tooltip-Izquierda1" class="bajo3 border-top" title="Estadísticas">
+                                    EDA</p>
+                                <p id="Tooltip-Izquierda2" class="bajo3 border-top" title="Rendimiento">
+                                    KPI's</p>
+                                <p id="Tooltip-Abajo" class="bajo3 border-top" title="Etapas alcanzadas">
+                                    Hitos</p></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock content %}
+
+{%block scriptsfoot%}
+<script type="text/javascript" src="{% static '/js/script_bienvenida_foot.js'%}"></script>
+{%endblock%}

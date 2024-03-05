@@ -8,6 +8,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 <script type="text/javascript" src="{% static '/js/script_bienvenida_head.js'%}"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<script>
+    const stateSelect = document.getElementById('selected_state');
+    const citySelect = document.getElementById('selected_city');
+    const citiesDict = {{ cities_dict|safe }};
+  
+    stateSelect.addEventListener('change', function() {
+      const selectedState = this.value;
+      citySelect.disabled = !selectedState;  // Enable city selection only for a chosen state
+      citySelect.innerHTML = '';  // Clear previous city options
+      if (selectedState) {
+        const cities = citiesDict[selectedState] || [];  // Get cities for selected state (or empty list)
+        cities.forEach(city => {
+          const option = document.createElement('option');
+          option.value = city;
+          option.text = city;
+          citySelect.appendChild(option);
+        });
+      }
+    });
+  </script>
 {%endblock%}
 
 {% block content %}
@@ -29,27 +49,33 @@
                 <div class="col-sm-8">
                     <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
                         <h1>GoogleMaps</h1>
+                        <p>Elija su ubicacion:</p>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <p class="centro3">Elija su ubicacion:</p>
+                    <p class="centro3">Seleccione cantidad <i class="fas fa-star estrella-amarilla"></i>:</p>
                     <div style="display: flex; flex-direction: column;  align-items: center;">
-                        <label for="state">Select a State:</label>
-                        <select id="state" name="state">
-                            <option value="">--Select State--</option>
+                        <form method="post">
+                            <label for="selected_state">Select State:</label>
+                            <select name="selected_state" id="selected_state">
                             {% for state in states %}
-                            <option value="{{ state.name }}" {% if state.name == request.GET.state %}selected{% endif %}>{{ state.name }}</option>
+                                <option value="{{ state }}">{{ state }}</option>
                             {% endfor %}
-                        </select>
-                        <hr>
-                        <label for="city">Select a City:</label>
-                        <select id="city" name="city">
-                            <option value="">--Select City--</option>
-                        </select>
-                        <hr>
-
+                            </select>
+                            <br>
+                            <label for="selected_city">Select City:</label>
+                            <select name="selected_city" id="selected_city" disabled>
+                            {% for city in cities_dict.get(selected_state, []) %}
+                                <option value="{{ city }}">{{ city }}</option>
+                            {% endfor %}
+                            {% for city in cities_dict.get(selected_state, []) %}
+                                <option value="{{ city }}">{{ city }}</option>
+                            {% endfor %}
+                            </select>
+                            <br>
+                        </form>
                         <p class="centro3">Amenities</p>
                         <div class="col-sm-4">
                         </div>
@@ -95,25 +121,7 @@
                 </div> 
             </div>
         </div>
-<script>
-    const stateSelect = document.getElementById('state');
-    const citySelect = document.getElementById('city');
-
-    stateSelect.addEventListener('change', () => {
-        const selectedState = stateSelect.value;
-        fetch(`/get_cities?state=${selectedState}`)
-            .then(response => response.json())
-            .then(data => {
-                citySelect.innerHTML = '<option value="">--Select City--</option>';
-                data.forEach(city => {
-                    const option = document.createElement('option');
-                    option.value = city.name;
-                    option.textContent = city.name;
-                    citySelect.appendChild(option);
-                });
-            });
-    });
-</script>
+        
         <!-- Contenedor Bajo -->
 
         <div class="bottomcontainer">

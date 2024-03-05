@@ -5,6 +5,7 @@ app_prueba/
 hoteles_unificado.xlsx
 00.DB.FIX.ipynb
 key.json
+gmap_api_key.json
 
 # Editors
 .vscode/
