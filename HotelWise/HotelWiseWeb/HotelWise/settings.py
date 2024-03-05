@@ -39,11 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'reviews',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -129,3 +131,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATIC_ROOT = '/static/'
 
 CLOUD_STORAGE_BUCKET_NAME = 'hotelwise_db'
+
+CORS_ALLOW_ALL_ORIGINS = True  # Allow requests from all origins
+CORS_ALLOW_CREDENTIALS = True  # Allow including credentials like cookies in requests
+CORS_ALLOW_METHODS = ['GET', 'POST']  # Allow only GET and POST requests
+CORS_ALLOW_HEADERS = ['Content-Type',
+                      'Authorization']  # Allow specific headers

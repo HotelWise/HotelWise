@@ -1,6 +1,7 @@
 Django>=3.2,<3.3
 gunicorn>=20.1.0,<20.2
 django-storages>=1.14.2
+django-cors-headers
 google-cloud-storage
 pandas
 pyarrow

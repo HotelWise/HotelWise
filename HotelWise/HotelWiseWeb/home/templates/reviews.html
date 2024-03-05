@@ -8,6 +8,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 <script type="text/javascript" src="{% static '/js/script_bienvenida_head.js'%}"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<script>
+    const identityToken = "{{ token }}";
+</script>
 {%endblock%}
 
 {% block content %}
@@ -88,20 +91,49 @@
         
             stateSelect.addEventListener('change', updateCityOptions);
             updateCityOptions();
+
+            function handleCloudFunctionResponse(data) {
+                // Handle the response data here (e.g., display a message)
+                console.log('Cloud Function response:', data);
+            }
         
             submitButton.addEventListener('click', function() {
                 const selectedState = stateSelect.value;
                 const selectedCity = citySelect.value;
-        
+            
                 console.log('Selected State:', selectedState);
                 console.log('Selected City:', selectedCity);
-        
+            
                 if (!selectedCity) {
                     alert("Please select a city before submitting.");
                     return false;
                 }
-                // Render Google Map with the selected city and state
-            renderGoogleMap(selectedCity, selectedState);
+                // Send request to Cloud Function
+                const data = {
+                    "state": selectedState,
+                    "city": selectedCity
+                };
+            
+                fetch('https://us-central1-hotelwiseweb.cloudfunctions.net/ML_HTML', {
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                    headers: { 'Content-Type': 'application/json' }
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            return response.json();
+                        } else {
+                            throw new Error(`Error: ${response.statusText}`);
+                        }
+                    })
+                    .then(data => {
+                        // Handle Cloud Function response
+                        handleCloudFunctionResponse(data);
+            
+                        // Render Google Map with the selected city and state
+                        renderGoogleMap(selectedCity, selectedState);
+                    })
+                    .catch(error => console.error('Error sending request:', error));
             });
         
             // Function to render Google Map with the selected city and state
@@ -109,24 +141,24 @@
                 // Fetch the JSON file containing the API key
                 const apiKeyUrl = "{% static 'gmap_api_key.json' %}";
         
-            fetch(apiKeyUrl)
-                .then(response => response.json())
-                .then(data => {
-                    const apiKey = data.MAP_API_KEY;
-    
-                    // Render the Google Maps iframe using the extracted API key
-                    const mapContainer = document.getElementById('map-container');
-                    mapContainer.innerHTML = `
-                        <iframe
-                            width="600"
-                            height="450"
-                            frameborder="0"
-                            style="border:0"
-                            src="https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${state},${city}"
-                            allowfullscreen
-                        ></iframe>
-                    `;
-                })
+                fetch(apiKeyUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        const apiKey = data.MAP_API_KEY;
+        
+                        // Render the Google Maps iframe using the extracted API key
+                        const mapContainer = document.getElementById('map-container');
+                        mapContainer.innerHTML = `
+                            <iframe
+                                width="600"
+                                height="450"
+                                frameborder="0"
+                                style="border:0"
+                                src="https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${state},${city}"
+                                allowfullscreen
+                            ></iframe>
+                        `;
+                    })
                 .catch(error => console.error('Error fetching API key:', error));
             }
             renderGoogleMap("", "United States");
