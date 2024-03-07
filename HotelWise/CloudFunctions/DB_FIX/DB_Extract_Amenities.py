@@ -3,8 +3,9 @@ import pyarrow.parquet as pq
 import pandas as pd
 from DB_FILES import *
 
+hoteles_dataset_NLP = pd.read_parquet(f"gs://{bucket_name}/{file_hoteles_NLP_parquet}")
+
 def extract_amenities():
-    hoteles_dataset_NLP = pd.read_parquet(f"gs://{bucket_name}/{file_hoteles_NLP_parquet}")
     amenidades_sin_repetir = []
     for amenidades_str in hoteles_dataset_NLP['AMENITIES']:
         for amenidad in amenidades_str:

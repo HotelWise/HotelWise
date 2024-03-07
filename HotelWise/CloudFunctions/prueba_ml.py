@@ -4,7 +4,6 @@ import requests
 def send_data():
     selected_state = input("Ingrese Estado deseado: ")
     selected_city = input("Ingrese Ciudad deseada: ")
-
     cloud_function_url = "https://us-central1-hotelwiseweb.cloudfunctions.net/ML_HTML"
     payload = {
         "state": selected_state,
@@ -21,7 +20,6 @@ def send_data():
             response_json = response.json()
             formatted_response = "\n".join(
                 [f"{key}: {value}" for key, value in response_json.items()])
-
             print("Contenido de la Respuesta:\n")
             print(formatted_response)
             print("\n")

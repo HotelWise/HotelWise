@@ -9,19 +9,17 @@ from contractions import fix
 from google.cloud import storage
 from DB_FILES import *
 
-nltk.download('punkt')
-nltk.download('stopwords')
-nltk.download('wordnet')
-nltk.download('vader_lexicon')
-
 client = storage.Client(project=project_id)
 bucket = client.bucket(bucket_name)
 
-user_reviews_dataset = pd.read_parquet(
-    f"gs://{bucket_name}/{file_name_parquet_final}")
-
+user_reviews_dataset = pd.read_parquet(f"gs://{bucket_name}/{file_name_parquet_final}")
 
 def process_nlp():
+    def nltk_downloads():
+        nltk.download('punkt')
+        nltk.download('stopwords')
+        nltk.download('wordnet')
+        nltk.download('vader_lexicon')
     def preprocess_text(text):
         if not text or pd.isnull(text):
             return ''
@@ -96,9 +94,11 @@ def process_nlp():
             f"gs://{bucket_name}/{file_hoteles_NLP_parquet}", index=False)
         print(f"Parquet file successfully uploaded to GCS: {file_hoteles_NLP_parquet}")
 
+    nltk_downloads()
     user_reviews_dataset['preprocess_text'] = user_reviews_dataset['REVIEWS'].apply(
         preprocess_text)
     user_reviews_dataset['SENTIMENT_ANALYSIS'] = user_reviews_dataset['preprocess_text'].apply(
         analizar_sentimiento)
     summarize_df()
-    print("Terminó linea de Funciones")
+    print("Terminó Funciones NLP")
+    
