@@ -1,7 +1,9 @@
 # reviews/views.py
 from django.shortcuts import render
 from django.http import JsonResponse
+from django.http import HttpResponse
 from .models import State, City
+import requests
 import json
 
 
@@ -28,26 +30,38 @@ def get_cities(request):
         return JsonResponse([], safe=False)
 
 
-def get_google_cloud_identity_token(request):
-    with open('path/to/your/key.json', 'r') as file:
-        key_data = json.load(file)
-        token = key_data.get('private_key', None)
-    return render(request, 'reviews.html', {'token': token})
-
-
-def ml_html(request):
+def save_location(request):
     if request.method == 'POST':
-        # Your Cloud Function logic here
-        data = request.POST
-        state = data.get('state')
-        city = data.get('city')
-
-        # Process the request and return a response
-        response_data = {
-            'message': 'Request received successfully',
-            'state': state,
-            'city': city
-        }
+        data = json.loads(request.body)
+        selected_state = data.get('state')
+        selected_city = data.get('city')
+        response_data = send_data(selected_state, selected_city)
+        print(response_data)
+        print(type(response_data))
         return JsonResponse(response_data)
     else:
-        return JsonResponse({'error': 'Method not allowed'}, status=405)
+        return ('error Invalid request method')
+
+
+def send_data(selected_state, selected_city):
+    cloud_function_url = "https://us-central1-hotelwiseweb.cloudfunctions.net/ML_HTML"
+    payload = {
+        "state": selected_state,
+        "city": selected_city
+    }
+    headers = {
+        "Content-Type": "application/json"
+    }
+    response = requests.post(cloud_function_url, json=payload, headers=headers)
+    print("Status Code:", response.status_code)
+    if response.status_code == 200:
+        print("Cloud function successfully triggered.")
+        try:
+            response_json = response.json()
+            print("Response Content:", response_json)
+            return (response_json)
+        except ValueError:
+            print("Response Content (raw):", response.content.decode('utf-8'))
+    else:
+        print("Error triggering cloud function. Status code:", response.status_code)
+        print("Error Response Content:", response.content.decode('utf-8'))

@@ -8,9 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 <script type="text/javascript" src="{% static '/js/script_bienvenida_head.js'%}"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<script>
-    const identityToken = "{{ token }}";
-</script>
 {%endblock%}
 
 {% block content %}
@@ -27,19 +24,12 @@
                 <hr>
             </div>
             <div class="row">
-                <div class="col-sm-4">
-                </div>
-                <div class="col-sm-8">
-                    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-5">
+                <div id="div_izq" style="text-align: center;">
                     <p class="centro3">Elija su ubicacion:</p>
                     <br><br>
-                    <div style="display: flex; flex-direction: column;  align-items: center;text-align: center;">
+                    <div style="align-items: center;text-align: center;">
                         <form method="GET" id="locationForm">
+                            {% csrf_token %}
                             <label for="state">Seleccione Estado:</label>
                             <select id="state" name="state">
                                 <option value="">--Seleccione Estado--</option>
@@ -58,16 +48,26 @@
                             </div>
                         </form>
                         <br>  
+                        <div class="wrapper_div">
+                            <div id="watch_logs" class="in_wrapper_div"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-sm-7">
-                    <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 30px;">
+                <div id="div_der" >
+                    <div style="justify-content: center; align-items: center; margin-bottom: 30px;">
                         <div id="map-container"></div>
                     </div>
                 </div> 
             </div>
         </div>
         <script>
+            document.getElementById("city").addEventListener("change", function() {
+            document.getElementById("watch_logs").innerHTML = "";
+            });
+            document.getElementById("submitButton").addEventListener("click", function() {
+            document.getElementById("watch_logs").innerHTML = "";
+            });
+
             const stateSelect = document.getElementById('state');
             const citySelect = document.getElementById('city');
             const submitButton = document.getElementById('submitButton');
@@ -92,11 +92,8 @@
             stateSelect.addEventListener('change', updateCityOptions);
             updateCityOptions();
 
-            function handleCloudFunctionResponse(data) {
-                // Handle the response data here (e.g., display a message)
-                console.log('Cloud Function response:', data);
-            }
-        
+            const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
             submitButton.addEventListener('click', function() {
                 const selectedState = stateSelect.value;
                 const selectedCity = citySelect.value;
@@ -105,37 +102,30 @@
                 console.log('Selected City:', selectedCity);
             
                 if (!selectedCity) {
-                    alert("Please select a city before submitting.");
+                    alert("Por favor seleccione una ciudad antes de hacer el pedido!");
                     return false;
                 }
-                // Send request to Cloud Function
-                const data = {
-                    "state": selectedState,
-                    "city": selectedCity
-                };
-            
-                fetch('https://us-central1-hotelwiseweb.cloudfunctions.net/ML_HTML', {
+                
+                const watchLogs = document.getElementById('watch_logs');
+                
+                fetch('save_location/', {
                     method: 'POST',
-                    body: JSON.stringify(data),
-                    headers: { 'Content-Type': 'application/json' }
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': csrftoken,
+                    },
+                    body: JSON.stringify({ "state": selectedState , "city": selectedCity})
                 })
-                    .then(response => {
-                        if (response.ok) {
-                            return response.json();
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    if (typeof data === 'string') {
+                        watchLogs.innerHTML += `<pre>${data.replace(/[:]/g, ': ').replace(/["{}]/g, '').replace(/,/g, '\n\n')}</pre>`;
                         } else {
-                            throw new Error(`Error: ${response.statusText}`);
-                        }
-                    })
-                    .then(data => {
-                        // Handle Cloud Function response
-                        handleCloudFunctionResponse(data);
-            
-                        // Render Google Map with the selected city and state
-                        renderGoogleMap(selectedCity, selectedState);
-                    })
-                    .catch(error => console.error('Error sending request:', error));
-            });
-        
+                            watchLogs.innerHTML += `<pre>${JSON.stringify(data).replace(/[:]/g, ': ').replace(/["{}]/g, '').replace(/,/g, '\n\n')}</pre>`;
+                        }               });
+                renderGoogleMap(selectedCity, selectedState);
+            });    
             // Function to render Google Map with the selected city and state
             function renderGoogleMap(city, state) {
                 // Fetch the JSON file containing the API key
@@ -171,28 +161,16 @@
             <div class="row">
                 <div class="col-3 d-none d-sm-block text-center">
                     <img id="flip-img" src="/static/imagenes/Customer-Satisfaction-Surveys.png"
-                        class="img-fluid" width="100%" style="margin-left: 6%;"
+                        class="img-fluid" width="100%" style="margin-left: 6%; margin-bottom:6%"
                         alt="Responsive image">
                 </div>
-                <div class="col-sm-6">
-                    <h6 id="txt00" class="bajo1">Rol a Desarrollar</h6>
-                    <p  class="bajo1">Como parte de una consultora de data, 
-                        nos han contratado para poder realizar un análisis del mercado
-                         estadounidense. Nuestro cliente es parte de un conglomerado de 
-                         empresas de restaurantes y afines, y desean tener un análisis 
-                         detallado de la opinión de los usuarios en Yelp y cruzarlos con los
-                          de Google Maps sobre hoteles, restaurantes y otros negocios afines
-                          al turismo y ocio, utilizando análisis de sentimientos, predecir 
-                          cuáles serán los rubros de los negocios que más crecerán 
-                          (o decaerán). Además, desean saber dónde es conveniente emplazar 
-                          los nuevos locales de restaurantes y afines, y desean poder tener 
-                          un sistema de recomendación de restaurantes para los usuarios de
-                           ambas plataformas para darle, al usuario por ejemplo la 
-                           posibilidad de poder conocer nuevos sabores basados en sus
-                            experiencias previas.</p>
+                <div class="col-sm-6 d-none d-sm-block text-center">
+                    <img id="flip-img" src="/static/imagenes/Wink-Emoji.png"
+                    class="img-fluid" width="55%" style="margin-top: 6%;"
+                    alt="Responsive image">
                 </div>
                 <div class="col-sm-3">
-                    <div style="justify-content: center; margin-left:5% ;margin-right:5%">
+                    <div style="justify-content: center; margin-left:5%; margin-top:15% ;margin-right:16%">
                         <h6 class="bajo2">Mas Información</h6>
                         <div class="justify-content-center border border-dark rounded"
                             style="background-color: rgb(248, 251, 251);">
@@ -214,5 +192,4 @@
 {% endblock content %}
 
 {%block scriptsfoot%}
-<script type="text/javascript" src="{% static '/js/script_bienvenida_foot.js'%}"></script>
 {%endblock%}

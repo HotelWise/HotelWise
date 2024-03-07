@@ -164,12 +164,12 @@ p.bajo3 {
 
 div.topcontainer {
     border: black;
-    background-color: rgb(255, 242, 204);
+    background-color: rgb(255, 235, 204);
 }
 
 div.middlecontainer {
     border: black;
-    background-color: rgb(250, 217, 213);
+    background-color: rgb(255, 237, 199);
 }
 
 div.bottomcontainer {
@@ -264,4 +264,32 @@ div.incardpos {
     /* Color amarillo */
     text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
     /* Sombra */
+}
+
+.wrapper_div {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(80% - 20px);
+    margin-left: 12%;
+    height: 180px;
+}
+
+.in_wrapper_div {}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+#div_izq {
+    flex: 0 0 50%;
+}
+
+#div_der {
+    flex: 0 0 50%;
+    justify-content: flex-end;
 }
