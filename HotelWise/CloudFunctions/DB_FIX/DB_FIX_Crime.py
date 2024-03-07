@@ -12,7 +12,7 @@ def process_crime():
         f"gs://{bucket_name}/{file_hoteles_parquet}")
 
     # Realizar la fusión
-    hoteles_final = pd.merge(hoteles_dataset, crime_dataset[['STATE', 'CITY', 'CRIME RATE']],
+    hoteles_final = pd.merge(hoteles_dataset, crime_dataset[['STATE', 'CITY', 'CRIME_RATE']],
                              left_on=[hoteles_dataset['STATE'].str.lower(
                              ), hoteles_dataset['CITY'].str.lower()],
                              right_on=[crime_dataset['STATE'].str.lower(
@@ -26,9 +26,9 @@ def process_crime():
         columns={'CITY_x': 'CITY', 'STATE_x': 'STATE'}, inplace=True)
 
     hoteles_para_guardar = hoteles_final[['NAME', 'LATITUDE', 'LONGITUDE',
-                                          'CITY', 'COUNTY', 'STATE', 'TEXT', 'AVG_RATING', 'CRIME RATE', 'AMENITIES']]
+                                          'CITY', 'COUNTY', 'STATE', 'TEXT', 'AVG_RATING', 'CRIME_RATE', 'AMENITIES']]
     hoteles_para_guardar.rename(
-        columns={'TEXT': 'REVIEWS', 'CRIME RATE': 'CRIME_RATE'}, inplace=True)
+        columns={'TEXT': 'REVIEWS'}, inplace=True)
 
     hoteles_para_guardar.to_parquet(
         f"gs://{bucket_name}/{file_hoteles_parquet_final}", index=False)
