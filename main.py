@@ -1,26 +1,16 @@
 import functions_framework
 import json
-import apache_beam as beam
-from apache_beam.options.pipeline_options import PipelineOptions
-from apache_beam.runners import DataflowRunner, DirectRunner
 import polars as pl
 import googlemaps
+from google.cloud import bigquery as bq
+from google.cloud import storage
+import io
 
-gmaps = googlemaps.Client(key='AIzaSyB9Sa4Myba6_qwXawPjjWWKVUEELVYZstk')
+gmaps = googlemaps.Client(key='AIzaSyDXtkYLqMyAdQTlAN2txtsJMxZkrblEn-0')
 
-# Función para realizar transformaciones en el DataFrame de Pandas
-def aplicar_transformaciones(beampc):
-    lineas = beampc.split('\n')
-    names = []
-    gmap_id  = []
-    descrptions  = []
-    latitudes  = []
-    longitudes  = []
-    categories  = []
-    avg_ratings  = []
-    num_of_reviews   = []
-    MISCs  = []
-    urls  = []
+def proceso(elemento):
+    lineas = elemento.split('\n')
+    names, gmap_id, descrptions, latitudes, longitudes, categories, avg_ratings, num_of_reviews, MISCs, urls = [], [], [], [], [], [], [], [], [], []
     for linea in lineas:
         if linea.strip():  # Ignora líneas en blanco
             objeto_json = json.loads(linea)
@@ -67,14 +57,11 @@ def aplicar_transformaciones(beampc):
     }
     df = pl.DataFrame(data)
     df = df.filter(~pl.col('category').is_null())
-    df = df.unique(subset=['gmap_id'], keep='first')
-    return df
-
-# Definir la función para obtener city y country a partir de coordenadas
-def obtener_geo(df2):
+    df = df.unique(subset=['gmap_id'], keep='first') 
+    
     counties, cities, states, countries, = [], [], [], []
 
-    for lat, lon in zip(df2['latitude'], df2['longitude']):
+    for lat, lon in zip(df['latitude'], df['longitude']):
         resultado = gmaps.reverse_geocode((lat, lon))
         county, city, state, country = None, None, None, None
 
@@ -100,15 +87,12 @@ def obtener_geo(df2):
         countries.append(country)
 
     counties, cities, states, countries = pl.Series(counties), pl.Series(cities), pl.Series(states), pl.Series(countries)
-    df2 = df2.with_columns(
+    df = df.with_columns(
     County=counties,
     City=cities,
     State=states,
     Country=countries)
-    return df2
-
-
-
+    return df
 # Triggered by a change in a storage bucket
 @functions_framework.cloud_event
 def hello_gcs(cloud_event):
@@ -130,99 +114,41 @@ def hello_gcs(cloud_event):
     print(f"Metageneration: {metageneration}")
     print(f"Created: {timeCreated}")
     print(f"Updated: {updated}")
-    files=name.replace(".","")
-    # Table schema for BigQuery
-    table_schema = {
-        "fields": [
-            {
-                "name": "name",
-                "type": "STRING"
-            },
-            {
-                "name": "gmap_id",
-                "type": "STRING"
-            },
-            {
-                "name": "description",
-                "type": "STRING"
-            },
-            {
-                "name": "latitude",
-                "type": "FLOAT"
-            },
-            {
-                "name": "longitude",
-                "type": "FLOAT"
-            },
-            {
-                "name": "category",
-                "type": "STRING"
-            },
-            {
-                "name": "avg_rating",
-                "type": "FLOAT"
-            },
-            {
-                "name": "num_of_reviews",
-                "type": "INTEGER"
-            },
-            {
-                "name": "facilities",
-                "type": "STRING"
-            },
-            {
-                "name": "url",
-                "type": "STRING"
-            },
-            {
-                "name": "County",
-                "type": "STRING"
-            },
-            {
-                "name": "City",
-                "type": "STRING"
-            },
-            {
-                "name": "State",
-                "type": "STRING"
-            },
-            {
-                "name": "Country",
-                "type": "STRING"
-            }
-        ]
-    }
+    files=name[0]+".parquet"
+    print("abriendo archivo")
+    client = storage.Client()
+    inbucket = client.bucket(bucket)
+    file_obj = inbucket.blob(name)
+    with file_obj.open() as f:
+        data = f.read()
+    print("realizando transformaciones")
+    df1 = proceso(data)
+    print("almacenando resultado")
+    outbucket = client.bucket('clean-data-hotel')
+    out_obj = outbucket.blob(files)
+    # Write the DataFrame to a BytesIO object in-memory
+    with io.BytesIO() as stream:
+        df1.write_parquet(stream)
+        stream.seek(0)  # Move the stream pointer to the beginning
+        dataout = stream.getvalue()
 
-    options = PipelineOptions(
-        runner='DataflowRunner',
-        project='hotelwise-415022',
-        job_name=f'mypipelinex{files}',
-        temp_location='gs://hw-d1/temp',
-        region='us-central1')
+    # Upload the BytesIO content to Cloud Storage
+    out_obj.upload_from_string(dataout, content_type="application/octet-stream")
     
-    # Static input and output
-    inp = f'gs://{bucket}/{name}'
-    output = 'hotelwise-415022:dshw.hoteles'
-
-    
-    # Create the pipeline
-    with beam.Pipeline(options=options) as pipeline:
-        datos_pcollection = (
-            pipeline
-            | 'Cargar archivo json' >> beam.io.ReadFromText(inp)
-            )
-        datos_transformados_pcollection = (
-            datos_pcollection
-            | 'Aplicar transformaciones' >> beam.Map(aplicar_transformaciones)
-            )
-        datos_geograficos_pcollection = (
-            datos_transformados_pcollection
-            | 'Obtener datos geograficos' >> beam.Map(obtener_geo)
-            )
-        datos_geograficos_pcollection| 'WriteToBQ' >> beam.io.WriteToBigQuery(
-            output,
-            schema=table_schema,
-            create_disposition=beam.io.BigQueryDisposition.CREATE_IF_NEEDED,
-            write_disposition=beam.io.BigQueryDisposition.WRITE_APPEND
-            )
-    
+    print("creando acceso a bq")
+    bq_client = bq.Client()
+    table_id='hotelwise2024.hwdb1.hoteles'
+    file_path = f'gs://clean-data-hotel/{files}' 
+    job_config=bq.LoadJobConfig(
+              source_format=bq.SourceFormat.PARQUET,
+          )
+    project_id = 'hotelwise2024'
+    print("Ingesta de datos a BQ")
+    job = bq_client.load_table_from_uri(
+        file_path,
+        table_id,
+        job_config=job_config,
+        project=project_id,
+    )
+    job.result()  # Wait for the job to complete
+    print("datos insertados")
