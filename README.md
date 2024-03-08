@@ -188,25 +188,20 @@ Explicar de manera efectiva los análisis realizados y los beneficios destacados
 
 ### 1. Índice de Criminalidad por Estado o Región
 
-El Índice de Criminalidad por Estado o Región es una métrica que permite evaluar el nivel de seguridad en diferentes áreas geográficas. Este KPI proporciona información sobre la incidencia de actividades delictivas en un estado o región específica.
+El Índice de Criminalidad por Estado o Región es una medida que proporciona información sobre el nivel de seguridad en diferentes áreas geográficas basadas en los hoteles de tu conjunto de datos.
 
-#### Fórmula
+**Fórmula:**
+<img src = 'imagenes/kpi-1.jpg' >\]
 
-El Índice de Criminalidad por Estado o Región puede calcularse de varias maneras, pero comúnmente implica la recopilación de datos sobre delitos reportados en un área determinada y su normalización por la población o el área geográfica. Una fórmula simple podría ser:
+**Descripción:**
+Este KPI calcula el promedio de los índices de criminalidad en los hoteles de cada estado o región. Proporciona una visión general del nivel de seguridad en áreas geográficas más amplias y ayuda a identificar áreas con posibles problemas de seguridad.
 
-\[ \text{Índice de Criminalidad por Estado o Región} = \frac{\text{Total de delitos reportados en el estado o región}}{\text{Población del estado o región}} \times 1000 \]
+**Objetivo:**
+Evaluar el nivel de seguridad por estado o región basado en los índices de criminalidad de los hoteles.
 
-#### Datos Necesarios
+**Cómo se Utiliza:**
+Este KPI te permite comparar la seguridad entre diferentes estados o regiones. Puedes utilizar esta información para tomar decisiones informadas sobre ubicaciones específicas para tus viajeros, implementar medidas de seguridad adicionales en áreas de mayor riesgo y mejorar la calidad del servicio en áreas donde la seguridad es una preocupación.
 
-Para calcular el Índice de Criminalidad por Estado o Región, se requiere información detallada sobre los delitos reportados en cada área geográfica y datos demográficos como la población total del estado o región.
-
-#### Objetivo Específico
-
-El objetivo principal del Índice de Criminalidad por Estado o Región es proporcionar una medida cuantitativa del nivel de seguridad en diferentes áreas geográficas. Esta métrica puede ayudar a identificar áreas con altos índices de criminalidad y guiar la asignación de recursos para la prevención del delito y la seguridad pública.
-
-#### Resumen y Conclusiones
-
-El Índice de Criminalidad por Estado o Región es una herramienta importante para comprender la seguridad pública y la incidencia delictiva en áreas geográficas específicas. Al analizar este KPI, los responsables de la toma de decisiones pueden desarrollar estrategias efectivas para abordar y mitigar los problemas de seguridad en diferentes estados o regiones.
 
 
 ### 2. Porcentaje de Hoteles con Índice de Criminalidad por Encima de un Umbral
