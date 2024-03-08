@@ -100,6 +100,8 @@ Tambien relevante mencionar que los pedidos al sistema de recomendaciones pueden
 
 ### Linea de Comandos
 
+> Ingresar en linea de comandos:
+
 ```bash
 curl -m 70 -X POST https://us-central1-hotelwiseweb.cloudfunctions.net/ML_HTML \
 -H "Authorization: bearer $(gcloud auth print-identity-token)" \
@@ -108,6 +110,12 @@ curl -m 70 -X POST https://us-central1-hotelwiseweb.cloudfunctions.net/ML_HTML \
   "state": "Nombre Estado Seleccionado",
   "city": "Nombre Ciudad Seleccionada"
 }'
+```
+
+> Devuelve dato en formato JSON:
+
+```bash
+{"Hotel recomendado 1": "Nombre Hotel 1", "Hotel recomendado 2": "Nombre Hotel 2", "Hotel recomendado 3": "Nombre Hotel 3"}%                                                                                                                   
 ```
 
 ### Por codigo Python
