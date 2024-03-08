@@ -14,32 +14,13 @@
         <!-- Contenedor Medio -->
         <!-- Faltan migrar mas elementos a template base.html-->
         <div class="topcontainer d-none d-md-block">
-            <div class="row">
-                <div class="col-6">
-                    <div class="row">
-                        <div class="col-6">
-                            <a class="enlace" href="{% url 'home' %}">
-                                <h1 class="hotelwise-title">HotelWise</h1>
-                                <p class="uno">
-                                    Ayudando a mejorar el marketing de su empresa
-                                </p>
-                            </a>
-                        </div>
-                        <div class="col-6 text-center"style="margin-top: 3%; margin-bottom: 3%">
-                            <a href="{% url 'home' %}">
-                                <img id="img_prueba" src="/static/imagenes/HotelWiseLogo.Icon.png"
-                                    class="img-responsive" width="60%"
-                                    alt="Responsive image">
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            <div class="row"style="margin-left:3%">
                 <div class="col-6">
                     <div class="row">
                         <div class="col-6">
                             <a class="enlace"
-                                href="{% url 'home' %}">
-                                <h6 id="AcercaNos" class="uno">Acerca de Nosotros
+                                href="{% url 'acerca_de' %}">
+                                <h6 id="AcercaNos" class="uno">Acerca De
                                     <img src="/static/imagenes/link.png"
                                     class="img-responsive " width="5%"
                                     alt="Responsive image"></h6></a>
@@ -47,8 +28,8 @@
                         </div>
                         <div class="col-6">
                             <a class="enlace"
-                                href="{% url 'home' %}">
-                                <h6 id="IngresoCli"class="uno">Ingreso de Clientes
+                                href="{% url 'dashboard' %}">
+                                <h6 id="IngresoCli"class="uno">Dashboard
                                     <img src="/static/imagenes/link.png"
                                         class="img-responsive " width="5%"
                                         alt="Responsive image"></h6></a>
@@ -59,55 +40,69 @@
                     </div>
                     <div class="row">
                         <div class="col-6">
-                            <a class="enlace" href="{% url 'home' %}">
+                            <a class="enlace" href="{% url 'contacto' %}">
                                 <h6 id="Contactss" class="uno">Contacto
                                     <img src="/static/imagenes/link.png"
                                         class="img-responsive " width="5%"
                                         alt="Responsive image"></h6></a>
-                            <p class="dos">Contacto con los integrantes del grupo?</p>
+                            <p class="dos">Contacto con los integrantes del grupo</p>
                         </div>
 
                         <div class="col-6">
-                            <a class="enlace" href="{% url 'home' %}">
-                                <h6 id="Productoss" class="uno">Busqueda
+                            <a class="enlace" href="{% url 'github' %}">
+                                <h6 id="Productoss" class="uno">Repositorio
                                     <img src="/static/imagenes/link.png"
                                         class="img-responsive " width="5%"
                                         alt="Responsive image"></h6></a>
-                            <p class="dos">Busqueda</p>
+                            <p class="dos">Link al Repositorio GitHub</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-6">
+                                <a class="enlace" href="{% url 'home' %}">
+                                    <h1 class="hotelwise-title">HotelWise</h1>
+                                    <p class="uno">
+                                        Ayudando a mejorar el marketing de su empresa
+                                    </p>
+                                </a>
+                            </div>
+                            <div class="col-6 text-center"style="margin-top: 3%; margin-bottom: 3%">
+                                <a href="{% url 'home' %}">
+                                    <img id="img_prueba" src="/static/imagenes/HotelWiseLogo.IconBlue.png"
+                                        class="img_logo img-responsive" width="60%"
+                                        alt="Responsive image">
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
-        <div class="middlecontainer">
-            <div>
-                <div class="row">
-                    <div class="col-sm-12"">
+        <div class="row">
+            <div class="middlecontainer">
+                <div class="row;">
+                    <div class="col-sm-12;" style="margin:3%;">
                         <!-- Titulo recomendations -->
                         <h6 class="centro">YELP & GOOGLE MAPS - REVIEWS AND RECOMMENDATIONS</h6>
-                        <!-- Subtitulo recomendations -->
-                        <p class="centro2">Falta terminar imagen Yelp y GOOGLE</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="text-center">
-                            <img src="/static/imagenes/googlemaps.png" class="img-fluid" width="20%" alt="Responsive image">
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <div class="row">
-                            <a href="{% url 'reviews' %}" class="custom-btn btn-5 mx-auto btn btn-info active responsive-width" style=" border-color: black; font-size: 1.4vw" tabindex="-1" role="button" aria-disabled="true">
-                                Ingreso a Reviews <img src="/static/imagenes/link2.png" class="img-responsive" margin-right="5em" width="14em" alt="Responsive Image">
-                            </a>
-                        </div>
                         <div class="row;text-center">
                             <p class="centro2">Sistema de recomendación de Hoteles</p>
                         </div>
                     </div>
-
+                </div>
+                <div class="row" style="margin-bottom: 5%">
+                    <div class="col-sm-4">
+                        <div class="text-center">
+                            <img src="/static/imagenes/googlemaps.png" class="img-fluid" width="30%" alt="Responsive image">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="{% url 'reviews' %}" class="custom-btn btn-5 mx-auto btn btn-info active responsive-width" style="border-color: black; font-size: 1.4vw" tabindex="-1" role="button" aria-disabled="true">
+                            Ingreso a Reviews <img src="/static/imagenes/link2.png" class="img-responsive" margin-right="5em" width="14em" alt="Responsive Image">
+                        </a>
+                    </div>
                     <div class="col-sm-4">
                         <div class="text-center">
                             <img src="/static/imagenes/yelp.png" class="img-fluid" width="40%" alt="Responsive image">  
@@ -128,20 +123,9 @@
                 </div>
                 <div class="col-sm-6">
                     <h6 id="txt00" class="bajo1">Rol a Desarrollar</h6>
-                    <p  class="bajo1">Como parte de una consultora de data, 
-                        nos han contratado para poder realizar un análisis del mercado
-                         estadounidense. Nuestro cliente es parte de un conglomerado de 
-                         empresas de restaurantes y afines, y desean tener un análisis 
-                         detallado de la opinión de los usuarios en Yelp y cruzarlos con los
-                          de Google Maps sobre hoteles, restaurantes y otros negocios afines
-                          al turismo y ocio, utilizando análisis de sentimientos, predecir 
-                          cuáles serán los rubros de los negocios que más crecerán 
-                          (o decaerán). Además, desean saber dónde es conveniente emplazar 
-                          los nuevos locales de restaurantes y afines, y desean poder tener 
-                          un sistema de recomendación de restaurantes para los usuarios de
-                           ambas plataformas para darle, al usuario por ejemplo la 
-                           posibilidad de poder conocer nuevos sabores basados en sus
-                            experiencias previas.</p>
+                    <p  class="bajo1">
+                        Servicio de recomendación de hoteles basado en bases de datos de Google Maps y Yelp, utilizando Machine Learning para hacer recomendaciones utilizando como referencia el análisis de sentimiento de las reseñas realizadas por los usuarios, la ubicación y la tasa de seguridad del lugar.
+                    </p>
                 </div>
                 <div class="col-sm-3">
                     <div style="justify-content: center; margin-left:5% ;margin-right:5%">
@@ -149,15 +133,18 @@
                         <div class="justify-content-center border border-dark rounded"
                             style="background-color: rgb(248, 251, 251);">
                             <p style="margin-bottom: 2%;"></p>
-                            <a class="enlace" href="https://www.google.com/">
+                            <a class="enlace" href="{% url 'github' %}">
                                 <p id="Tooltip-Arriba" class="bajo3" title="Vaya al Repo">
-                                    Repositorio Github</p>
+                                    Repositorio Github</p></a>
+                            <a class="enlace" href="{% url 'etl' %}">
                                 <p id="Tooltip-Izquierda1" class="bajo3 border-top" title="Estadísticas">
-                                    EDA</p>
+                                    ETL</p></a>
+                            <a class="enlace" href="{% url 'dashboard' %}">
                                 <p id="Tooltip-Izquierda2" class="bajo3 border-top" title="Rendimiento">
-                                    KPI's</p>
-                                <p id="Tooltip-Abajo" class="bajo3 border-top" title="Etapas alcanzadas">
-                                    Hitos</p></a>
+                                    Dashboard</p></a>
+                            <a class="enlace" href="{% url 'seguridad' %}">
+                                <p id="Tooltip-Abajo" class="bajo3 border-top" title="Indice de Criminalidad">
+                                    Seguridad</p></a></a>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,217 @@
+{% extends "base.html" %}
+{% block title %}AcercaNos{% endblock %}
+{% load static %}
+
+{%block scriptshead%}
+<script src = "https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.3/dist/jBox.all.min.js"></script>
+<link href="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.3/dist/jBox.all.min.css" rel="stylesheet"></link>
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+<script type="text/javascript" src="{% static '/js/script_bienvenida_head.js'%}"></script>
+{%endblock%}
+
+{% block content %}
+
+<div style="margin: 2%">
+  <div class="row">
+      <div class="col-sm-12">
+          <h6 class="page-titles">Proyecto de Data Science</h6>
+      </div>
+      <hr>
+  </div>
+</div>
+
+<div style="margin: 0 auto; width: 1000px;">  
+
+<h2 id="indice-omit-in-toc">Indice </h2>
+<ul>
+<li><a href="#introducción"><strong>Introducción</strong></a></li>
+<li><a href="#entendiendo-la-situación-propuesta"><strong>Entendiendo la situación propuesta</strong></a><ul>
+<li><a href="#qué-nos-diferencia-de-las-demás-plataformas">¿Qué nos diferencia de las demás plataformas?</a></li>
+</ul>
+</li>
+<li><a href="#objetivo-principal"><strong>Objetivo Principal</strong></a><ul>
+<li><a href="#objetivos-específicos"><strong>Objetivos Específicos</strong></a><ul>
+<li><a href="#kpis-plataforma"><strong>KPI&#39;s plataforma</strong></a></li>
+<li><a href="#kpis-usuario"><strong>KPI&#39;s Usuario</strong></a></li>
+<li><a href="#stack-tecnológico"><strong>Stack Tecnológico</strong></a></li>
+</ul>
+</li>
+<li><a href="#alcance-del-proyecto"><strong>Alcance del proyecto</strong></a></li>
+<li><a href="#metodología-de-trabajo"><strong>Metodología de trabajo</strong></a><ul>
+<li><a href="#sprint-1-del-29-de-enero-al-09-febrero-2024"><strong>Sprint 1</strong> del 29 de enero al 09 febrero 2024</a></li>
+<li><a href="#sprint-2-del-12-al-23-de-febrero-2024"><strong>Sprint 2</strong> del 12 al 23 de febrero 2024</a></li>
+<li><a href="#sprint-3-26-de-febrero-al-09-de-marzo-2024"><strong>Sprint 3</strong> 26 de febrero al 09 de marzo 2024</a></li>
+</ul>
+</li>
+<li><a href="#roles-y-responsabilidades"><strong>Roles y responsabilidades</strong></a><ul>
+<li><a href="#data-engineers">Data Engineers</a></li>
+<li><a href="#data-analists">Data Analists</a></li>
+<li><a href="#data-scientist-web-master">Data Scientist &amp; Web Master</a></li>
+</ul>
+</li>
+<li><a href="#diagrama-gantt-con-clickup"><strong>Diagrama Gantt</strong> con ClickUp</a><ul>
+<li><a href="#sprint-1">Sprint 1</a></li>
+<li><a href="#sprint-2">Sprint 2</a></li>
+<li><a href="#sprint-3">Sprint 3</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#ramas-del-proyecto">Ramas del Proyecto</a><ul>
+<li><a href="#hotelwiseetl">HotelWiseETL</a></li>
+<li><a href="#hotelwiseeda">HotelWiseEDA</a></li>
+<li><a href="#hotelwise_da">HotelWise_DA</a></li>
+<li><a href="#hotelwiseweb">HotelWiseWeb</a></li>
+<li><a href="#hotelwiseml">HotelWiseML</a></li>
+</ul>
+</li>
+<li><a href="#contribución">Contribución</a></li>
+<li><a href="#créditos">Créditos</a></li>
+<li><a href="#licencias">Licencias</a></li>
+<li><a href="#contacto">Contacto</a></li>
+<li><a href="#enlaces-adicionales">Enlaces adicionales</a></li>
+</ul>
+<hr>
+<h1 id="introducción"><strong>Introducción</strong></h1>
+<p>Nuestro servicio &#39;HotelWise&#39;, es un servicio de recomendacion de hoteles que se destaca por brindar una experiencia de usuario excepcional y de primer nivel, superando la mera comparación de opciones de alojamiento. A diferencia de plataformas similares, nos especializamos en ofrecer una cuidadosa selección de hoteles de alta calidad, respaldados por reseñas auténticas y detalladas. Además, contamos con información confiable sobre zonas seguras para garantizar la tranquilidad de nuestros usuarios.</p>
+<hr>
+<h1 id="entendiendo-la-situación-propuesta"><strong>Entendiendo la situación propuesta</strong></h1>
+<p>En un mercado saturado de plataformas de reservas de hoteles, HotelWise se destaca como un oasis de calidad y confiabilidad. No nos conformamos con ofrecer una simple comparación de opciones de alojamiento; nuestra misión es proporcionar una experiencia de usuario excepcional y de primer nivel que va más allá de las expectativas tradicionales.</p>
+<h2 id="qué-nos-diferencia-de-las-demás-plataformas">¿Qué nos diferencia de las demás plataformas?</h2>
+<p>Selección Cuidadosa de Hoteles: En HotelWise, nos enorgullece ofrecer una cuidadosa selección de hoteles de alta calidad. No se trata solo de proporcionar opciones; se trata de garantizar que cada hotel en nuestra plataforma cumplirá a cabalidad las expectativas del usuario.</p>
+<p>Reseñas Auténticas y Detalladas: Entendemos la importancia de la transparencia y la confianza en la industria hotelera. Por eso, cada reseña en HotelWise es auténtica y detallada, proporcionada por viajeros reales que han experimentado de primera mano lo que cada hotel tiene para ofrecer. Creemos en la honestidad y la integridad en cada
+paso del camino.</p>
+<p>Información Confiable sobre Zonas Seguras: La seguridad de nuestros usuarios es una prioridad absoluta. Por eso, ayudaremos a encontrar el hotel perfecto, sino que también te proporcionamos información confiable sobre las zonas seguras de cada
+destino. Queremos que nuestros usuarios viajen con tranquilidad y confianza, sabiendo que están en buenas manos.</p>
+<p>En HotelWise, no solo estamos en el negocio de ofrecer habitaciones de hotel; estamos en el negocio de crear recuerdos inolvidables y experiencias de viaje extraordinarias. Si
+estás buscando invertir en una plataforma que se enorgullece de su compromiso con la calidad, la transparencia y la satisfacción del cliente, HotelWise es la elección perfecta.</p>
+<hr>
+<h1 id="objetivo-principal"><strong>Objetivo Principal</strong></h1>
+<p>Presentar una plataforma web que realice recomendaciones de hoteles, mediante machine learning utilizando las comodidades y zona geografica preferidas por el usuario, donde el tiempo de muestra de la recomendación sea menor a 30 segundos, utilizando herramientas en la nube con un tiempo de implementación no mayor a 6 semanas.</p>
+<h2 id="objetivos-específicos"><strong>Objetivos Específicos</strong></h2>
+<p>Crear dos bases de datos una para filtrar las zonas utilizando Cloud SQL y para el modelo de machine learning con Vertex AI.</p>
+<p>Crear Analisis de datos con looker para medir rendimiento de la plataforma y mostrar indicadores clave para convencer al usuario de la recomendación del hotel</p>
+<p>Crear un modelo de recomendación utilizando Tensorflow para la generación de valor obtenido de los datos al usuario</p>
+<p>Crear una plataforma web intuitiva y eficiente al momento de realizar recomendaciones al usuario.</p>
+<h3 id="kpis-plataforma"><strong>KPI&#39;s plataforma</strong></h3>
+<hr>
+<p>Tiempo de obtención de datos de Cloud SQL</p>
+<p>Tiempo de obtención de datos de Cloud Storage</p>
+<p>Tiempo de proceso de ML</p>
+<h3 id="kpis-usuario"><strong>KPI&#39;s Usuario</strong></h3>
+<hr>
+<p>Porcentaje de similitud de amenidades del hotel con relacion a las amenidades preferidas del usuario</p>
+<p>Distancia del punto o zona de interes del usuario</p>
+<p>Porcentaje de reseñas positivas sobre las amenidades del hotel</p>
+<p>Indice de seguridad de la zona del hotel</p>
+<p>demanda por meses o epoca</p>
+<h3 id="stack-tecnológico"><strong>Stack Tecnológico</strong></h3>
+<hr>
+<p align="center">
+  <img src="static/imagenes/Stack.png">
+</p>
+
+<hr>
+<h2 id="alcance-del-proyecto"><strong>Alcance del proyecto</strong></h2>
+<p>El proyecto parte con la base de datos ubicada en el pais de Estados Unidos, abarcara  de 51 Estados, donde se sentrará la atención principalmente en el rendimiento del tiempo de retorno de información y el valor otorgado por la analitica para el convencimiento del Usuario al momento de la elección del Hotel recomendado.</p>
+<p>La ejecución de este constará de 6 semanas donde se utilizaran sprints para la divición de tareas a realizar y metas a cumplir, donde en el primer sprint semana 1 y 2 se definen los objetivos, metodologias, tecnologias, tareas y roles. La Semana 3 y 4 se realizará la extracción, disposición y analisis de datos; y por ultimo la semana 5 y 6 el desarrollo del sistema de recomendación mediante machine learning. En paralelo a las semanas 3, 4, 5 y 6 se llevara a cabo el diseño y pespliegue de la web.</p>
+<p>El mismo será escalable gracias a que se implementará un flujo de extraccion y disposición de datos automatizado, por lo que permitirá en un futuro ir agregando paises junto con su divición política.</p>
+<hr>
+<h2 id="metodología-de-trabajo"><strong>Metodología de trabajo</strong></h2>
+<p>El proyecto se divide en 3 etapas denominadas Sprints, cada sprint constará de 2 semanas, donde en cada una tendrá 3 reuniones mediante google meet, en esta los miembros del equipo harán reporte sobre el trabajo realizado, los inconvenientes y la labor que realizarán de cara al próximo meet; mientras que el Mentor dará feedback a las tareas realizadas.</p>
+<h3 id="sprint-1-del-29-de-enero-al-09-febrero-2024"><strong>Sprint 1</strong> del 29 de enero al 09 febrero 2024</h3>
+<ul>
+<li>Entendimiento de la problemática.</li>
+<li>Documentación de Alcance, Objetivos.</li>
+<li>KPI’s.</li>
+<li>Implementación del Stack.</li>
+<li>Repo Github y EDA preliminar.</li>
+<li>Planificación – Gantt.</li>
+</ul>
+<h3 id="sprint-2-del-12-al-23-de-febrero-2024"><strong>Sprint 2</strong> del 12 al 23 de febrero 2024</h3>
+<ul>
+<li>Creación de entornos GCP.</li>
+<li>Creación de flujo de datos automatizados en Composer.</li>
+<li>Creación del Data Warehouse en Cloud SQL y Cloud Storage.</li>
+<li>Análisis de datos preliminar.</li>
+<li>MVP Dashboards.</li>
+<li>MVP producto ML.</li>
+</ul>
+<h3 id="sprint-3-26-de-febrero-al-09-de-marzo-2024"><strong>Sprint 3</strong> 26 de febrero al 09 de marzo 2024</h3>
+<ul>
+<li>Dashboards final.</li>
+<li>Reportes geográficos.</li>
+<li>Storytelling (relacionar KPI’s e Insights).</li>
+<li>Producto ML Ajustado.</li>
+<li>Demo general del proyecto.</li>
+<li>Correcciones y retoces en base a feedback de Mentor y Product Owner.</li>
+<li>Entregable final.</li>
+<li>Documentación.</li>
+</ul>
+<hr>
+<h2 id="roles-y-responsabilidades"><strong>Roles y responsabilidades</strong></h2>
+<h3 id="data-engineers">Data Engineers</h3>
+<hr>
+<p><a href="https://www.linkedin.com/in/carlos-hidalgo84/"><strong>Carlos Hidalgo</strong> (Reviews) </a>| <a href="https://www.linkedin.com/in/angelprieto92/"><strong>Angel Prieto</strong> (Meta-Data)</a></p>
+<p>Las responsabilidades incluyen la creación y gestión de entornos en Google Cloud Platform (GCP), configuración y administración de flujos de datos automatizados en Apache Airflow, y la creación y mantenimiento de un Data Warehouse en Cloud SQL y Cloud Storage, abarcando el diseño de esquemas, desarrollo de procesos ELT y gestión continua para optimización y calidad de los datos.</p>
+<h3 id="data-analists">Data Analists</h3>
+<hr>
+<p><a href="https://www.linkedin.com/in/delfina-longo-pe%C3%B1a-44b4b623b"><strong>Delfina Longo</strong></a> | <a href="https://www.linkedin.com/in/carlos-hidalgo84/"><strong>Carlos Hidalgo</strong></a></p>
+<p>Las responsabilidades abarcan la implementación y administración de bases de datos en BigQuery, el desarrollo de paneles interactivos en Looker Studio para análisis de datos, y la organización de tareas y seguimiento del progreso mediante la plataforma ClickUp. Además, se incluye la creación y mantenimiento de KPIs específicos.</p>
+<h3 id="data-scientist-web-master">Data Scientist &amp; Web Master</h3>
+<hr>
+<p><a href="https://www.linkedin.com/in/mdallanegra/"><strong>Miguel Dallanegra</strong></a></p>
+<p>Las responsabilidades abarcan la selección del entorno de trabajo, biblioteca y modelo de machine learning, para luego implementarlo, entrenarlo, evaluarlo y validarlo, de manera que finalmente pueda ser desplegado y puesto en producción, devolviendo recomendaciones de hoteles.</p>
+<p>Diseño y desarrollo del sitio web del proyecto, implementando las características y funcionalidades necesarias para poder hacer las mejores recomendaciones de hoteles. Dando a los clientes una experiencia superadora y otorgando información clara sobre sus consultas, haciendo hincapié en la facilidad para navegar el sitio.</p>
+<hr>
+<h2 id="diagrama-gantt-con-clickup"><strong>Diagrama Gantt</strong> con <a href="https://sharing.clickup.com/9013083406/g/h/8ckhf8e-73/02dcc37f04a9a1a">ClickUp</a></h2>
+<h3 id="sprint-1">Sprint 1</h3>
+<p align="center">
+  <img src="static/imagenes/Gantt1.png">
+</p>
+
+<h3 id="sprint-2">Sprint 2</h3>
+<p align="center">
+  <img src="static/imagenes/Gantt2.png">
+</p>
+
+<h3 id="sprint-3">Sprint 3</h3>
+<p align="center">
+  <img src="static/imagenes/Gantt3.png">
+</p>
+
+<hr>
+<h1 id="ramas-del-proyecto">Ramas del Proyecto</h1>
+<ul>
+<h2 id="hotelwiseetl">HotelWiseETL</h2>
+<ul><li><p>Extracción, transformación y carga de datos. (<a href="https://github.com/HotelWise/HotelWise/tree/ELT-Google">ETL Branch</a>)</p></li></ul>
+<h2 id="hotelwiseeda">HotelWiseEDA</h2>
+<ul><li><p>Análisis exploratorio de datos (EDA). (<a href="https://github.com/HotelWise/HotelWise/tree/ETL_Yelp">EDA Branch</a>)</p></li></ul>
+<h2 id="hotelwise_da">HotelWise_DA</h2>
+<ul><li><p>Visualizacion y análisis de detallado de los datos del proyecto. (<a href="https://github.com/HotelWise/HotelWise/tree/HotelWise_DA">DA Branch</a>)</p></li></ul>
+<h2 id="hotelwiseweb">HotelWiseWeb</h2>
+<ul><li><p>Diseño y despliegue de la pagina web. (<a href="https://github.com/HotelWise/HotelWise/tree/HotelWiseWeb">Web Branch</a>)</p></li></ul>
+<h2 id="hotelwiseml">HotelWiseML</h2>
+<ul><li><p>Desarrollo y puesta en funcionamiento del sistema de ML. (<a href="https://github.com/HotelWise/HotelWise/tree/HotelWiseML">ML Branch</a>)</p></li></ul>
+</ul>
+<hr>
+<h1 id="contribución">Contribución</h1>
+<p>¡Estamos abiertos a contribuciones! Si tienes ideas de mejora, problemas que reportar o características nuevas que te gustaría añadir, no dudes en abrir una solicitud de extracción o un problema en este repositorio.</p>
+<h1 id="créditos">Créditos</h1>
+<ul>
+<li><p>Desarrollado por HotelWise® 2024 Team.</p>
+</li>
+<li><p>Logotipo diseñado por HotelWise® 2024 Copyright ©.</p>
+</li>
+</ul>
+<h1 id="licencias">Licencias</h1>
+<p>Este proyecto está bajo las Licencias:</p>
+<ul>
+<li><a href="LICENSE-GPL"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="Licencia GPL 3.0"></a></li>
+<li><a href="LICENSE-GPL"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="Licencia MIT"></a></li>
+<li><a href="LICENSE-APACHE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="Licencia Apache 2.0"></a></li>
+</ul>
+<br><br>
+{% endblock content %}
+{%block scriptsfoot%}
+{%endblock%}

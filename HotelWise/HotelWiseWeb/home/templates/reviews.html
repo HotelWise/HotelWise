@@ -15,17 +15,17 @@
         <!-- Contenedor Medio -->
         <!-- Faltan migrar mas elementos a template base.html-->
 
-        <div class="middlecontainer">
+        <div>
             <div class="row">
                 <div class="col-sm-12"">
                     <!-- Titulo recomendations -->
-                    <h6 class="reviews-title">REVIEWS</h6>
+                    <h6 class="page-titles">REVIEWS</h6>
                 </div>
                 <hr>
             </div>
             <div class="row">
                 <div id="div_izq" style="text-align: center;">
-                    <p class="centro3">Elija su ubicacion:</p>
+                    <h6 class="centro" style="text-decoration: underline;">ELIJA LA UBICACIÓN</h6>
                     <br><br>
                     <div style="align-items: center;text-align: center;">
                         <form method="GET" id="locationForm">
@@ -55,7 +55,7 @@
                 </div>
                 <div id="div_der" >
                     <div style="justify-content: center; align-items: center; margin-bottom: 30px;">
-                        <div id="map-container"></div>
+                        <div class="map-container"id="map-container"></div>
                     </div>
                 </div> 
             </div>
@@ -165,25 +165,28 @@
                         alt="Responsive image">
                 </div>
                 <div class="col-sm-6 d-none d-sm-block text-center">
-                    <img id="flip-img" src="/static/imagenes/Wink-Emoji.png"
+                    <img id="img_prueba" src="/static/imagenes/Wink-Emoji.png"
                     class="img-fluid" width="55%" style="margin-top: 6%;"
                     alt="Responsive image">
                 </div>
                 <div class="col-sm-3">
-                    <div style="justify-content: center; margin-left:5%; margin-top:15% ;margin-right:16%">
+                    <div style="justify-content: center; margin-left:5% ;margin-right:5%">
                         <h6 class="bajo2">Mas Información</h6>
                         <div class="justify-content-center border border-dark rounded"
                             style="background-color: rgb(248, 251, 251);">
                             <p style="margin-bottom: 2%;"></p>
-                            <a class="enlace" href="https://www.google.com/">
+                            <a class="enlace" href="{% url 'github' %}">
                                 <p id="Tooltip-Arriba" class="bajo3" title="Vaya al Repo">
-                                    Repositorio Github</p>
+                                    Repositorio Github</p></a>
+                            <a class="enlace" href="{% url 'etl' %}">
                                 <p id="Tooltip-Izquierda1" class="bajo3 border-top" title="Estadísticas">
-                                    EDA</p>
+                                    ETL</p></a>
+                            <a class="enlace" href="{% url 'dashboard' %}">
                                 <p id="Tooltip-Izquierda2" class="bajo3 border-top" title="Rendimiento">
-                                    KPI's</p>
-                                <p id="Tooltip-Abajo" class="bajo3 border-top" title="Etapas alcanzadas">
-                                    Hitos</p></a>
+                                    Dashboard</p></a>
+                            <a class="enlace" href="{% url 'seguridad' %}">
+                                <p id="Tooltip-Abajo" class="bajo3 border-top" title="Indice de Criminalidad">
+                                    Seguridad</p></a></a>
                         </div>
                     </div>
                 </div>

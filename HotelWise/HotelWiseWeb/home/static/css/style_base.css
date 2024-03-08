@@ -1,3 +1,35 @@
+body {
+    background: rgb(255, 248, 174);
+    background: -moz-linear-gradient(0deg, rgba(255, 248, 174, 1) 9%, rgba(245, 235, 183, 1) 55%, rgba(245, 212, 84, 1) 97%);
+    background: -webkit-linear-gradient(0deg, rgba(255, 248, 174, 1) 9%, rgba(245, 235, 183, 1) 55%, rgba(245, 212, 84, 1) 97%);
+    background: linear-gradient(0deg, rgba(255, 248, 174, 1) 9%, rgba(245, 235, 183, 1) 55%, rgba(245, 212, 84, 1) 97%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fff8ae", endColorstr="#f5d454", GradientType=1);
+}
+
+.custom-navbar {
+    background: rgb(255, 248, 174);
+    background: -moz-linear-gradient(90deg, rgba(255, 248, 174, 1) 40%, rgba(245, 212, 84, 1) 68%);
+    background: -webkit-linear-gradient(90deg, rgba(255, 248, 174, 1) 40%, rgba(245, 212, 84, 1) 68%);
+    background: linear-gradient(90deg, rgba(255, 248, 174, 1) 40%, rgba(245, 212, 84, 1) 68%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fff8ae", endColorstr="#f5d454", GradientType=1);
+    font-family: Copperplate, "Arial", sans-serif;
+    font-size: 30px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.nav-link {
+    color: #13134a;
+    /* Change the font color to blue */
+    /* Add any other styles as needed */
+}
+
+.img_logo {
+    filter: drop-shadow(4px 4px 4px #101041);
+    /* Horizontal offset, Vertical offset, Blur radius, Spread radius, Color */
+}
+
+
 h1.uno {
     /* Titulo con enlace a ppal*/
     font-family: "Courier Prime";
@@ -44,7 +76,7 @@ h2.uno {
 h6.uno {
     /* SubTitulo con enlace a paginas */
     font-family: "Courier Prime", Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1.5vw;
+    font-size: 1.8vw;
     font-weight: bold;
     text-align: center;
     margin-top: 10%;
@@ -54,9 +86,12 @@ h6.uno {
 h6.centro {
     /* SubTitulo */
     font-family: "Courier Prime", Arial, Helvetica, sans-serif;
-    font-size: 1.6vw;
+    font-size: 2vw;
     font-weight: bold;
     text-align: center;
+    filter: drop-shadow(4px 4px 4px #d09843);
+    margin: 2%;
+
 }
 
 h6.centro3 {
@@ -106,7 +141,7 @@ p.uno {
 
 p.dos {
     font-family: "Courier Prime", monospace, Arial, Helvetica, sans-serif;
-    font-size: 1vw;
+    font-size: 1.1vw;
     font-weight: normal;
     text-align: center;
     margin-top: 5%;
@@ -122,7 +157,7 @@ p.centro1 {
 
 p.centro2 {
     font-family: "Courier Prime", monospace, Arial, Helvetica, sans-serif;
-    font-size: 1.2vw;
+    font-size: 1.5vw;
     font-weight: normal;
     text-align: center;
 }
@@ -163,18 +198,23 @@ p.bajo3 {
 }
 
 div.topcontainer {
-    border: black;
-    background-color: rgb(255, 235, 204);
+    /* border: black;
+    # background-color: rgb(255, 235, 204); */
 }
 
 div.middlecontainer {
-    border: black;
-    background-color: rgb(255, 237, 199);
+    border-radius: 0.5%;
+    background-image: url("/static/imagenes/trianglify-lowres.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 5%;
+    filter: drop-shadow(4px 4px 8px #d09843);
 }
 
 div.bottomcontainer {
-    border: black;
-    background-color: rgb(249, 247, 237);
+    margin: 5%;
+    /*border: black;
+    background-color: rgb(249, 247, 237);*/
 }
 
 .responsive-width {
@@ -220,16 +260,17 @@ div.incardpos {
     text-align: center;
     margin-top: 15%;
     margin-left: 5%;
-    color: rgb(40, 40, 125);
+    color: #13134a;
 }
 
-.reviews-title {
+.page-titles {
     font-family: 'Cocogoose Pro Letterpress Narrow';
     font-size: 4.5vw;
     font-weight: Bold;
     text-align: center;
-    margin-top: 3%;
-    color: rgb(40, 40, 125);
+    margin: 5%;
+    color: #13134a;
+    ;
 }
 
 #miDiv {
@@ -266,9 +307,13 @@ div.incardpos {
     /* Sombra */
 }
 
+.map-container {
+    filter: drop-shadow(-4px 4px 8px #101041);
+}
+
 .wrapper_div {
     background-color: #f0f0f0;
-    border-radius: 5px;
+    border-radius: 7px;
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -276,6 +321,7 @@ div.incardpos {
     width: calc(80% - 20px);
     margin-left: 12%;
     height: 180px;
+    filter: drop-shadow(4px 4px 8px #101041);
 }
 
 .in_wrapper_div {}
@@ -283,6 +329,16 @@ div.incardpos {
 .row {
     display: flex;
     justify-content: space-between;
+}
+
+.col-sm-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
 }
 
 #div_izq {

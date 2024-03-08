@@ -4,9 +4,9 @@
 <html lang="es">
     <head>
         <meta lang="es">
-        <meta name="description" content="Texto descripcion">
-        <meta name="keywords" content="Texto Servicios">
-        <meta name="author" content="Autores Todos">
+        <meta name="description" content="Reseñas Auténticas y Detalladas de Hoteles">
+        <meta name="keywords" content="Reseñas Reviews Hoteles">
+        <meta name="author" content="Delfina Longo, Angel Prieto, Carlos Hidalgo & Miguel Dallanegra">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="copyright" content="© 2024 Copyright: HotelWise.com">
@@ -23,8 +23,8 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nerko+One">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Courier+Prime">
 
-        <link rel="stylesheet" href="/static/css/style.css">
-        <link rel="stylesheet" href="/static/css/style_base.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/style_base.css">
 
         <link rel='stylesheet'
             href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
@@ -61,46 +61,45 @@
     <!-- Contenedor Alto -->
 
     <body>
-        <div class="topcontainer d-none d-md-block">
+        <div class="topcontainer d-flex justify-content-center">
             <!-- <div class="d-block d-md-none"> -->
-            <div class="row">
-                <nav class="navbar navbar-expand-lg navbar-light " style=" background-color: rgb(255, 235, 204)">
+            <div class="row justify-content-center">
+                <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
                     <a class="navbar-brand" href="{% url 'home' %}" style="margin-left: 20px">
-                        <img src="/static/imagenes/HotelWiseLogo.Horizontal.png" height="40" class="d-inline-block align-top" alt="">
+                        <img src="/static/imagenes/HotelWiseLogo.HorizontalBlue.png" height="60" class="img_logo d-inline-block align-top" alt="">
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
-                            <li class="nav-item active">
-                            <a class="nav-link" href="{% url 'home' %}">Acerca De <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
+                            <li class="nav-item " >
                             <a class="nav-link" href="{% url 'reviews' %}">Reviews</a>
                             </li>
-                            <li class="nav-item">
-                            <a class="nav-link" href="{% url 'home' %}">Busqueda</a>
+                            <li class="nav-item ">
+                                <a class="nav-link " href="{% url 'acerca_de' %}">AcercaDe</a>
+                                </li>
+                            <li class="nav-item ">
+                            <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
                             </li>
-                            <li class="nav-item">
-                            <a class="nav-link " href="{% url 'home' %}">Contacto</a>
+                            <li class="nav-item ">
+                            <a class="nav-link " href="{% url 'contacto' %}">Contacto</a>
                             </li>
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown ">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
+                                Repositorio
                                 </a>
                                 <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="{% url 'github' %}"">GitHub</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="{% url 'etl' %}"">ETL</a></li>
+                                <li><a class="dropdown-item" href="{% url 'd_analytics' %}"">Data Analytics</a></li>
+                                <li><a class="dropdown-item" href="{% url 'm_learning' %}"">Machine Learning</a></li>
+                                <li><a class="dropdown-item" href="{% url 'web_design' %}"">Web Design</a></li>
+
                                 </ul>
                             </li>
-                        </ul>
-                        <form class="d-flex" role="search">
-                          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                          <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>                    
+                        </ul>                
                     </div>
                 </nav>
             </div>

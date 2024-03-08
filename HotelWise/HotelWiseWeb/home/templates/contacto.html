@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block title %}AcercaNos{% endblock %}
+{% load static %}
+
+{%block scriptshead%}
+<script src = "https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.3/dist/jBox.all.min.js"></script>
+<link href="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.3/dist/jBox.all.min.css" rel="stylesheet"></link>
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+<script type="text/javascript" src="{% static '/js/script_bienvenida_head.js'%}"></script>
+{%endblock%}
+
+{% block content %}
+<div style="margin: 2%">
+  <div class="row">
+      <div class="col-sm-12">
+          <h6 class="page-titles">CONTACTO</h6>
+      </div>
+      <hr>
+  </div>
+</div>
+
+<div class="row" style="margin: 0 auto; width: 800px;">
+
+<p>Si tienes alguna pregunta, comentario o problema con la página web de HotelWise, no dudes en ponerte en contacto con nosotros.</p>
+
+<ul>
+    <li>
+        <strong>Delfina Longo Peña</strong><br>
+        <img src="/static/imagenes/mail.ico" alt="Correo electrónico"> <a href="mailto:delfinapena55@gmail.com">delfinapena55@gmail.com</a><br>
+        <img src="/static/imagenes/linkedin.ico" alt="LinkedIn"> <a href="https://www.linkedin.com/in/delfina-longo-pe%C3%B1a-44b4b623b">Delfina Longo Peña</a><br>
+        <img src="/static/imagenes/github_mark_icon.ico" alt="GitHub"> <a href="https://github.com/delfinap5">delfinap5</a>
+    </li>
+    <hr>
+
+    <li>
+        <strong>Angel Prieto</strong><br>
+        <img src="/static/imagenes/mail.ico" alt="Correo electrónico"> <a href="mailto:angelprieto92@gmail.com">angelprieto92@gmail.com</a><br>
+        <img src="/static/imagenes/linkedin.ico" alt="LinkedIn"> <a href="https://www.linkedin.com/in/angelprieto92">Angel Prieto</a><br>
+        <img src="/static/imagenes/github_mark_icon.ico" alt="GitHub"> <a href="https://github.com/PrietoPy">PrietoPy</a>
+    </li>
+    <hr>
+
+    <li>
+        <strong>Carlos Hidalgo</strong><br>
+        <img src="/static/imagenes/mail.ico" alt="Correo electrónico"> <a href="mailto:hidalgo.carlos1984@gmail.com">hidalgo.carlos1984@gmail.com</a><br>
+        <img src="/static/imagenes/linkedin.ico" alt="LinkedIn"> <a href="https://www.linkedin.com/in/carlos-hidalgo84">Carlos Hidalgo</a><br>
+        <img src="/static/imagenes/github_mark_icon.ico" alt="GitHub"> <a href="https://github.com/C-Hidalgo">C-Hidalgo</a>
+    </li>
+    <hr>
+
+    <li>
+        <strong>Miguel Dallanegra</strong><br>
+        <img src="/static/imagenes/mail.ico" alt="Correo electrónico"> <a href="mailto:mdallanegra@icloud.com">mdallanegra@icloud.com</a><br>
+        <img src="/static/imagenes/linkedin.ico" alt="LinkedIn"> <a href="https://www.linkedin.com/in/mdallanegra">Miguel Dallanegra</a><br>
+        <img src="/static/imagenes/github_mark_icon.ico" alt="GitHub"> <a href="https://github.com/mdallanegra">mdallanegra</a>
+    </li>
+</ul>
+
+<hr>
+</div>
+<br><br>
+<div style= "text-align: center">
+  <h6 class="centro" style="text-decoration: underline;">ENLACES ADICIONALES</h6>
+    <br>
+        <a href="https://github.com/HotelWise/HotelWise">Documentación completa del proyecto</a>
+        <br><br>
+        <a href="https://hotelwiseweb.uk.r.appspot.com">Sitio web en vivo</a>
+</div>
+<br><br>
+
+{% endblock content %}
+
+{%block scriptsfoot%}
+{%endblock%}
