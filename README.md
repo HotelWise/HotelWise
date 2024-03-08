@@ -217,9 +217,9 @@ El porcentaje de hoteles con un Índice de Criminalidad por Encima de un Umbral 
 
 Para calcular el porcentaje de hoteles con un Índice de Criminalidad por Encima de un Umbral (umbral = 10), sigue esta fórmula:
 
-```
-Porcentaje de Hoteles con Índice de Criminalidad por Encima de 10 = (Número de Hoteles con Índice de Criminalidad por Encima de 10 / Total de Hoteles) × 100
-```
+
+<img src = 'imagenes/kpi-2.jpg' >
+
 
 #### Datos Necesarios
 
@@ -271,7 +271,7 @@ El Índice de Satisfacción del Usuario (CSAT) es una métrica crucial para eval
 
 El CSAT se calcula utilizando la siguiente fórmula:
 
-\[ CSAT = \left( \frac{Total\ de\ comentarios\ positivos\ de\ satisfacción}{Total\ de\ comentarios\ de\ usuarios\ evaluados} \right) \times 100 \]
+<img src = 'imagenes/kpi-4.jpg' >
 
 #### Datos Necesarios
 
