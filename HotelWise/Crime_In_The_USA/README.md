@@ -42,7 +42,7 @@ Los datos proporcionados por las bases de datos se trabajaron de la siguiente fo
 - Se extrajeron los datos de ambas tablas.
 - Se realizó una sumatoria de todos los delitos por cada localidad.
 - Se generó el calclulo de la tasa de criminalidad por cada año y ciudad.
-$$Tasa de Delincuencia=\frac{Numero total de delitos}{Poblacion Total}\times Factor de Escala$$
+$$Tasa\;;de\;Delincuencia=\frac{Numero\;total\;de\;delitos}{Poblacion\;Total}\times Factor\;de\;Escala$$
 >El factor escala utilizado es 1000 debido a que la variacion de la población entre ciudades es muy grande.
 - Se limpiaron los datos innecesarios.
 - Se unificaron las tablas de ambos años.
