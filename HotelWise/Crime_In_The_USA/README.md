@@ -49,8 +49,10 @@ $$Tasa\;de\;Delincuencia=\frac{Numero\;total\;de\;delitos}{Poblacion\;Total}\tim
 - Se realizó la resta de las tasas de criminalidad.
 $$Variacion\;Tasa\;de\;Delincuencia=Tasa\;de\;Delincuencia\;Actual−Tasa\;de\;Delincuencia\;Anterior$$
 > Realizar la resta entre las tasas de criminalidad implica que se puede analizar el dato simplemente con ver su tamaño y signo, lo que será my útil para la implementación de los KPI.
+
 $$R=\frac{V_{(hoy)}-V_{(ayer)}}{V_{(ayer)}}$$
->  Para que se comprenda correctamente lo que se sugiere, es que los valores positivos resultantes de la resta indican un aumento en la seguridad de la zona (O disminución de la delincuencia) y por el contrario los valores negativos indican una disminucion en la seguridad (O aumento de la delincuencia), y obviamente el tamaño de los valores inidca directamente el indice de crecimiento de cada uno de ellos.
+
+>  Para que se comprenda correctamente lo que se sugiere, es que los valores positivos resultantes de la resta indican un aumento en la seguridad de la zona (o disminución de la delincuencia) y por el contrario los valores negativos indican una disminucion en la seguridad (o aumento de la delincuencia), y obviamente el tamaño de los valores inidca directamente el indice de crecimiento de cada uno de ellos.
 - Se realizaron algunos calculos estadísticos simples para poder identificar outliers y comprender mejor la situación evaluada.
 - Se almacenó la base de datos resultante para luego ser utilizada por el sistema de Machine Learning en el [Análisis previo de Proyecto de Machine Learning](https://github.com/HotelWise/HotelWise/tree/HotelWiseML/HotelWise) y en el [Despliegue del Proyecto de Machine Learning](https://github.com/HotelWise/HotelWise/tree/HotelWiseML/HotelWise).
 
