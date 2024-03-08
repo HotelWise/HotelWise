@@ -352,6 +352,7 @@ La relación se establece a través de la clave primaria en "Usuario" (User_id) 
 ---
 
 <img src = 'imagenes\db.jpeg' >
+<img src = 'imagenes\db 2.jpeg' >
 
 Link de acceso: [Dashboard](https://lookerstudio.google.com/reporting/b6c70dbb-9c99-4710-8eb3-03f883cf818a)
 
@@ -362,6 +363,9 @@ Link de acceso: [Dashboard](https://lookerstudio.google.com/reporting/b6c70dbb-9
 En este proyecto, se emplearán las siguientes tecnologías para la gestión y análisis de datos:
 
 #### **Google Colaboratory**
+
+[![Colaboratory](https://img.shields.io/badge/Colaboratory-red?style=for-the-badge&logo=lock&logoColor=white)]
+(https://cloud.google.com/colaboratory?hl=es)
 
 - *Descripción:* Google Colaboratory, es una plataforma en línea que nos permite escribir y ejecutar código en Python directamente en el navegador. Proporciona acceso gratuito a recursos informáticos, incluidas GPU, lo que lo hace ideal para el análisis de datos.
 
@@ -396,6 +400,8 @@ En este proyecto, se emplearán las siguientes tecnologías para la gestión y a
 - *Utilidad:* Integraremos ClickUp para organizar tareas, asignar responsabilidades y mantener un seguimiento del progreso del proyecto. Con sus características de colaboración y seguimiento de tiempo, ClickUp facilitará la gestión eficiente del proyecto y la coordinación del equipo.
 
 #### **Lucidchart**
+
+![Lucidchart](https://img.shields.io/badge/Lucidchart-%23FF0000?style=for-the-badge&logo=lock&logoColor=white)
 
 - *Descripción:* Lucidchart es una plataforma en línea que permite crear diagramas, flujos de trabajo y otros tipos de representaciones visuales de manera colaborativa. Proporciona una interfaz intuitiva para la creación y edición de diagramas, facilitando la comunicación visual en equipos de trabajo. Además, al ser una plataforma en línea, permite la colaboración en tiempo real entre múltiples usuarios, lo que facilita el trabajo en equipo.
 
