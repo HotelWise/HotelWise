@@ -186,7 +186,7 @@ Explicar de manera efectiva los análisis realizados y los beneficios destacados
 
 ---
 
-### 1. Índice de Criminalidad por Estado o Región
+### 1. Promedio de Índice de Criminalidad por Estado (PIDC)
 
 El Índice de Criminalidad por Estado o Región es una medida que proporciona información sobre el nivel de seguridad en diferentes áreas geográficas basadas en los hoteles de tu conjunto de datos.
 
@@ -204,7 +204,7 @@ Este KPI te permite comparar la seguridad entre diferentes estados o regiones. P
 
 
 
-### 2. Porcentaje de Hoteles con Índice de Criminalidad por Encima de un Umbral
+### 2. Porcentaje de Hoteles con Índice de Criminalidad por Encima de un Umbral (PHICEU)
 
 El porcentaje de hoteles con un Índice de Criminalidad por Encima de un Umbral es una métrica importante para evaluar la seguridad y la percepción de seguridad de los hoteles en una determinada área. En este caso, el umbral se establece en 10, que representa el promedio de todos los índices de criminalidad.
 
@@ -216,7 +216,7 @@ Para calcular el porcentaje de hoteles con un Índice de Criminalidad por Encima
 <img src = 'imagenes/kpi-2.jpg' >
 
 
-#### Datos Necesarios
+#### Datos Necesarios 
 
 1. **Índice de Criminalidad:** Este dato indica el nivel de criminalidad en el área donde se encuentra el hotel. Es esencial tener esta información para evaluar la seguridad del entorno.
 2. **Umbral:** El umbral se establece en 10, que representa el promedio de todos los índices de criminalidad.
@@ -236,7 +236,7 @@ El porcentaje de hoteles con un Índice de Criminalidad por Encima de un Umbral 
 
 Al implementar esta métrica, podrás evaluar la seguridad de los hoteles y tomar decisiones informadas para mejorar la experiencia y la seguridad de tus huéspedes. Además, al establecer el umbral en 10, estás utilizando el promedio de todos los índices de criminalidad como referencia para determinar qué hoteles pueden requerir una atención especial en términos de seguridad.
 
-### 3. Cantidad Promedio de Amenidades por Usuario en verano
+### 3. Cantidad Promedio de Amenidades por Usuario en verano (CPAUV)
 
 La Cantidad Promedio de Amenidades por Usuario en verano proporciona el promedio de la cantidad de amenidades preferidas por usuario durante la temporada de verano. Esta métrica ayuda a comprender mejor las preferencias de los usuarios durante ese período específico.
 
@@ -289,9 +289,9 @@ El CSAT ofrece una medida clave de la satisfacción de los usuarios durante la t
 
 Al implementar esta metodología, podrás evaluar de manera efectiva la satisfacción del usuario y realizar mejoras continuas en los servicios ofrecidos durante la temporada de verano.
 
-### 5. Promedio de Calificaciones (AVG_RATING)
+### 5. Promedio de Calificaciones (AVG RATING)
 
-El Promedio de Calificaciones (AVG_RATING) es una métrica crucial para evaluar la satisfacción general de los usuarios con un producto o servicio. En el contexto de tu plataforma, el AVG_RATING se calcula utilizando las calificaciones dadas por los usuarios a los hoteles en tu conjunto de datos. Esta medida nos brinda información valiosa sobre la calidad percibida de los servicios ofrecidos.
+El Promedio de Calificaciones (AVG RATING) es una métrica crucial para evaluar la satisfacción general de los usuarios con un producto o servicio. En el contexto de tu plataforma, el AVG_RATING se calcula utilizando las calificaciones dadas por los usuarios a los hoteles en tu conjunto de datos. Esta medida nos brinda información valiosa sobre la calidad percibida de los servicios ofrecidos.
 
 #### Fórmula del AVG_RATING
 
@@ -326,7 +326,7 @@ El AVG_RATING ofrece una medida clave de la satisfacción de los usuarios con lo
 
 ---
 
-Optamos por un modelo relacional para nuestro conjunto de datos con el fin de mantener una estructura organizada y facilitar la recuperación y análisis de información. Este modelo es eficaz tanto para el análisis de datos como para su implementación en una base de datos, gracias a la claridad en las relaciones entre las tablas y la normalización de los datos. Esto nos permite realizar consultas complejas para obtener información detallada sobre hoteles, ubicaciones, opiniones y usuarios, lo cual es fundamental para el desarrollo de nuestra aplicación HotelWise.
+Optamos por un modelo relacional de tipo Estrella (Star) para nuestro conjunto de datos con el fin de mantener una estructura organizada y facilitar la recuperación y análisis de información. Este modelo es eficaz tanto para el análisis de datos como para su implementación en una base de datos, gracias a la claridad en las relaciones entre las tablas y la normalización de los datos. Esto nos permite realizar consultas complejas para obtener información detallada sobre hoteles, ubicaciones, opiniones y usuarios, lo cual es fundamental para el desarrollo de nuestra aplicación HotelWise.
 
 <img src = 'imagenes/Modelo ER.png' height='400'>
 
@@ -361,13 +361,21 @@ Link de acceso: [Dashboard](https://lookerstudio.google.com/reporting/b6c70dbb-9
 
 En este proyecto, se emplearán las siguientes tecnologías para la gestión y análisis de datos:
 
+#### **Google Colaboratory**
+
+- *Descripción:* Google Colaboratory, es una plataforma en línea que nos permite escribir y ejecutar código en Python directamente en el navegador. Proporciona acceso gratuito a recursos informáticos, incluidas GPU, lo que lo hace ideal para el análisis de datos.
+
+- *Utilidad:* Los utilizamos para desarrollar y ejecutar código de Python de manera colaborativa, facilitando la creación de documentos interactivos que combinan código, texto explicativo y visualizaciones, tambien para modificar los datos y actualizarlos en BigQuery.
+
+
 #### **BigQuery**
 
 [![BigQuery](https://img.shields.io/badge/BigQuery-007ACC?style=for-the-badge&logo=lock&logoColor=white)](https://cloud.google.com/bigquery?hl=es)
 
 - *Descripción:* BigQuery es un almacén de datos completamente administrado y altamente escalable que permite analizar grandes conjuntos de datos en tiempo real mediante SQL.
 
-- *Utilidad:* Utilizaremos BigQuery para almacenar y procesar grandes volúmenes de datos de manera eficiente, lo que nos permitirá realizar análisis de datos complejos y consultas en tiempo real.
+- *Utilidad:* Almacena y procesa grandes volúmenes de datos de manera eficiente, lo que nos permite realizar análisis de datos complejos y consultas en tiempo real. Se conecta y envia los datos actualizados facilmente a Looker Studio.
+
 
 #### **Looker Studio**
 
@@ -375,18 +383,27 @@ En este proyecto, se emplearán las siguientes tecnologías para la gestión y a
 
 - *Descripción:* Looker Studio es una plataforma de análisis de datos que proporciona herramientas poderosas para explorar y visualizar datos, crear paneles interactivos y compartir conocimientos.
 
-- *Utilidad:* Integraremos Looker Studio para crear visualizaciones dinámicas, paneles interactivos y reportes personalizados basados en los datos almacenados en BigQuery. Esto nos permitirá extraer insights valiosos y comunicar de manera efectiva los resultados del análisis a los stakeholders.
+- *Utilidad:* Integraremos Looker Studio para crear visualizaciones dinámicas, paneles interactivos, campos calculados, filtros, Kpis y asi generr un reporte personalizado basado en los datos almacenados en BigQuery.
+
+### *Tecnologías adicionales*
 
 #### **ClickUp**
 
 [![ClickUp](https://img.shields.io/badge/ClickUp-7B68E?style=for-the-badge&logo=lock&logoColor=white)](https://app.clickup.com/)
 
-- **Descripción:** ClickUp es una plataforma de gestión de proyectos y tareas que ofrece herramientas para la planificación, seguimiento y colaboración en equipos.
-- **Utilidad:** Integraremos ClickUp para organizar tareas, asignar responsabilidades y mantener un seguimiento del progreso del proyecto. Con sus características de colaboración y seguimiento de tiempo, ClickUp facilitará la gestión eficiente del proyecto y la coordinación del equipo.
+- *Descripción:* ClickUp es una plataforma de gestión de proyectos y tareas que ofrece herramientas para la planificación, seguimiento y colaboración en equipos.
+
+- *Utilidad:* Integraremos ClickUp para organizar tareas, asignar responsabilidades y mantener un seguimiento del progreso del proyecto. Con sus características de colaboración y seguimiento de tiempo, ClickUp facilitará la gestión eficiente del proyecto y la coordinación del equipo.
+
+#### **Lucidchart**
+
+- *Descripción:* Lucidchart es una plataforma en línea que permite crear diagramas, flujos de trabajo y otros tipos de representaciones visuales de manera colaborativa. Proporciona una interfaz intuitiva para la creación y edición de diagramas, facilitando la comunicación visual en equipos de trabajo. Además, al ser una plataforma en línea, permite la colaboración en tiempo real entre múltiples usuarios, lo que facilita el trabajo en equipo.
+
+- *Utilidad:* Con esta app creamos el modelo ER facilmente. Es una herramienta valiosa para la comunicación de ideas de manera clara y eficiente.
 
 #### *Integración de Tecnologías*
 
-- **Complementariedad:** La integración de BigQuery, Looker Studio y ClickUp ofrece una solución completa para el almacenamiento, procesamiento, análisis, visualización y gestión de proyectos de datos. Esta combinación nos proporciona las herramientas necesarias para obtener información significativa a partir de nuestros datos, tomar decisiones informadas y gestionar eficazmente el proyecto.
+- **Complementariedad:** La integración de las tecnologías utilizadas ofrece una solución completa para el almacenamiento, procesamiento, análisis, visualización y gestión de proyectos de datos. Esta combinación nos proporciona las herramientas necesarias para obtener información significativa a partir de nuestros datos, tomar decisiones informadas y gestionar eficazmente el proyecto.
 
 - **Escalabilidad:** Todas las tecnologías seleccionadas son altamente escalables y pueden adaptarse a las necesidades cambiantes del proyecto a medida que crece y se desarrolla.
 
