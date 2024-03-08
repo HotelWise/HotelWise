@@ -1,4 +1,4 @@
-<div align="center">
+|<div align="center">
 
 <img src = 'imagenes/HotelWiseLogo.png' >
 </div>
@@ -186,201 +186,133 @@ Explicar de manera efectiva los análisis realizados y los beneficios destacados
 
 ---
 
-### 1. **Cantidad Promedio de amenidades por Usuario en verano (basado en comentarios positivos)**
+### 1. Índice de Criminalidad por Estado o Región
 
-Proporcionará el promedio de la cantidad de amenidades preferidas por usuario durante la temporada de verano, lo que ayudará a comprender mejor las preferencias de los usuarios durante ese período específico.
+El Índice de Criminalidad por Estado o Región es una medida que proporciona información sobre el nivel de seguridad en diferentes áreas geográficas basadas en los hoteles de tu conjunto de datos.
 
-#### Formula
+**Fórmula:**
+<img src = 'imagenes/kpi-1.jpg' >
 
-Cantidad Promedio de Amenidades por Usuario en verano = (Total de amenidades preferidas durante el verano/ Total de usuarios que dejaron comentarios positivos sobre amenidades durante el verano)
+**Descripción:**
+Este KPI calcula el promedio de los índices de criminalidad en los hoteles de cada estado o región. Proporciona una visión general del nivel de seguridad en áreas geográficas más amplias y ayuda a identificar áreas con posibles problemas de seguridad.
 
-- *Total de amenidades preferidas durante el verano*: Es la suma del número de amenidades mencionadas en los comentarios positivos durante la temporada de verano.
+**Objetivo:**
+Evaluar el nivel de seguridad por estado o región basado en los índices de criminalidad de los hoteles.
 
-- *Total de usuarios que dejaron comentarios positivos sobre amenidades durante el verano*: Es la cantidad de usuarios que expresaron comentarios positivos relacionados con amenidades durante la temporada de verano.
+**Cómo se Utiliza:**
+Este KPI te permite comparar la seguridad entre diferentes estados o regiones. Puedes utilizar esta información para tomar decisiones informadas sobre ubicaciones específicas para tus viajeros, implementar medidas de seguridad adicionales en áreas de mayor riesgo y mejorar la calidad del servicio en áreas donde la seguridad es una preocupación.
+
+
+
+### 2. Porcentaje de Hoteles con Índice de Criminalidad por Encima de un Umbral
+
+El porcentaje de hoteles con un Índice de Criminalidad por Encima de un Umbral es una métrica importante para evaluar la seguridad y la percepción de seguridad de los hoteles en una determinada área. En este caso, el umbral se establece en 10, que representa el promedio de todos los índices de criminalidad.
+
+#### Fórmula
+
+Para calcular el porcentaje de hoteles con un Índice de Criminalidad por Encima de un Umbral (umbral = 10), sigue esta fórmula:
+
+
+<img src = 'imagenes/kpi-2.jpg' >
+
+
+#### Datos Necesarios
+
+1. **Índice de Criminalidad:** Este dato indica el nivel de criminalidad en el área donde se encuentra el hotel. Es esencial tener esta información para evaluar la seguridad del entorno.
+2. **Umbral:** El umbral se establece en 10, que representa el promedio de todos los índices de criminalidad.
+3. **Asociación con Hoteles:** Asocia cada índice de criminalidad con el hotel correspondiente para realizar un seguimiento y análisis precisos.
+
+#### Objetivo Específico
+
+Evaluar la seguridad y la percepción de seguridad de los hoteles en función de su índice de criminalidad, considerando un umbral de 10.
+
+#### Medición
+
+Calcular el porcentaje de hoteles cuyo índice de criminalidad está por encima del umbral establecido (10).
+
+#### Resumen y Conclusiones
+
+El porcentaje de hoteles con un Índice de Criminalidad por Encima de un Umbral (umbral = 10) proporciona información valiosa sobre la seguridad y la percepción de seguridad en el área donde se encuentran los hoteles. Este indicador puede ayudar a identificar áreas con mayores preocupaciones de seguridad y a tomar medidas para abordarlas y mejorar la seguridad general de los hoteles y sus entornos.
+
+Al implementar esta métrica, podrás evaluar la seguridad de los hoteles y tomar decisiones informadas para mejorar la experiencia y la seguridad de tus huéspedes. Además, al establecer el umbral en 10, estás utilizando el promedio de todos los índices de criminalidad como referencia para determinar qué hoteles pueden requerir una atención especial en términos de seguridad.
+
+### 3. Cantidad Promedio de Amenidades por Usuario en verano
+
+La Cantidad Promedio de Amenidades por Usuario en verano proporciona el promedio de la cantidad de amenidades preferidas por usuario durante la temporada de verano. Esta métrica ayuda a comprender mejor las preferencias de los usuarios durante ese período específico.
+
+#### Fórmula
+
+La Cantidad Promedio de Amenidades por Usuario en verano se calcula como:
+
+<img src = 'imagenes/kpi-3.jpg' >
+
+- **Total de amenidades preferidas durante el verano:** Es la suma del número de amenidades mencionadas en los comentarios positivos durante la temporada de verano.
+- **Total de usuarios que dejaron comentarios positivos sobre amenidades durante el verano:** Es la cantidad de usuarios que expresaron comentarios positivos relacionados con amenidades durante la temporada de verano.
 
 #### Objetivo Específico
 
 Evaluar las preferencias de los usuarios en cuanto a las amenidades durante la temporada de verano.
 
-#### Medición
-
-Recopilar comentarios de usuarios que mencionen amenidades durante la temporada de verano, calcular el promedio de amenidades preferidas por usuario y evaluar las preferencias generales.
-
-#### Datos necesarios
-
-- Comentarios de usuarios:
-Comentarios de usuarios que contengan información sobre las amenidades que prefieren durante la temporada de verano. Estos comentarios deben estar asociados con cada usuario para calcular el promedio por usuario.
-
-- Análisis de sentimiento:
-Realizar un análisis de sentimiento en los comentarios para identificar aquellos que son positivos y están relacionados con las amenidades preferidas durante el verano.
-Esto permitirá filtrar los comentarios relevantes para el cálculo del KPI.
-
-- Temporada de verano:
-Periodo de Junio a Agosto
-
-- Conteo de amenidades:
-Una vez identificados los comentarios positivos relacionados con las amenidades preferidas durante el verano, contar el número de amenidades mencionadas en cada comentario.
-
-- Asociación con usuarios:
-Asociar cada comentario con el usuario correspondiente para calcular el promedio por usuario.
-
-Proporciona información valiosa sobre las preferencias de los usuarios en cuanto a las amenidades durante la temporada de verano, lo que puede ser útil para tomar decisiones informadas sobre la oferta de servicios durante ese período.
-
 #### Resumen y Conclusiones
 
-El análisis de la cantidad promedio de amenidades por usuario en verano proporciona una visión detallada de las preferencias de los usuarios durante la temporada estival, permitiendo a la plataforma adaptar su oferta de servicios de manera más precisa.
+La Cantidad Promedio de Amenidades por Usuario en verano ofrece información valiosa sobre las preferencias de los usuarios durante la temporada de verano, lo que permite adaptar mejor los servicios ofrecidos a sus necesidades y expectativas durante ese período.
 
 
-### 2. **Índice de Satisfacción del Usuario (CSAT)**
+### 4. Índice de Satisfacción del Usuario (CSAT)
 
-El Índice de Satisfacción del Usuario (CSAT) es una métrica que mide la satisfacción general de los usuarios con un producto o servicio. En el contexto de nuestra plataforma, podemos calcular el CSAT utilizando las reseñas y comentarios de los usuarios sobre su experiencia con los hoteles. Esta medida nos brinda información valiosa sobre la percepción general de los usuarios hacia los servicios ofrecidos. El CSAT nos ayuda a evaluar la calidad del servicio de manera integral, proporcionando una métrica cuantitativa de la satisfacción del usuario durante la temporada de verano. Esta evaluación continua nos permite identificar áreas de mejora y garantizar una mejora constante en la calidad del servicio ofrecido.
+El Índice de Satisfacción del Usuario (CSAT) es una métrica crucial para evaluar la satisfacción general de los usuarios con un producto o servicio. En el contexto de tu plataforma, el CSAT se calculará utilizando los comentarios y reseñas de los usuarios sobre su experiencia con los hoteles durante la temporada de verano.
 
-#### Fórmula
+#### Fórmula del CSAT
 
-CSAT= (Total de comentarios positivos de satisfaccion/ Total de comentarios de usuarios evaluados) ×100
+El CSAT se calcula utilizando la siguiente fórmula:
 
-- *Total de comentarios positivos de satisfacción:* Es la cantidad de comentarios que se han identificado como positivos y están relacionados con la satisfacción del usuario durante la temporada de verano.
+<img src = 'imagenes/kpi-4.jpg' >
 
-- *Total de comentarios de usuarios evaluados:* Es la cantidad total de comentarios de usuarios recopilados durante la temporada de verano.
+#### Datos Necesarios
+
+1. **Comentarios de Usuarios:** Recopila comentarios de usuarios que contengan información sobre su satisfacción con el servicio. Estos comentarios deben estar asociados con cada usuario para calcular el CSAT por usuario.
+2. **Análisis de Sentimiento:** Realiza un análisis de sentimiento en los comentarios para identificar aquellos que son positivos y están relacionados con la satisfacción del usuario. Esto permitirá filtrar los comentarios relevantes para el cálculo del CSAT.
+3. **Temporada de Verano:** El período de evaluación para el CSAT será durante la temporada de verano, que abarca desde junio hasta agosto.
+4. **Asociación con Usuarios:** Es esencial asociar cada comentario con el usuario correspondiente para calcular el CSAT por usuario.
 
 #### Objetivo Específico
 
-Evaluar la satisfacción de los usuarios a través de comentarios de usuarios recopilando puntuaciones de satisfacción.
+Evaluar la satisfacción de los usuarios a través de comentarios de usuarios, recopilando puntuaciones de satisfacción.
 
 #### Medición
 
 Recopilar puntuaciones de satisfacción a través de comentarios de los usuarios y calcular un índice de satisfacción del usuario (CSAT).
 
-#### Datos Necesarios
-
-- Comentarios de Usuarios:
-Recopilar comentarios de usuarios que contengan información sobre su satisfacción con el servicio.
- Estos comentarios deben estar asociados con cada usuario para calcular el CSAT por usuario.
-
-- Análisis de Sentimiento:
-Realizar un análisis de sentimiento en los comentarios para identificar aquellos que son positivos y están relacionados con la satisfacción del usuario.
-Esto permitirá filtrar los comentarios relevantes para el cálculo del CSAT.
-
-- Temporada de Verano:
-El período de evaluación para el CSAT será durante la temporada de verano, que abarca desde junio hasta agosto.
-
-- Conteo de Amenidades:
-Una vez identificados los comentarios positivos relacionados con la satisfacción del usuario, se debe contar el número de menciones de satisfacción en cada comentario.
-
-- Asociación con Usuarios:
-Es esencial asociar cada comentario con el usuario correspondiente para calcular el CSAT por usuario.
-
 #### Resumen y Conclusiones
 
 El CSAT ofrece una medida clave de la satisfacción de los usuarios durante la temporada de verano, proporcionando información valiosa sobre la percepción general de los servicios ofrecidos y permitiendo mejoras continuas en la calidad del servicio.
 
+Al implementar esta metodología, podrás evaluar de manera efectiva la satisfacción del usuario y realizar mejoras continuas en los servicios ofrecidos durante la temporada de verano.
 
-### 3. **Tasa de Conversión de Reservas de acuerdo a las amenidades**
+### 5. Promedio de Calificaciones (AVG_RATING)
 
-La Tasa de Conversión de Reservas de acuerdo a las amenidades representa el porcentaje de visitantes que dejaron un comentario positivo sobre un hotel junto con las amenidades que ofrece.
+El Promedio de Calificaciones (AVG_RATING) es una métrica crucial para evaluar la satisfacción general de los usuarios con un producto o servicio. En el contexto de tu plataforma, el AVG_RATING se calcula utilizando las calificaciones dadas por los usuarios a los hoteles en tu conjunto de datos. Esta medida nos brinda información valiosa sobre la calidad percibida de los servicios ofrecidos.
 
-#### Fórmula
+#### Fórmula del AVG_RATING
 
-Tasa de Conversión de Reservas de acuerdo a las amenidades = (Total de usuarios con comentarios positivos y menciones de amenidades / Total de visitantes) ×100%
-
-- *Total de usuarios con comentarios positivos y menciones de amenidades:* Es la cantidad de usuarios que dejaron comentarios positivos sobre un hotel junto con menciones de amenidades durante la temporada de verano.
-
-- *Total de visitantes:* Es el total de visitantes que accedieron a la información del hotel durante la temporada de verano.
-
-#### Objetivo Específico
-
-Evaluar la efectividad de las amenidades ofrecidas por los hoteles en la conversión de reservas.
-
-#### Medición
-
-Recopilar comentarios de usuarios que mencionen amenidades durante la temporada de verano, identificar los comentarios positivos y calcular la tasa de conversión de reservas basada en dichos comentarios.
+El AVG_RATING se calcula como la media de las calificaciones dadas por los usuarios a los hoteles en tu conjunto de datos.
 
 #### Datos Necesarios
 
-- Comentarios de usuarios que mencionen amenidades durante la temporada de verano.
-Necesitamos recopilar comentarios de usuarios que contengan información sobre las amenidades preferidas durante la temporada de verano. Estos comentarios deben estar asociados con cada usuario para calcular el promedio por usuario.
-
-- Análisis de sentimiento para identificar comentarios positivos.
-Realizaremos un análisis de sentimiento en los comentarios para identificar aquellos que son positivos y están relacionados con las amenidades preferidas durante el verano. Esto nos permitirá filtrar los comentarios relevantes para el cálculo del KPI.
-
-- Temporada de verano definida como junio a agosto.
-La temporada de verano se define como el período de junio a agosto.
-
-- Conteo de amenidades en cada comentario.
-Una vez identificados los comentarios positivos relacionados con las amenidades preferidas durante el verano, contaremos el número de amenidades mencionadas en cada comentario.
-
-- Asociación de cada comentario con el usuario correspondiente.
-Es importante asociar cada comentario con el usuario correspondiente para calcular el promedio por usuario.
-
-#### Resumen y Conclusiones
-
-La tasa de conversión de reservas según las amenidades proporciona información valiosa sobre cómo las características ofrecidas por los hoteles influyen en las decisiones de reserva de los usuarios, permitiendo ajustes estratégicos para maximizar la eficacia de las ofertas de servicios.
-
-
-### 4. **Índice de Retención de Usuarios (RIU)**
-
-El Índice de Retención de Usuarios (RIU) es una métrica crucial que evalúa la fidelidad y la satisfacción de los usuarios con la plataforma a lo largo del tiempo. Este indicador nos permite comprender cuántos usuarios regresan a utilizar la plataforma después de su primera experiencia y cuántos permanecen como usuarios activos durante un periodo determinado, como la temporada de verano.
-
-#### Fórmula
-
-RIU = ((Usuarios activos al final del periodo - Nuevos usuarios)\Usuarios activos al inicio del periodo) X 100
-
-- *Usuarios activos al final del periodo:* Es el número de usuarios que siguen utilizando la plataforma al final del periodo de evaluación, que en este caso sería al final del verano.
-
-- *Nuevos usuarios:* Representa la cantidad de usuarios que se registraron y comenzaron a utilizar la plataforma durante el periodo de evaluación.
-
-- *Usuarios activos al inicio del periodo:* Indica el número de usuarios que ya estaban utilizando la plataforma al comienzo del periodo de evaluación.
+Calificaciones de Usuarios: Recopila las calificaciones dadas por los usuarios a los hoteles en tu conjunto de datos. Estas calificaciones deben estar asociadas con cada hotel para calcular el AVG_RATING por hotel.
 
 #### Objetivo Específico
 
-Medir la capacidad de retención de la plataforma y evaluar la satisfacción de los usuarios a lo largo del tiempo.
+Evaluar la satisfacción de los usuarios a través de las calificaciones proporcionadas a los hoteles en tu conjunto de datos.
 
 #### Medición
 
-Calcular el Índice de Retención de Usuarios al final de la temporada de verano y compararlo con periodos anteriores para identificar tendencias y áreas de mejora.
-
-#### Datos Necesarios
-
-- Registro de usuarios: Mantener un registro de los nuevos usuarios que se registran durante el periodo de evaluación.
-
-- Actividad de usuarios: Seguir la actividad de los usuarios para determinar quiénes siguen utilizando la plataforma de manera activa al final del periodo.
-
-- Análisis comparativo: Comparar el número de usuarios activos al final del periodo con el número de nuevos usuarios y usuarios activos al inicio del periodo para calcular el RIU.
+Calcular el promedio de las calificaciones dadas por los usuarios a los hoteles en tu conjunto de datos y obtener el AVG_RATING.
 
 #### Resumen y Conclusiones
 
-El Índice de Retención de Usuarios proporcionará información valiosa sobre la lealtad y la satisfacción de los usuarios con la plataforma, permitiendo identificar áreas de mejora y estrategias para aumentar la retención de usuarios a largo plazo.
+El AVG_RATING ofrece una medida clave de la satisfacción de los usuarios con los hoteles en tu conjunto de datos, proporcionando información valiosa sobre la percepción general de los servicios ofrecidos y permitiendo mejoras continuas en la calidad del servicio.
 
-
-### 5. **Índice de Delitos por Área (IDA)**
-
-El Índice de Delitos por Área (IDA) es una métrica que evalúa la incidencia de delitos en una zona geográfica específica, lo que proporciona una medida relativa de la seguridad en esa área. Este KPI es útil para que los usuarios puedan evaluar el nivel de seguridad de la zona donde se encuentra un hotel y tomar decisiones informadas al seleccionar su alojamiento.
-
-#### Fórmula
-
-IDA = (Total de delitos en la zona\Población total de la zona) x 1000
-
-- *Total de delitos en la zona:* Es la cantidad total de delitos reportados en la zona durante un período específico.
-
-- *Población total de la zona:* Representa la población total que habita en la zona durante el mismo período.
-
-#### Objetivo Específico
-
-Evaluar la incidencia de delitos en una zona geográfica específica para proporcionar información sobre la seguridad en esa área.
-
-#### Medición
-
-Calcular el Índice de Delitos por Área (IDA) mediante la fórmula proporcionada, que relaciona el total de delitos en la zona con la población total de la misma durante un período específico.
-
-#### Datos Necesarios
-
-- Registros de delitos: Mantener un registro de todos los delitos reportados en la zona geográfica de interés durante el período de evaluación.
-
-- Datos demográficos: Obtener información precisa sobre la población total que habita en la zona durante el mismo período de tiempo.
-
-#### Resumen y Conclusiones
-
-El Índice de Delitos por Área (IDA) proporciona una medida relativa de la seguridad en una zona geográfica específica al evaluar la incidencia de delitos en relación con la población total de la zona. Esta métrica es valiosa para que los usuarios puedan tomar decisiones informadas al seleccionar su alojamiento, al proporcionar una perspectiva sobre la seguridad en diferentes áreas.
 
 ## **Diccionario de datos**
 
@@ -389,37 +321,6 @@ El Índice de Delitos por Área (IDA) proporciona una medida relativa de la segu
 <img src = 'imagenes\diccionario.jpeg' >
 <img src = 'imagenes\diccionario2.jpeg' >
 
-### Detallado
-
-Hotel:
-
-- Gmap_id (PK): Identificador único del hotel.
-- Name: Nombre del hotel.
-- Category: Categoría del hotel.
-- Amenidades: Servicios del hotel.
-- Url (FK): Clave foránea que referencia a la tabla "Ubicación" mediante la columna "Url".
-- Review_id (FK): Clave foránea que referencia a la tabla "Review" mediante la columna "Review_id".
-
-Ubicación:
-
-- Url (PK): URL de la ubicación del hotel.
-- Gmap_id (FK): Clave foránea que referencia a la tabla "Hotel" mediante la columna "Gmap_id".
-- Latitude: Latitud del hotel.
-- Longitude: Longitud del hotel.
-- County: Nombre del condado del hotel.
-- City: Nombre de la ciudad del hotel.
-- State: Nombre del estado del hotel.
-- Country: Nombre del país del hotel.
-
-Review:
-
-- Review_id (PK): Identificador único de revisión.
-- Time: Fecha del comentario.
-- Text: Comentario (review).
-- Avg_rating: Rating promedio de las revisiones.
-- Num_of_reviews: Número de revisiones.
-- User_id (FK): Clave foránea que referencia a la tabla "Usuario" mediante la columna "User_id".
-- Gmap_id (FK): Clave foránea que referencia a la tabla "Hotel" mediante la columna "Gmap_id".
 
 ## **Modelo de datos**
 
