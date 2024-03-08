@@ -1,4 +1,4 @@
-<div align="center">
+|<div align="center">
 
 <img src = 'imagenes/HotelWiseLogo.png' >
 </div>
@@ -321,37 +321,6 @@ El AVG_RATING ofrece una medida clave de la satisfacción de los usuarios con lo
 <img src = 'imagenes\diccionario.jpeg' >
 <img src = 'imagenes\diccionario2.jpeg' >
 
-### Detallado
-
-Hotel:
-
-- Gmap_id (PK): Identificador único del hotel.
-- Name: Nombre del hotel.
-- Category: Categoría del hotel.
-- Amenidades: Servicios del hotel.
-- Url (FK): Clave foránea que referencia a la tabla "Ubicación" mediante la columna "Url".
-- Review_id (FK): Clave foránea que referencia a la tabla "Review" mediante la columna "Review_id".
-
-Ubicación:
-
-- Url (PK): URL de la ubicación del hotel.
-- Gmap_id (FK): Clave foránea que referencia a la tabla "Hotel" mediante la columna "Gmap_id".
-- Latitude: Latitud del hotel.
-- Longitude: Longitud del hotel.
-- County: Nombre del condado del hotel.
-- City: Nombre de la ciudad del hotel.
-- State: Nombre del estado del hotel.
-- Country: Nombre del país del hotel.
-
-Review:
-
-- Review_id (PK): Identificador único de revisión.
-- Time: Fecha del comentario.
-- Text: Comentario (review).
-- Avg_rating: Rating promedio de las revisiones.
-- Num_of_reviews: Número de revisiones.
-- User_id (FK): Clave foránea que referencia a la tabla "Usuario" mediante la columna "User_id".
-- Gmap_id (FK): Clave foránea que referencia a la tabla "Hotel" mediante la columna "Gmap_id".
 
 ## **Modelo de datos**
 
