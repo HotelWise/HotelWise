@@ -11,7 +11,7 @@
 - [Objetivos Particulares](#objetivos-particulares)
 - [Stack Tecnológico](#stack-tecnológico)
   - [Google Cloud Platform (GCP)](#google-cloud-platform-gcp)
-  - [Vertex AI de Google](#vertex-ai-de-google)
+  - [NLTK Machine Learning](#nltk-machine-learning)
     - [Bibliotecas y Funciones](#bibliotecas-y-funciones)
     - [Modelos](#modelos)
     - [Lenguajes](#lenguajes)
@@ -19,6 +19,10 @@
   - [Instalación](#instalación)
     - [Procedimiento](#procedimiento)
 - [Resumen y Decisiones Finales](#resumen-y-decisiones-finales)
+- [Proxmas Etapas:](#proxmas-etapas)
+  - [Análisis previo Proyecto de Machine Learning ](#análisis-previo-proyecto-de-machine-learning-)
+  - [Despliegue del Proyecto de Machine Learning](#despliegue-del-proyecto-de-machine-learning)
+  - [Análisis de Seguridad en EE.UU.](#análisis-de-seguridad-en-eeuu)
 - [Contribuciones](#contribuciones)
 - [Créditos](#créditos)
 - [Licencias](#licencias)
@@ -27,7 +31,7 @@
 
 # Descripción del Proyecto
 
-Este es un proyecto de Machine Learning que utiliza Vertex AI de Google para entrenar y desplegar modelos de aprendizaje automático y tiene como objetivo desplegarlos utilizando las bases de datos de Google y Yelp para hacer recomendaciones de hoteles.
+Este es un proyecto de Machine Learning que utiliza Cloud Functions de Google para entrenar y desplegar modelos de aprendizaje automático y tiene como objetivo desplegarlos utilizando las bases de datos de Google y Yelp para hacer recomendaciones de hoteles.
 
 # Flujo de Trabajo
 
@@ -46,11 +50,10 @@ Conjunto de tecnologías, herramientas, frameworks e infraestructura que se util
 
 ## Google Cloud Platform (GCP)
 Utilizaremos Google Cloud Platform para acceder a los servicios de Vertex AI y alojar nuestro proyecto.
-- Google Cloud Storage será utilizado para almacenar los datos raw.
-- Google Cloud Filestore será utlizado por el ML para trabajar con los datos procesados. 
+- Google Cloud Storage será utilizado para almacenar los datos raw y procesados, donde finalmente los tomará ML para trabajar las recomendaciones. 
 
-## Vertex AI de Google
-Utilizaremos Vertex AI de Google para entrenar y desplegar nuestros modelos de aprendizaje automático.
+## NLTK Machine Learning
+Utilizaremos las bibliotecas de Python NLTK y Sklearn de análisis de datos, de codigo abierto, para entrenar y desplegar el modelo de aprendizaje automático de similaridad del coseno.
 
 ### Bibliotecas y Funciones
 
@@ -64,6 +67,10 @@ Dentro de esta plataforma podremos utilizar las siguientes funciones y bibliotec
       Google Cloud AI Platform es un servicio integral de Google Cloud diseñado para ayudar a las organizaciones a construir, entrenar, implementar y administrar modelos de machine learning a escala. Ofrece una variedad de servicios y herramientas que facilitan el desarrollo de modelos de machine learning, incluyendo TensorFlow, scikit-learn y otros frameworks populares. AI Platform proporciona capacidades de procesamiento escalable, administración de recursos, monitoreo de modelos y herramientas de colaboración para equipos de científicos de datos y desarrolladores de machine learning.
   - **Cloud Functions**:
       Google Cloud Functions es un servicio de computación sin servidor que permite a los desarrolladores ejecutar código en respuesta a eventos en la nube sin necesidad de aprovisionar o administrar servidores. Permite a los desarrolladores crear funciones pequeñas y modulares que se ejecutan de forma independiente en la nube, escalando automáticamente según la demanda. Cloud Functions es adecuado para implementar lógica empresarial, procesamiento de eventos, integraciones de sistemas y tareas de automatización en la nube de Google.
+  - **Scikit-learn (sklearn)**:
+      Scikit-learn es una biblioteca de aprendizaje automático (machine learning) de código abierto para Python. Proporciona herramientas simples y eficientes para análisis predictivo y de datos, incluyendo algoritmos para clasificación, regresión, clustering, reducción de dimensionalidad, selección de modelos y preprocesamiento de datos. Scikit-learn se integra bien con otras bibliotecas de Python como NumPy y SciPy, y es ampliamente utilizada tanto en la industria como en la investigación académica debido a su facilidad de uso y su enfoque en la eficiencia computacional.
+  - **NLTK (Natural Language Toolkit)**:
+      NLTK es una biblioteca de Python ampliamente utilizada para el procesamiento del lenguaje natural (NLP, por sus siglas en inglés). Proporciona herramientas y recursos para trabajar con datos de texto en Python. Estas herramientas incluyen tokenización, etiquetado POS (part-of-speech), análisis sintáctico, análisis semántico, entre otras. NLTK es una herramienta valiosa tanto para estudiantes que aprenden sobre NLP como para investigadores y profesionales que trabajan en proyectos de procesamiento de lenguaje natural.
 
 ### Modelos
 
@@ -86,7 +93,7 @@ Dentro de esta plataforma podremos utilizar las siguientes funciones y bibliotec
   - Utilizaremos Python como lenguaje de programación principal para desarrollar y ejecutar nuestro código.
 
 - **Bibliotecas de Python**:
-  - Las Bibliotecas de aprendizaje automático serán utilizadas según sea necesario para el desarrollo de modelos que se eligirán para trabajar con Vertex AI.
+  - Las Bibliotecas de aprendizaje automático serán utilizadas según sea necesario para el desarrollo del modelo de Cosine Similarity.
 
 - **Entorno de Desarrollo**:
   - Visual Studio Code, Google Colab y Jupyter Notebook se utilizarán para escribir y ejecutar nuestro código Python.
@@ -99,8 +106,8 @@ Dentro de esta plataforma podremos utilizar las siguientes funciones y bibliotec
 - Instalar Python: [Python.org](https://www.python.org/downloads/)
 - Configurar Google Cloud Platform: [Google Cloud Platform](https://cloud.google.com/)
 - Modelos y Paquetes a instalar:
-  - Machine Learning: [Tensorflow Recommenders](https://blog.tensorflow.org/2020/09/introducing-tensorflow-recommenders.html?hl=es-419&_gl=1*1ywamkx*_ga*MTY2Nzg0ODg1Ni4xNzA3ODUyMzIw*_ga_W0YLR4190T*MTcwODY0NjkyOC40LjEuMTcwODY0NjkzNy4wLjAuMA)
-  - Natural Language Processing: [Tensorflow Text](https://blog.tensorflow.org/2019/06/introducing-tftext.html?hl=es-419&_gl=1*qajqos*_ga*MTY2Nzg0ODg1Ni4xNzA3ODUyMzIw*_ga_W0YLR4190T*MTcwODY0NjkyOC40LjEuMTcwODY0NzA1OC4wLjAuMA..)
+  - Machine Learning: [scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html)
+  - Natural Language Processing: [Natural Language Toolkit](https://www.nltk.org)
 
 
 ## Instalación
@@ -119,15 +126,21 @@ git clone https://github.com/jgutierrezladino/HotelWise/tree/HotelWiseML
 pip install -r requirements.txt
 
 python /HotelWise/NLP.py
-
+git
 python /HotelWise/ML.py
 
 ```
 
 # Resumen y Decisiones Finales
 
-Recapitulando lo visto anteriormente, para abordar el problema específico en nuestro proyecto de Machine Learning, se ha optado por utilizar TensorFlow Recommenders con Vertex AI. Este enfoque nos permite automatizar el proceso de construcción y entrenamiento de modelos, optimizando y ajustando automáticamente los modelos según los datos de entrada y los objetivos del proyecto.
-Además, se ha decidido implementar un modelo basado en similitud de coseno o el modelo de vecinos cercanos (near neighbors) y aquel que consuma menos recursos de CPU será el elegido. Este enfoque nos permite maximizar la eficiencia en entornos de costo elevado por uso de CPU, asegurando un rendimiento óptimo mientras gestionamos de manera efectiva los recursos disponibles.
+Recapitulando lo visto anteriormente, para abordar el problema específico en nuestro proyecto de Machine Learning, se ha optado por utilizar scikit-learn para la recomendacion de hoteles y Natural Language Toolkit para hacer el análisis de sentimientos de las reviews. Este enfoque nos permite automatizar el proceso de construcción y entrenamiento de modelos, optimizando y ajustando automáticamente los modelos según los datos de entrada y los objetivos del proyecto.
+Además, se ha decidido implementar un modelo basado en similitud de coseno ya que consume menos recursos de CPU, su implementación resulta muy util a la hora de conectar con el entorno de Usuarios (WEB, Consola y App Python) y además la simplicidad para desplegar en Cloud Functions. Este enfoque nos permite maximizar la eficiencia en entornos de costo elevado por uso de CPU, asegurando un rendimiento óptimo mientras gestionamos de manera efectiva los recursos disponibles.
+
+# Proxmas Etapas:
+
+## [Análisis previo Proyecto de Machine Learning ](https://github.com/HotelWise/HotelWise/tree/HotelWiseML/HotelWise)
+## [Despliegue del Proyecto de Machine Learning](https://github.com/HotelWise/HotelWise/tree/HotelWiseML/HotelWise/CloudFunctions)
+## [Análisis de Seguridad en EE.UU.](https://github.com/HotelWise/HotelWise/tree/HotelWiseML/HotelWise/Crime_In_The_USA)
 
 ---
 
