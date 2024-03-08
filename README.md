@@ -191,7 +191,7 @@ Explicar de manera efectiva los análisis realizados y los beneficios destacados
 El Índice de Criminalidad por Estado o Región es una medida que proporciona información sobre el nivel de seguridad en diferentes áreas geográficas basadas en los hoteles de tu conjunto de datos.
 
 **Fórmula:**
-<img src = 'imagenes/kpi-1.jpg' >\]
+<img src = 'imagenes/kpi-1.jpg' >
 
 **Descripción:**
 Este KPI calcula el promedio de los índices de criminalidad en los hoteles de cada estado o región. Proporciona una visión general del nivel de seguridad en áreas geográficas más amplias y ayuda a identificar áreas con posibles problemas de seguridad.
@@ -244,7 +244,7 @@ La Cantidad Promedio de Amenidades por Usuario en verano proporciona el promedio
 
 La Cantidad Promedio de Amenidades por Usuario en verano se calcula como:
 
-\[ \text{Cantidad Promedio de Amenidades por Usuario en verano} = \left( \frac{\text{Total de amenidades preferidas durante el verano}}{\text{Total de usuarios que dejaron comentarios positivos sobre amenidades durante el verano}} \right) \]
+<img src = 'imagenes/kpi-3.jpg' >
 
 - **Total de amenidades preferidas durante el verano:** Es la suma del número de amenidades mencionadas en los comentarios positivos durante la temporada de verano.
 - **Total de usuarios que dejaron comentarios positivos sobre amenidades durante el verano:** Es la cantidad de usuarios que expresaron comentarios positivos relacionados con amenidades durante la temporada de verano.
