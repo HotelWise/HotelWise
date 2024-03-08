@@ -115,11 +115,15 @@ Este proyecto utiliza los siguientes:
     <img src="screenshots/Web_HotReviews_02_MAPS_drawio.png"  height=400>
 </p>
 
+---
+
 - Primer print de pantalla de la página ```HOME```:
 
 <p align="center">
     <img src="screenshots/Web_HotReviews_01_HOME.png"  height=400>
 </p>
+
+---
 
 - Print de pantalla de la página ```HOME``` renombrado y con logo:
 
@@ -131,6 +135,39 @@ Este proyecto utiliza los siguientes:
 
 <p align="center">
     <img src="screenshots/Web_HotelWise_01_REVIEWS.png"  height=400>
+</p>
+
+---
+
+Print de pantalla de la iteracion final de la página ```HOME```:
+
+<p align="center">
+    <img src="screenshots/Web_HotelWise_02_HOME.png"  height=400>
+</p>
+
+
+- Print de pantalla de la iteracion final de la página ```REVIEWS```:
+
+<p align="center">
+    <img src="screenshots/Web_HotelWise_02_REVIEWS.png"  height=400>
+</p>
+
+- Print de pantalla de la iteracion final de la página ```Acerca De```:
+
+<p align="center">
+    <img src="screenshots/Web_HotelWise_02_AcercaDe.png"  height=400>
+</p>
+
+- Print de pantalla de la iteracion final de la página ```Contacto```:
+
+<p align="center">
+    <img src="screenshots/Web_HotelWise_02_CONTACTO.png"  height=400>
+</p>
+
+- Print de pantalla de la iteracion final de la página ```Error```:
+
+<p align="center">
+    <img src="screenshots/Web_HotelWise_02_ERROR.png"  height=400>
 </p>
 
 ---
