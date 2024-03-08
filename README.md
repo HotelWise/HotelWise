@@ -142,8 +142,8 @@ Además, se ha decidido implementar un modelo basado en similitud de coseno ya q
 ## [Análisis previo Proyecto de Machine Learning ](https://github.com/HotelWise/HotelWise/tree/HotelWiseML/HotelWise)
 ## [Despliegue del Proyecto de Machine Learning](https://github.com/HotelWise/HotelWise/tree/HotelWiseML/HotelWise/CloudFunctions)
 ### Videos de Funcionamiento
-- Video del Funcionamiento de Análisis de Sentimiento
-- Video del Funcionamiento de Recomendaciones
+- [Video del Funcionamiento de Análisis de Sentimiento](https://drive.google.com/file/d/1LtyzTT6X3eznUTa07NtoBYl9X607SszN/view?usp=share_link)
+- [Video del Funcionamiento de Recomendaciones](https://drive.google.com/file/d/1jR9XQi4-WdiVBoU_90XLV8CQQh0lPyCV/view?usp=share_link)
 ## [Análisis de Seguridad en EE.UU.](https://github.com/HotelWise/HotelWise/tree/HotelWiseML/HotelWise/Crime_In_The_USA)
 
 ---
