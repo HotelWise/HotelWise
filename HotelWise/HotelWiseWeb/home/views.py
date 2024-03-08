@@ -11,3 +11,7 @@ def acerca_de(request):
 
 def contacto(request):
     return render(request, 'contacto.html')
+
+
+def error_page(request):
+    return render(request, 'error_page.html')

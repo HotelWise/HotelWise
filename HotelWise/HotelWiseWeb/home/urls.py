@@ -6,6 +6,7 @@ urlpatterns = [
     path('', views.home_view, name='home'),
     path('acerca_de', views.acerca_de, name='acerca_de'),
     path('contacto', views.contacto, name='contacto'),
+    path('error_page', views.error_page, name='error_page'),
     path('dashboard', RedirectView.as_view(
         url='https://lookerstudio.google.com/s/sfapHivroXI'), name='dashboard'),
     path('github', RedirectView.as_view(
