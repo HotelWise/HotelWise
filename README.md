@@ -1,4 +1,6 @@
-![wink](./src/Hotelwise TD.PNG)
+
+![wink](./src/HotelwiseTD.PNG)
+
 
 ### 1. Configuración de GCP:
 
