@@ -364,8 +364,7 @@ En este proyecto, se emplearán las siguientes tecnologías para la gestión y a
 
 #### **Google Colaboratory**
 
-[![Colaboratory](https://img.shields.io/badge/Colaboratory-red?style=for-the-badge&logo=lock&logoColor=white)]
-(https://cloud.google.com/colaboratory?hl=es)
+[![Colaboratory](https://img.shields.io/badge/Colaboratory-FFA500?style=for-the-badge&logo=lock&logoColor=white)](https://colab.google/)
 
 - *Descripción:* Google Colaboratory, es una plataforma en línea que nos permite escribir y ejecutar código en Python directamente en el navegador. Proporciona acceso gratuito a recursos informáticos, incluidas GPU, lo que lo hace ideal para el análisis de datos.
 
@@ -401,7 +400,9 @@ En este proyecto, se emplearán las siguientes tecnologías para la gestión y a
 
 #### **Lucidchart**
 
-![Lucidchart](https://img.shields.io/badge/Lucidchart-%23FF0000?style=for-the-badge&logo=lock&logoColor=white)
+[![Lucidchart](https://img.shields.io/badge/Lucidchart-FF5733?style=for-the-badge&logo=lucidchart&logoColor=white)](https://www.lucidchart.com)
+
+
 
 - *Descripción:* Lucidchart es una plataforma en línea que permite crear diagramas, flujos de trabajo y otros tipos de representaciones visuales de manera colaborativa. Proporciona una interfaz intuitiva para la creación y edición de diagramas, facilitando la comunicación visual en equipos de trabajo. Además, al ser una plataforma en línea, permite la colaboración en tiempo real entre múltiples usuarios, lo que facilita el trabajo en equipo.
 
