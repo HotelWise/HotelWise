@@ -3,7 +3,6 @@
 <img src = 'imagenes/HotelWiseLogo.png' >
 </div>
 
-
 # **Data Analytics: HotelWise**
 
 ---
@@ -191,11 +190,11 @@ Nos comprometimos a completar la creación del dashboard en Looker Studio en las
 
 ### 1. Promedio de Índice de Criminalidad por Estado (PIDC)
 
-El Índice de Criminalidad por Estado o Región es una medida que proporciona información sobre el nivel de seguridad en diferentes áreas geográficas basadas en los hoteles de tu conjunto de datos.
+El Índice de Criminalidad por Estado o Región ofrece una medida clave para evaluar el nivel de seguridad en diversas áreas geográficas, utilizando los datos de los hoteles.
 
 #### Fórmula
 
-El PIDC se calcula de la siguiente forma:
+El PIDC se calcula de la siguiente manera:
 <img src = 'imagenes/kpi-1.jpg' >
 
 #### Datos Necesarios
@@ -209,15 +208,15 @@ Evaluar el nivel de seguridad por estado o región utilizando los índices de cr
 
 #### Medición
 
-Calcula el promedio de los índices de criminalidad en los hoteles de cada estado o región, proporcionando una visión general del nivel de seguridad en áreas geográficas más amplias.
+Se obtiene el promedio de los índices de criminalidad en los hoteles de cada estado o región, proporcionando una visión general del nivel de seguridad en áreas geográficas más amplias.
 
 #### Resumen y Conclusiones
 
-El PIDC proporciona una visión general del nivel de seguridad en áreas geográficas más amplias, lo que ayuda a identificar áreas con posibles problemas de seguridad. Este KPI permite comparar la seguridad entre diferentes estados o regiones, lo que puede utilizarse para tomar decisiones informadas sobre ubicaciones específicas para los viajeros, implementar medidas de seguridad adicionales en áreas de mayor riesgo y mejorar la calidad del servicio en áreas donde la seguridad es una preocupación.
+El PIDC brinda una visión panorámica del nivel de seguridad en áreas geográficas más amplias, facilitando la identificación de zonas con posibles problemas de seguridad. Este indicador permite comparar la seguridad entre diferentes estados o regiones, lo que posibilita la toma de decisiones informadas sobre ubicaciones específicas para los viajeros, la implementación de medidas adicionales de seguridad en áreas de mayor riesgo y la mejora de la calidad del servicio en lugares donde la seguridad es una preocupación prioritaria.
 
 ### 2. Porcentaje de Hoteles con Índice de Criminalidad por Encima de un Umbral (PHICEU)
 
-El porcentaje de hoteles con un Índice de Criminalidad por Encima de un Umbral es una métrica importante para evaluar la seguridad y la percepción de seguridad de los hoteles en una determinada área. En este caso, el umbral se establece en 10, que representa el promedio de todos los índices de criminalidad.
+El porcentaje de hoteles con un Índice de Criminalidad por Encima de un Umbral, es una medida crucial para evaluar la seguridad y la percepción de seguridad en los hoteles dentro de una zona específica. En este contexto, el umbral se fija en 10, representando el promedio de todos los índices de criminalidad.
 
 #### Fórmula
 
@@ -232,31 +231,31 @@ Para calcular el porcentaje de hoteles con un Índice de Criminalidad por Encima
 
 #### Objetivo Específico
 
-Evaluar la seguridad y la percepción de seguridad de los hoteles en función de su índice de criminalidad, considerando un umbral de 10.
+Evaluar la seguridad y la percepción de seguridad en los hoteles en función de su índice de criminalidad, considerando un umbral de 10.
 
 #### Medición
 
-Calcular el porcentaje de hoteles cuyo índice de criminalidad está por encima del umbral establecido (10).
+Determinar el porcentaje de hoteles cuyo índice de criminalidad supera el umbral establecido (10).
 
 #### Resumen y Conclusiones
 
-El porcentaje de hoteles con un Índice de Criminalidad por Encima de un Umbral (umbral = 10) proporciona información valiosa sobre la seguridad y la percepción de seguridad en el área donde se encuentran los hoteles. Este indicador puede ayudar a identificar áreas con mayores preocupaciones de seguridad y a tomar medidas para abordarlas y mejorar la seguridad general de los hoteles y sus entornos.
+El porcentaje de hoteles con un Índice de Criminalidad por Encima de un Umbral (umbral = 10) ofrece información valiosa sobre la seguridad y la percepción de seguridad en la zona donde se encuentran los hoteles. Este indicador puede ser útil para identificar áreas con mayores preocupaciones de seguridad y tomar medidas para abordarlas, mejorando así la seguridad general de los hoteles y sus alrededores.
 
-Al implementar esta métrica, podrás evaluar la seguridad de los hoteles y tomar decisiones informadas para mejorar la experiencia y la seguridad de tus huéspedes. Además, al establecer el umbral en 10, estás utilizando el promedio de todos los índices de criminalidad como referencia para determinar qué hoteles pueden requerir una atención especial en términos de seguridad.
+Al emplear esta métrica, se puede evaluar la seguridad de los hoteles y tomar decisiones informadas para mejorar la experiencia y la seguridad de los huéspedes. Además, al utilizar el umbral de 10, se establece un punto de referencia basado en el promedio de todos los índices de criminalidad, lo que ayuda a identificar qué hoteles pueden necesitar una atención especial en términos de seguridad.
 
 ### 3. Cantidad Promedio de Amenidades por Usuario en verano (CPAUV)
 
-La Cantidad Promedio de Amenidades por Usuario en verano proporciona el promedio de la cantidad de amenidades preferidas por usuario durante la temporada de verano. Esta métrica ayuda a comprender mejor las preferencias de los usuarios durante ese período específico.
+La Cantidad Promedio de Amenidades por Usuario en verano, proporciona el promedio de las amenidades preferidas por los usuarios durante la temporada de verano. Esta medida facilita una comprensión más profunda de las preferencias de los usuarios durante este período específico.
 
 #### Fórmula
 
-La Cantidad Promedio de Amenidades por Usuario en verano se calcula como:
+El CPAUV se calcula de la siguiente manera:
 <img src = 'imagenes/kpi-3.jpg' >
 
 #### Datos necesarios
 
-1. **Total de amenidades preferidas durante el verano:** Es la suma del número de amenidades mencionadas en los comentarios positivos durante la temporada de verano.
-2. **Total de usuarios que dejaron comentarios positivos sobre amenidades durante el verano:** Es la cantidad de usuarios que expresaron comentarios positivos relacionados con amenidades durante la temporada de verano.
+1. **Total de amenidades preferidas durante el verano:** Suma del número de amenidades mencionadas en los comentarios positivos durante la temporada de verano.
+2. **Total de usuarios que dejaron comentarios positivos sobre amenidades durante el verano:** Cantidad de usuarios que expresaron comentarios positivos relacionados con amenidades durante la temporada indicada.
 
 #### Objetivo Específico
 
@@ -264,62 +263,62 @@ Evaluar las preferencias de los usuarios en cuanto a las amenidades durante la t
 
 #### Resumen y Conclusiones
 
-La Cantidad Promedio de Amenidades por Usuario en verano ofrece información valiosa sobre las preferencias de los usuarios durante la temporada de verano, lo que permite adaptar mejor los servicios ofrecidos a sus necesidades y expectativas durante ese período.
+El CPAUV proporciona información valiosa sobre las preferencias de los usuarios durante la temporada de verano, permitiendo una mejor adaptación de los servicios ofrecidos a sus necesidades y expectativas durante este período.
 
 ### 4. Índice de Satisfacción del Usuario (CSAT)
 
-El Índice de Satisfacción del Usuario (CSAT) es una métrica crucial para evaluar la satisfacción general de los usuarios con un producto o servicio. En el contexto de tu plataforma, el CSAT se calculará utilizando los comentarios y reseñas de los usuarios sobre su experiencia con los hoteles durante la temporada de verano.
+La Evaluación de la Satisfacción del Usuario (CSAT) es un indicador esencial para valorar el nivel de satisfacción global de los usuarios respecto a un producto o servicio. En el contexto nuestra plataforma, el CSAT se determinará mediante los comentarios y reseñas de los usuarios sobre su experiencia con los hoteles durante la temporada de verano.
 
 #### Fórmula
 
-El CSAT se calcula utilizando la siguiente fórmula:
+El CSAT se obtiene mediante la siguiente fórmula:
 <img src = 'imagenes/kpi-4.jpg' >
 
 #### Datos Necesarios
 
-1. **Comentarios de Usuarios:** Recopila comentarios de usuarios que contengan información sobre su satisfacción con el servicio. Estos comentarios deben estar asociados con cada usuario para calcular el CSAT por usuario.
-2. **Análisis de Sentimiento:** Realiza un análisis de sentimiento en los comentarios para identificar aquellos que son positivos y están relacionados con la satisfacción del usuario. Esto permitirá filtrar los comentarios relevantes para el cálculo del CSAT.
+1. **Comentarios de Usuarios:** Recolecta comentarios de usuarios que expresen su satisfacción con el servicio. Estos comentarios deben estar asociados con cada usuario para calcular el CSAT individualmente.
+2. **Análisis de Sentimiento:** Realiza un análisis de sentimiento en los comentarios para identificar aquellos que sean positivos y estén relacionados con la satisfacción del usuario. Esto facilitará la identificación de comentarios relevantes para el cálculo del CSAT.
 3. **Temporada de Verano:** El período de evaluación para el CSAT será durante la temporada de verano, que abarca desde junio hasta agosto.
-4. **Asociación con Usuarios:** Es esencial asociar cada comentario con el usuario correspondiente para calcular el CSAT por usuario.
+4. **Asociación con Usuarios:** Es crucial vincular cada comentario con el usuario correspondiente para calcular el CSAT de manera individual.
 
 #### Objetivo Específico
 
-Evaluar la satisfacción de los usuarios a través de comentarios de usuarios, recopilando puntuaciones de satisfacción.
+Evaluar la satisfacción de los usuarios a través de sus comentarios, recopilando puntajes de satisfacción.
 
 #### Medición
 
-Recopilar puntuaciones de satisfacción a través de comentarios de los usuarios y calcular un índice de satisfacción del usuario (CSAT).
+Recopilar puntajes de satisfacción a partir de los comentarios de los usuarios y calcular el índice de satisfacción del usuario (CSAT).
 
 #### Resumen y Conclusiones
 
-El CSAT ofrece una medida clave de la satisfacción de los usuarios durante la temporada de verano, proporcionando información valiosa sobre la percepción general de los servicios ofrecidos y permitiendo mejoras continuas en la calidad del servicio.
+El CSAT proporciona una medida fundamental de la satisfacción de los usuarios durante la temporada de verano, ofreciendo información valiosa sobre la percepción general de los servicios prestados y permitiendo mejoras continuas en su calidad.
 
-Al implementar esta metodología, podrás evaluar de manera efectiva la satisfacción del usuario y realizar mejoras continuas en los servicios ofrecidos durante la temporada de verano.
+Implementando esta metodología, podrás evaluar de manera efectiva la satisfacción del usuario y realizar mejoras continuas en los servicios ofrecidos durante la temporada estival.
 
 ### 5. Promedio de Calificaciones (AVG RATING)
 
-El Promedio de Calificaciones (AVG RATING) es una métrica crucial para evaluar la satisfacción general de los usuarios con un producto o servicio. En el contexto de tu plataforma, el AVG_RATING se calcula utilizando las calificaciones dadas por los usuarios a los hoteles en tu conjunto de datos. Esta medida nos brinda información valiosa sobre la calidad percibida de los servicios ofrecidos.
+El Promedio de Calificaciones es un indicador vital para entender el nivel de satisfacción general de los usuarios respecto a un producto o servicio. En el ámbito de nuestra plataforma, se obtiene a partir de las valoraciones otorgadas por los usuarios a los hoteles. Esta métrica nos ofrece valiosa información sobre la percepción de calidad de los servicios proporcionados.
 
 #### Fórmula
 
-El AVG_RATING se calcula:
+El AVG RATING se calcula de la siguiente manera:
 <img src = 'imagenes/kpi-5.jpg' >
 
 #### Datos Necesarios
 
-Calificaciones de Usuarios: Recopila las calificaciones dadas por los usuarios a los hoteles en tu conjunto de datos. Estas calificaciones deben estar asociadas con cada hotel para calcular el AVG_RATING por hotel.
+1. **Calificaciones de Usuarios:** Recolecta las valoraciones otorgadas por los usuarios a los hoteles. Estas evaluaciones deben estar vinculadas con cada hotel para calcular el AVG RATING por hotel.
 
 #### Objetivo Específico
 
-Evaluar la satisfacción de los usuarios a través de las calificaciones proporcionadas a los hoteles en tu conjunto de datos.
+Evaluar la satisfacción de los usuarios mediante las valoraciones proporcionadas a los hoteles.
 
 #### Medición
 
-Calcular el promedio de las calificaciones dadas por los usuarios a los hoteles en tu conjunto de datos y obtener el AVG_RATING.
+Calcular el promedio de las valoraciones emitidas por los usuarios hacia los hoteles.
 
 #### Resumen y Conclusiones
 
-El AVG_RATING ofrece una medida clave de la satisfacción de los usuarios con los hoteles en tu conjunto de datos, proporcionando información valiosa sobre la percepción general de los servicios ofrecidos y permitiendo mejoras continuas en la calidad del servicio.
+Este indicador ofrece una visión fundamental de la satisfacción de los usuarios con respecto a los hoteles, brindando información crucial sobre la percepción global de los servicios ofrecidos y permitiendo mejoras continuas en su calidad.
 
 ## **Diccionario de datos**
 
