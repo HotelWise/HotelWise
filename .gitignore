@@ -130,3 +130,4 @@ venv.bak/
 .mypy_cache/
 .dmypy.json
 dmypy.json
+HotelWise/00.DB.FIX.ipynb
